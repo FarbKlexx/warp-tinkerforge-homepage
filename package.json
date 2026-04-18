@@ -1,0 +1,25 @@
+{
+  "name": "warp-tinkerforge-homepage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FarbKlexx/warp-tinkerforge-homepage.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/FarbKlexx/warp-tinkerforge-homepage/issues"
+  },
+  "homepage": "https://github.com/FarbKlexx/warp-tinkerforge-homepage#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}

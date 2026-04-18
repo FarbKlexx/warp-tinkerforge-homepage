@@ -1,0 +1,10 @@
+# Node & NPM Abhängigkeiten
+node_modules/
+package-lock.json
+
+# Systemdateien (Mac & Windows)
+.DS_Store
+Thumbs.db
+
+# Editor-Einstellungen (z.B. VS Code)
+.vscode/

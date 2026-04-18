@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  /* Farben */
+  --color-brand-primary: #0055ff;
+  --color-brand-secondary: #ff0055;
+  --color-brand-light: #f3f4f6;
+
+  /* Fonts */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Spacing */
+  --spacing-huge: 5rem;
+  
+  /* Effects */
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
