@@ -1,18 +1,198 @@
 @import "tailwindcss";
 
 @theme {
-  /* Farben */
-  --color-brand-primary: #0055ff;
-  --color-brand-secondary: #ff0055;
-  --color-brand-light: #f3f4f6;
-
-  /* Fonts */
-  --font-heading: "Playfair Display", serif;
-  --font-body: "Inter", sans-serif;
-
-  /* Spacing */
-  --spacing-huge: 5rem;
+  /* =========================================
+     Colors
+     ========================================= */
   
-  /* Effects */
-  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
+  /* Neutrals */
+  --color-background: #F3F3F3;
+  --color-black: #1B1B1B;
+  --color-grey: #6C757D;
+  --color-light-grey: #CED4DA;
+  --color-very-light-grey: #EAEAEA;
+  
+  /* Brand */
+  --color-primary: #2563EB;
+  
+  /* Semantics */
+  --color-console-green: #DDFFDF;
+
+
+  /* =========================================
+     Gradients
+     ========================================= */
+  
+  --background-image-gradient-blue: linear-gradient(to bottom, #021273 0%, #1856C8 50%, #008EFF 100%);
+  
+  --background-image-gradient-ridged: linear-gradient(to right, #1B1B1B 0%, #575757 25%, #1B1B1B 50%, #575757 75%, #1B1B1B 100%);
+  
+  --background-image-gradient-dark-soft: linear-gradient(to right, #1B1B1B 0%, #575757 50%, #1B1B1B 100%);
+
+  --background-image-gradient-grey-dark: linear-gradient(to bottom, #4A4A4A 0%, #1B1B1B 100%);
+  
+  --background-image-gradient-radial-dark: radial-gradient(circle, #1B1B25 0%, #05050A 100%);
+  
+  --background-image-gradient-white-blue: linear-gradient(to bottom, #FFFFFF 0%, #B0BAE9 100%);
+  
+  --background-image-gradient-deep-blue: linear-gradient(to bottom-right, #364578 0%, #0D121F 100%);
+  
+  --background-image-gradient-light-blue: linear-gradient(to bottom-right, #8AAEE9 0%, #233153 100%);
+  
+  /* Font Families */
+  --font-satoshi: "Satoshi Variable", sans-serif;
+  --font-instrument: "Instrument Serif", serif;
+
+
+  /* =========================================
+    Spacing
+    ========================================= */
+    
+  --width-main: 75rem;
+  --width-wide: 95rem;
+
+  --spacing-text-gap-sm: 0.9375rem; /* 15px (Headline zu Überschrift) */
+  --spacing-text-gap-md: 1.25rem;   /* 20px (Überschrift zu Body) */
+
+  --spacing-section: clamp(4rem, 6vw + 2rem, 9.375rem);
+
+
+  /* =========================================
+    Effects
+    ========================================= */
+
+  --shadow-normal: 0px 0px 29.43px 6.3px rgba(0, 0, 0, 0.5);
+  }
+
+  
+  /* =========================================
+    Typography
+    ========================================= */
+    
+  @utility text-display-1 {
+    font-family: var(--font-satoshi);
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.0625em;
+    line-height: 1.1;
+
+    @variant lg {
+      font-size: 4rem;
+    }
+  }
+
+  @utility text-display-2 {
+    font-family: var(--font-instrument);
+    font-size: 1.97rem;
+    font-weight: 400;
+    letter-spacing: -0.024em;
+    line-height: 1.1;
+
+    @variant lg {
+      font-size: 2.625rem;
+    }
+  }
+
+  @utility text-h2 {
+    font-family: var(--font-satoshi);
+    font-size: 1.97rem;
+    font-weight: 700;
+    line-height: 1.07;
+    letter-spacing: -0.048em;
+
+    @variant lg {
+      font-size: 2.625rem;
+    }
+  }
+
+  @utility text-h3 {
+    font-family: var(--font-satoshi);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.0625em;
+    line-height: 1.2;
+
+    @variant lg {
+      font-size: 2rem;
+    }
+  }
+
+  @utility text-h4 {
+    font-family: var(--font-satoshi);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 1.3;
+
+    @variant lg {
+      font-size: 1.25rem;
+    }
+  }
+
+  @utility text-body {
+    font-family: var(--font-satoshi);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.625;
+
+    @variant lg {
+      font-size: 1rem;
+    }
+  }
+
+  @utility text-btn {
+    font-family: var(--font-satoshi);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+
+    @variant lg {
+      font-size: 1rem;
+    }
+  }
+
+  @utility text-eyebrow {
+    font-family: var(--font-satoshi);
+    font-size: 0.656rem;
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: 0.143em;
+    text-transform: uppercase;
+
+    @variant lg {
+      font-size: 0.875rem;
+    }
+  }
+
+
+  /* =========================================
+  Custom Effects
+  ========================================= */
+
+  @utility glow-layer-normal {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit; /* Passt sich automatisch dem Parent an! */
+  z-index: -3;
+  box-shadow: 
+    0 -50px 170px -60px #2563EB, 
+    0 -50px 170px -60px #87ADFF; 
+  }
+
+  @utility glow-layer-overlay-3 {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: -2;
+    mix-blend-mode: overlay;
+    box-shadow: 0 -50px 50px -60px #FFFFFF;
+  }
+
+  @utility glow-layer-overlay-4 {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: -1;
+    mix-blend-mode: overlay;
+    box-shadow: 0 -50px 50px -60px #BFD3FF;
+  }
