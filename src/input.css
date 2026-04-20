@@ -1,6 +1,27 @@
+/* =========================================
+   LOKALE SCHRIFTARTEN
+   ========================================= */
+
+@font-face {
+  font-family: 'Satoshi Variable';
+  src: url('../fonts/Satoshi-Variable.woff2') format('woff2');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi Variable';
+  src: url('../fonts/Satoshi-VariableItalic.woff2') format('woff2');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: italic;
+}
+
 @import "tailwindcss";
 
 @theme {
+  --font-satoshi: "Satoshi Variable", sans-serif;
   /* =========================================
      Colors
      ========================================= */
@@ -76,6 +97,9 @@
     letter-spacing: -0.0625em;
     line-height: 1.1;
 
+    @variant md {
+      font-size: 4rem;
+    }
     @variant lg {
       font-size: 4rem;
     }
@@ -88,6 +112,9 @@
     letter-spacing: -0.024em;
     line-height: 1.1;
 
+    @variant md {
+      font-size: 2.625rem;
+    }
     @variant lg {
       font-size: 2.625rem;
     }
@@ -146,6 +173,9 @@
     font-weight: 700;
     line-height: 1;
 
+    @variant md {
+      font-size: 1rem;
+    }
     @variant lg {
       font-size: 1rem;
     }
@@ -195,4 +225,17 @@
     z-index: -1;
     mix-blend-mode: overlay;
     box-shadow: 0 -50px 50px -60px #BFD3FF;
+  }
+
+  /* =========================================
+     KOMPONENTEN (Buttons etc.)
+     ========================================= */
+
+  .btn-primary {
+    @apply bg-gradient-grey-dark text-white text-btn px-4 py-2 md:px-6 md:py-3 lg:px-6 lg:py-3 rounded-lg md:rounded-[10px] lg:rounded-[10px] shadow-md transition-all active:scale-95 hover:opacity-90;
+    
+    /* Hover-Effekte können wir direkt so verschachteln: */
+    &:hover {
+      @apply from-[#5a5a5a] to-[#2b2b2b];
+    }
   }

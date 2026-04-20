@@ -3,30 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tailwind v4 Test</title>
+  <title>WARP by Tinkerforge</title>
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
   <link href="./assets/css/output.css" rel="stylesheet">
   
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+  <body class="min-h-screen overflow-x-hidden relative">
 
-  <div class="bg-white p-8 rounded-2xl shadow-card max-w-md w-full text-center">
-    
-    <h1 class="font-heading text-4xl mb-4 text-brand-primary">
-      Setup Erfolgreich! 🎉
-    </h1>
-    
-    <p class="text-gray-600 mb-8 leading-relaxed">
-      Wenn du diese Karte mit einem weichen Schatten siehst und die Überschrift in Blau erstrahlt, dann arbeitet dein Tailwind-Compiler im Hintergrund fehlerfrei.
-    </p>
+    <!-- Navigation -->
+    <header class="fixed top-6 left-0 w-full z-50 flex justify-center px-4">
+        <nav class="relative overflow-hidden w-full max-w-5xl flex items-center justify-between px-8 py-4 rounded-2xl border border-white/20 shadow-2xl"> 
+            <!-- Black Tint Overlay -->
+            <div class="absolute inset-0 bg-black/30 pointer-events-none z-0"></div>
 
-    <a href="#" class="inline-block bg-brand-primary text-white font-medium px-6 py-3 rounded-lg hover:bg-brand-secondary transition-colors duration-300">
-      Design-System starten
-    </a>
+            <div class="relative z-10 text-white font-black text-2xl tracking-tighter">
+                BRAND<span class="text-cyan-400">.</span>
+            </div>
 
-  </div>
+            <ul class="relative z-10 hidden md:flex gap-8 text-white font-medium">
+                <li class="hover:text-black transition-colors cursor-pointer">Startseite</li>
+                <li class="hover:text-black transition-colors cursor-pointer">Projekte</li>
+                <li class="hover:text-black transition-colors cursor-pointer">Kontakt</li>
+            </ul>
 
-</body>
+            <button class="relative z-10 bg-white text-indigo-900 px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform">
+                Let's talk
+            </button>
+            
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex flex-col items-center text-center">
+
+        <!-- Hero Section -->
+        <section class="relative w-full overflow-hidden flex flex-col items-center pt-32 pb-0 min-h-140 md:min-h-175 lg:min-h-225">
+          <div class="relative flex flex-col items-center gap-4 md:gap-8 lg:gap-8  w-full">
+
+              <!-- Display Text -->
+              <div class="flex flex-col items-center gap-0">
+                <!-- Display 2 -->
+                <p
+                    class="text-display-2 bg-gradient-blue bg-clip-text text-transparent"
+                >
+                    <span class="italic text-display-2">Open Source</span> Ladelösungen.
+                </p>
+
+                <!-- Display 1 -->
+                <div class="flex items-end gap-0 mt-1">
+                    <div class="flex items-start">
+                            <span class="text-display-1 font-black bg-gradient-dark-soft bg-clip-text text-transparent leading-[1.3] pr-2 -mr-2">
+                                WARP
+                            </span>
+                            <sup class="font-satoshi text-black font-bold ml-1 relative text-3xl mt-5 lg:text-4xl lg:mt-6">®</sup>
+                    </div>
+                    <span
+                    class="text-display-1 font-black bg-gradient-ridged pr-2 -mr-2 bg-clip-text text-transparent leading-[1.3]">
+                    Charger.
+                    </span>
+                </div>
+              </div>
+
+              <div class="flex flex-row items-center gap-4">
+              <p class="font-medium text-grey text-l md:text-xl lg:text-xl font-satoshi">
+                  ab <span class="font-black text-black text-3xl md:text-4xl lg:text-4xl tracking-[-2px]">699€</span>
+              </p>
+              <button
+                  type="button"
+                  class="btn-primary">
+                  Konfigurieren
+              </button>
+              </div>
+          </div>
+
+          <div class="relative w-full max-w-4xl mx-auto mt-8 flex-1">
+              <img
+              src="./assets/images/warp-charger-stand.png"
+              alt="WARP Charger Stand"
+              class="w-full object-contain object-top"
+              style="max-height: 700px;"
+              >
+              <div
+              class="absolute inset-x-0 bottom-0 h-48"
+              style="background: linear-gradient(to top, #f3f3f3 0%, rgba(243,243,243,0) 100%);"
+              ></div>
+          </div>
+        </section>
+    </main>
+  </body>
 </html>

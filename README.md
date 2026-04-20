@@ -6,3 +6,4 @@
 > Das Projekt wird mit Tailwind v4 entwickelt. Die `input.css` ersetzt die alte `tailwind.config.js`.
 - Befehlt zum starten des Compilers in der `package.json`. Bei Styling-Änderungen `npm run dev` ausführen und dann Änderungen in den `HTML-Dateien` oder ggf. der `input.css` vornehmen.
 - Für das Deployen ist Tailwind nicht mehr nötig; Das gesamte Styling ist in der `output.css`.
+- Fonts müssen im Ordner `assets/fonts` abgelegt werden damit sie geladen werden können.
