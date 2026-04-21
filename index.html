@@ -17,25 +17,21 @@
   <body class="min-h-screen overflow-x-hidden relative bg-background">
 
     <!-- Navigation -->
-    <header class="fixed top-6 left-0 w-full z-50 flex justify-center">
+    <header class="fixed top-6 w-full px-6 z-50 flex justify-center">
         <nav class="relative overflow-hidden w-full max-w-6xl flex items-center justify-between px-2 py-2 rounded-[10px] border border-grey/50 shadow-xl"> 
-            <!-- Black Tint Overlay, needed for Liquid Glass -->
             <div class="absolute inset-0 bg-black/30 pointer-events-none z-0"></div>
 
-            <!-- Left Sided Content (Logo) -->
             <div class="ml-1 relative z-10 flex items-center">
                 <img 
                     src="./assets/images/warp-logo.svg" 
                     alt="WARP Charger Logo" 
-                    class="h-8 w-auto" 
+                    class="h-5 lg:h-8 w-auto transition-all" 
                 >
             </div>
 
-            <!-- Right Sided Content -->
-            <div class="z-10 flex flex-row gap-8 items-center">
+            <div class="z-10 flex flex-row gap-4 lg:gap-8 items-center text-white">
 
-                <!-- Navi-Items -->
-                <ul class="relative z-10 hidden md:hidden lg:flex gap-8 text-white">
+                <ul class="relative z-10 hidden lg:flex gap-8">
                     <li class="nav-item">Produkte</li>
                     <li class="nav-item">Software</li>
                     <li class="nav-item">Lösungen</li>
@@ -44,23 +40,34 @@
                         Dokumentation
                         <span class="material-symbols-outlined text-[18px]!">open_in_new</span>
                     </li>
-
                 </ul>
 
-                <!-- Buttons -->
-                <div class="z-10 flex flex-row gap-2 items-center">
-                    <button
-                        type="button"
-                        class="btn-tertiary">
+                <div class="z-10 hidden lg:flex flex-row gap-2 items-center text-black">
+                    <button type="button" class="btn-tertiary">
                         Downloads
                     </button>
 
-                    <button
-                        type="button"
-                        class="btn-secondary">
+                    <button type="button" class="btn-secondary">
                         Shop
                     </button>
                 </div>
+
+                <div class="z-10 flex lg:hidden flex-row gap-4 items-center">
+                    
+                    <button class="flex items-center justify-center hover:text-cyan-400 transition-colors">
+                        <span class="material-symbols-outlined text-[24px]!">download</span>
+                    </button>
+
+                    <button class="flex items-center justify-center hover:text-cyan-400 transition-colors">
+                        <span class="material-symbols-outlined text-[24px]!">shopping_bag</span>
+                    </button>
+
+                    <button class="flex items-center justify-center hover:text-cyan-400 transition-colors ml-1">
+                        <span class="material-symbols-outlined text-[28px]!">menu</span>
+                    </button>
+
+                </div>
+
             </div>
         </nav>
     </header>
@@ -123,7 +130,74 @@
         </div>
         </section>
 
-        <section class="h-100"></section>
+        <!-- Compatibility Section -->
+        <section class="flex flex-col gap-8 py-20 w-full">
+
+                <!-- Text -->
+                <div class="flex flex-col gap-text-gap-md text-center items-center px-1">
+                    <div class="flex flex-col gap-text-gap-sm">
+
+                        <!-- Badge -->
+                        <div class="flex items-center gap-2.5 justify-center">
+                            <!-- Icon -->
+                            <div class="w-7.5 h-7.5 rounded-full bg-gradient-overlay-blue p-px flex items-center justify-center">
+                                <div class="w-full h-full rounded-full bg-gradient-blue flex items-center justify-center">
+                                    
+                                <span class="material-symbols-outlined text-[18px]! text-white">crossword</span>
+                                </div>
+                            </div>
+                            <!-- Text -->
+                            <span class="text-h3 bg-gradient-blue bg-clip-text text-transparent">
+                                Maximale Kompatibilität
+                            </span>
+                        </div>
+                        <h2 class="text-h2 text-black">
+                            Perfekt vernetzt mit Ihrem System.
+                        </h2>
+
+                    </div>
+                    <p class="text-body text-grey max-w-184">
+                        Unsere Produkte sind zu vielen Geräten kompatibel. So können fremde Smart-Meter, PV-Wechselrichter, Stromspeicher und Wärmepumpen von einem WARP3 Charger oder WARP Energy Manager 2.0 ausgelesen und gesteuert werden.
+                    </p>
+                </div>
+
+                <!-- Icon Boxes -->
+                <div class="flex flex-row gap-2 lg:gap-8 items-center justify-center px-2">
+
+                    <div class="feature-box">
+                        <svg class="feature-icon">
+                            <use href="./assets/images/icons.svg#icon-waermepumpe"></use>
+                        </svg>
+                        <p
+                            class="feature-text"
+                        >
+                           Wärmepumpe
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <svg class="feature-icon">
+                            <use href="./assets/images/icons.svg#icon-solar"></use>
+                        </svg>
+                        <p
+                            class="feature-text"
+                        >
+                           PV-Anlage
+                        </p>
+                    </div>
+
+                    <div class="feature-box">
+                        <svg class="feature-icon">
+                            <use href="./assets/images/icons.svg#icon-wechselrichter"></use>
+                        </svg>
+                        <p
+                            class="feature-text"
+                        >
+                           Wechselrichter
+                        </p>
+                    </div>
+                </div>
+        </section>
     </main>
   </body>
 </html>

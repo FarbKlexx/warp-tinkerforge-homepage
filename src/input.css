@@ -1,5 +1,5 @@
 /* =========================================
-   LOKALE SCHRIFTARTEN
+   Local Fonts
    ========================================= */
 
 @font-face {
@@ -35,6 +35,8 @@
   
   /* Brand */
   --color-primary: #2563EB;
+
+  --color-dark-primary: #051533;
   
   /* Semantics */
   --color-console-green: #DDFFDF;
@@ -45,6 +47,8 @@
      ========================================= */
   
   --background-image-gradient-blue: linear-gradient(to bottom, #021273 0%, #1856C8 50%, #008EFF 100%);
+
+  --background-image-gradient-overlay-blue: linear-gradient(to bottom, #0525b3 0%, #2e8ef3 50%, #01cdff 100%);
   
   --background-image-gradient-ridged: linear-gradient(to right, #1B1B1B 0%, #575757 25%, #1B1B1B 50%, #575757 75%, #1B1B1B 100%);
   
@@ -243,7 +247,7 @@
   }
 
   /* =========================================
-     KOMPONENTEN (Buttons etc.)
+     Components
      ========================================= */
 
   .btn-primary {
@@ -261,3 +265,18 @@
   .nav-item {
     @apply text-nav hover:text-white/60 transition-colors cursor-pointer
   }
+
+  /* Der äußere Container */
+.feature-box {
+  @apply bg-white flex flex-col gap-1 lg:gap-6 items-center justify-center py-5 lg:py-16 lg:px-10 rounded-2xl flex-1 min-w-30 lg:min-w-70;
+}
+
+/* Das Icon selbst */
+.feature-icon {
+  @apply w-16 h-16 lg:w-32 text-dark-primary transition-colors;
+}
+
+/* Der Text darunter */
+.feature-text {
+  @apply text-h4 font-medium text-dark-primary text-center;
+}
