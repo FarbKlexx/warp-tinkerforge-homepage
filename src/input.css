@@ -59,6 +59,10 @@
   --background-image-gradient-deep-blue: linear-gradient(to bottom-right, #364578 0%, #0D121F 100%);
   
   --background-image-gradient-light-blue: linear-gradient(to bottom-right, #8AAEE9 0%, #233153 100%);
+
+  --background-image-gradient-light-white-image: linear-gradient(to top, #F3F3F3 0%, #F9F9F900 50%, #FFFFFF00 100%);
+
+  --background-image-gradient-light-white-background: linear-gradient(to top, #F3F3F3 0%, #FFFFFF 40%);
   
   /* Font Families */
   --font-satoshi: "Satoshi Variable", sans-serif;
@@ -194,6 +198,17 @@
     }
   }
 
+  @utility text-nav{
+    font-family: var(--font-satoshi);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.625;
+
+    @variant lg {
+      font-size: 1rem;
+    }
+  }
+
 
   /* =========================================
   Custom Effects
@@ -232,10 +247,17 @@
      ========================================= */
 
   .btn-primary {
-    @apply bg-gradient-grey-dark text-white text-btn px-4 py-2 md:px-6 md:py-3 lg:px-6 lg:py-3 rounded-lg md:rounded-[10px] lg:rounded-[10px] shadow-md transition-all active:scale-95 hover:opacity-90;
-    
-    /* Hover-Effekte können wir direkt so verschachteln: */
-    &:hover {
-      @apply from-[#5a5a5a] to-[#2b2b2b];
-    }
+    @apply bg-gradient-grey-dark z-10 text-white text-btn px-4 py-2 md:px-6 md:py-3 lg:px-6 lg:py-3 rounded-lg md:rounded-[10px] lg:rounded-[10px] shadow-md transition-all active:scale-95 hover:opacity-90;
+  }
+
+  .btn-secondary {
+    @apply bg-white z-10 text-black border-2 border-white text-btn px-4 py-2 md:px-6 md:py-3 lg:px-6 lg:py-3 rounded-[5px] transition-all active:scale-95 hover:opacity-90;
+  }
+
+    .btn-tertiary {
+    @apply bg-transparent text-white border-2 border-white text-btn px-4 py-2 md:px-6 md:py-3 lg:px-6 lg:py-3 rounded-[5px] transition-all active:scale-95 hover:opacity-90;
+  }
+
+  .nav-item {
+    @apply text-nav hover:text-white/60 transition-colors cursor-pointer
   }
