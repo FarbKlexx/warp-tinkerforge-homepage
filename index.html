@@ -146,7 +146,7 @@
                             </div>
                         </div>
                         <!-- Text -->
-                        <span class="text-h3 bg-gradient-blue bg-clip-text text-transparent">
+                        <span class="text-h3 bg-gradient-blue bg-clip-text text-transparent pr-2 -mr-2">
                             Maximale Kompatibilität
                         </span>
                     </div>
@@ -198,29 +198,34 @@
         <section id="products" class="relative w-full py-16 overflow-x-clip bg-gradient-radial-dark">
             <div class="max-w-7xl mx-auto flex flex-col">
                 <!-- Header Wrapper -->
-                <div class="px-4 md:px-0 md:pl-75 lg:pl-110 md:pr-8 relative z-10 pointer-events-auto">
+                <div class="-ml-[calc(50vw-50%)] -mr-[calc(50vw-50%)] px-4 md:pl-[calc(50vw-250px)] md:pr-[calc(max(2rem,50vw-40rem))] relative z-10 pointer-events-auto">
 
                     <!-- Section Header -->
-                    <header class="flex flex-col gap-5 text-left">
-                        <!-- Eyebrow -->
-                        <div class="flex items-center gap-3">
-                            <svg class="w-7.5 h-7.5">
-                                <use href="./assets/images/icons.svg#icon-dark-blue-circle"></use>
-                            </svg>
+                    <header class="flex flex-col gap-text-gap-sm text-center md:text-left">
+
+                        <!-- Badge-->
+                        <div class="flex items-center justify-center md:justify-start gap-2.5">
+                            <div
+                                class="w-7.5 h-7.5 rounded-full bg-gradient-light-blue p-px flex items-center justify-center">
+                                <div class="w-full h-full rounded-full bg-gradient-deep-blue flex items-center justify-center">
+
+                                    <span class="material-symbols-outlined text-[18px]! bg-gradient-white-blue bg-clip-text text-transparent">electrical_services</span>
+                                </div>
+                            </div>
                             <span
-                                class="font-satoshi font-medium text-2xl md:text-3xl tracking-[-2px] bg-[linear-gradient(180deg,#ffffff_0%,#B0BAE9_100%)] bg-clip-text text-transparent">
+                                class="text-h3 bg-gradient-white-blue bg-clip-text text-transparent pr-2 -mr-2">
                                 Produkte
                             </span>
                         </div>
 
                         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-                            <div>
+                            <div class="flex flex-col items-center md:items-start w-full gap-text-gap-md">
                                 <h2
-                                    class="font-satoshi font-bold text-white text-3xl md:text-4xl lg:text-5xl tracking-[-2px] leading-tight">
+                                    class="text-h2 text-white">
                                     Entdecken Sie unsere Lösungen
                                 </h2>
                                 <p
-                                    class="text-[rgba(255,255,255,0.8)] font-satoshi font-medium text-base mt-3 max-w-md">
+                                    class="text-body text-white/80 max-w-md mx-auto md:mx-0">
                                     Leistungsstarke Ladelösungen und vollumfängliches Energiemanagement.
                                 </p>
                             </div>
@@ -228,16 +233,16 @@
                             <!-- Desktop Scroll Controls -->
                             <div class="hidden md:flex gap-2 shrink-0">
                                 <button id="scroll-products-left"
-                                    class="w-12 h-12 rounded-full bg-[#d9dde2] flex items-center justify-center hover:bg-white transition-colors active:scale-95"
+                                    class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center hover:bg-white transition-colors active:scale-95"
                                     aria-label="Scroll left">
                                     <span
-                                        class="material-symbols-outlined text-[#959BA1] text-[24px]!">chevron_left</span>
+                                        class="material-symbols-outlined text-grey text-[24px]!">chevron_left</span>
                                 </button>
                                 <button id="scroll-products-right"
-                                    class="w-12 h-12 rounded-full bg-[#d9dde2] flex items-center justify-center hover:bg-white transition-colors active:scale-95"
+                                    class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center hover:bg-white transition-colors active:scale-95"
                                     aria-label="Scroll right">
                                     <span
-                                        class="material-symbols-outlined text-[#959BA1] text-[24px]!">chevron_right</span>
+                                        class="material-symbols-outlined text-grey text-[24px]!">chevron_right</span>
                                 </button>
                             </div>
                         </div>
@@ -247,140 +252,86 @@
                 <!-- Carousel Wrapper that breaks out to both left and right edges -->
                 <div class="-ml-[calc(50vw-50%)] mt-10 -mr-[calc(50vw-50%)]">
 
-                    <!-- Product Cards Container -->
-                    <div id="products-container"
-                        class="flex gap-6 overflow-x-auto pb-[100px] -mb-[100px] pt-[250px] -mt-[250px] pr-10 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pl-[calc(max(0px,50vw-40rem)+1rem)] md:pl-[calc(max(0px,50vw-40rem)+300px)] lg:pl-[calc(max(0px,50vw-40rem)+440px)] scroll-pl-[calc(max(0px,50vw-40rem)+1rem)] md:scroll-pl-[calc(max(0px,50vw-40rem)+300px)] lg:scroll-pl-[calc(max(0px,50vw-40rem)+440px)]">
+                <!-- Product Cards Container -->
+                <div id="products-container" class="flex gap-6 overflow-x-auto pb-25 -mb-25 pt-62.5 -mt-62.5 pr-10 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pl-[calc(50vw-150px)] md:pl-[calc(50vw-250px)] scroll-pl-0">
+                    
+                    <!-- Article 1 -->
+                    <article class="product-card group snap-center card-wrapper">
+                        
+                        <div class="glow-layer-normal opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500"></div>
+                        <div class="glow-layer-overlay-3 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500"></div>
+                        <div class="glow-layer-overlay-4 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500"></div>
 
-                        <!-- Product Card 1 -->
-                        <article
-                            class="product-card group snap-start relative z-0 bg-[rgba(255,255,255,0.1)] p-2.5 rounded-[18px] shadow-[0_0_29px_6px_rgba(0,0,0,0.5)] shrink-0 w-75 sm:w-85 md:w-95">
-
-                            <!-- Glow Layers -->
-                            <div
-                                class="glow-layer-normal opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500">
-                            </div>
-                            <div
-                                class="glow-layer-overlay-3 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500">
-                            </div>
-                            <div
-                                class="glow-layer-overlay-4 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500">
-                            </div>
-
-                            <div
-                                class="relative z-10 rounded-[9px] overflow-hidden flex flex-col justify-between bg-[linear-gradient(180deg,#ffffff_19.77%,#f5f5f5_84.88%)] h-105">
-                                <!-- Card Header -->
-                                <div class="p-8 flex flex-col gap-2 text-left">
-                                    <p
-                                        class="font-satoshi font-black text-xs tracking-[2px] uppercase bg-[linear-gradient(90deg,#021273_0%,#1856C8_49.73%,#008EFF_100%)] bg-clip-text text-transparent">
-                                        NEU
-                                    </p>
-                                    <h3 class="font-satoshi font-medium text-[#1b1b1b] text-2xl tracking-[-2px]">
-                                        WARP4 Wallbox
-                                    </h3>
-                                    <div class="flex items-baseline gap-1">
-                                        <span class="text-[#1b1b1b] text-lg font-satoshi">ab 699,00€</span>
-                                        <span class="text-[#959ba1] text-sm font-satoshi">inkl. MwSt</span>
-                                    </div>
-                                    <p class="text-[#6c757d] text-sm font-satoshi font-medium leading-relaxed mt-1">
-                                        Die modulare Wallbox mit offenen Schnittstellen und Vollausstattung.
-                                    </p>
+                        <div class="card-inner">
+                            <div class="card-content">
+                                <p class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent">NEU</p>
+                                <h3 class="card-title">WARP4 Wallbox</h3>
+                                <div class="card-price-row">
+                                    <span class="card-price">ab 699,00€</span>
+                                    <span class="text-medium-grey text-body">inkl. MwSt</span>
                                 </div>
-                                <!-- Product Image -->
-                                <div class="flex-1 relative overflow-hidden">
-                                    <img src="./assets/images/warp4-wallbox.png" alt="WARP4 Wallbox"
-                                        class="w-full h-full object-contain object-bottom">
+                                <p class="card-desc">Die modulare Wallbox mit offenen Schnittstellen und Vollausstattung.</p>
+                            </div>
+                            <div class="card-img-wrap">
+                                <img src="./assets/images/warp4-wallbox.png" alt="WARP4 Wallbox" class="card-img">
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="product-card group snap-center card-wrapper">
+                        
+                        <div class="glow-layer-normal opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500"></div>
+                        <div class="glow-layer-overlay-3 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500"></div>
+                        <div class="glow-layer-overlay-4 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500"></div>
+
+                        <div class="card-inner">
+                            <div class="card-content">
+                                <h3 class="card-title">WARP Ladesäule</h3>
+                                <div class="card-price-row">
+                                    <span class="card-price">ab 749,00€</span>
+                                    <span class="text-medium-grey text-body">inkl. MwSt</span>
                                 </div>
+                                <p class="card-desc">Die Lösung für Parkplätze inklusive integriertem Lastmanagement.</p>
                             </div>
-                        </article>
+                            <div class="card-img-wrap">
+                                <img src="./assets/images/warp-charger-stand.png" alt="WARP Ladesäule" class="card-img">
+                            </div>
+                        </div>
+                    </article>
 
-                        <!-- Product Card 2 -->
-                        <article
-                            class="product-card group snap-start relative z-0 bg-[rgba(255,255,255,0.1)] p-2.5 rounded-[18px] shadow-[0_0_29px_6px_rgba(0,0,0,0.5)] shrink-0 w-75 sm:w-85 md:w-95">
+                    <!-- Article 3 -->
+                    <article class="product-card group snap-center card-wrapper">
+                        
+                        <div class="glow-layer-normal opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500"></div>
+                        <div class="glow-layer-overlay-3 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500"></div>
+                        <div class="glow-layer-overlay-4 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500"></div>
 
-                            <!-- Glow Layers -->
-                            <div
-                                class="glow-layer-normal opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500">
-                            </div>
-                            <div
-                                class="glow-layer-overlay-3 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500">
-                            </div>
-                            <div
-                                class="glow-layer-overlay-4 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500">
-                            </div>
-
-                            <div
-                                class="relative z-10 rounded-[9px] overflow-hidden flex flex-col justify-between bg-[linear-gradient(180deg,#ffffff_19.77%,#f5f5f5_84.88%)] h-105">
-                                <!-- Card Header -->
-                                <div class="p-8 flex flex-col gap-2 text-left">
-                                    <h3 class="font-satoshi font-medium text-[#1b1b1b] text-2xl tracking-[-2px]">
-                                        WARP Ladesäule
-                                    </h3>
-                                    <div class="flex items-baseline gap-1">
-                                        <span class="text-[#1b1b1b] text-lg font-satoshi">ab 749,00€</span>
-                                        <span class="text-[#959ba1] text-sm font-satoshi">inkl. MwSt</span>
-                                    </div>
-                                    <p class="text-[#6c757d] text-sm font-satoshi font-medium leading-relaxed mt-1">
-                                        Die Lösung für Parkplätze inklusive integriertem Lastmanagement.
-                                    </p>
+                        <div class="card-inner">
+                            <div class="card-content">
+                                <h3 class="card-title">WARP Energy Manager 2.0</h3>
+                                <div class="card-price-row">
+                                    <span class="card-price">ab 399,00€</span>
+                                    <span class="text-medium-grey text-body">inkl. MwSt</span>
                                 </div>
-                                <!-- Product Image -->
-                                <div class="flex-1 relative overflow-hidden">
-                                    <img src="./assets/images/warp-charger-stand.png" alt="WARP Ladesäule"
-                                        class="w-full h-full object-contain object-bottom">
-                                </div>
+                                <p class="card-desc">Das zentrale Energiemanagementsystem für Wärmepumpen, Batteriespeicher und WARP Charger.</p>
                             </div>
-                        </article>
-
-                        <!-- Product Card 3 -->
-                        <article
-                            class="product-card group snap-start relative z-0 bg-[rgba(255,255,255,0.1)] p-2.5 rounded-[18px] shadow-[0_0_29px_6px_rgba(0,0,0,0.5)] shrink-0 w-75 sm:w-85 md:w-95">
-
-                            <!-- Glow Layers -->
-                            <div
-                                class="glow-layer-normal opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500">
+                            <div class="card-img-wrap">
+                                <img src="./assets/images/warp-energy-manager-2.png" alt="WARP Ladesäule" class="card-img">
                             </div>
-                            <div
-                                class="glow-layer-overlay-3 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500">
-                            </div>
-                            <div
-                                class="glow-layer-overlay-4 opacity-0 group-[.is-active]:opacity-100 transition-opacity duration-500">
-                            </div>
+                        </div>
+                    </article>
 
-                            <div
-                                class="relative z-10 rounded-[9px] overflow-hidden flex flex-col justify-between bg-[linear-gradient(180deg,#ffffff_19.77%,#f5f5f5_84.88%)] h-105">
-                                <!-- Card Header -->
-                                <div class="p-8 flex flex-col gap-2 text-left">
-                                    <h3 class="font-satoshi font-medium text-[#1b1b1b] text-2xl tracking-[-2px]">
-                                        WARP Energy Manager 2.0
-                                    </h3>
-                                    <div class="flex items-baseline gap-1">
-                                        <span class="text-[#1b1b1b] text-lg font-satoshi">ab 399,00€</span>
-                                        <span class="text-[#959ba1] text-sm font-satoshi">inkl. MwSt</span>
-                                    </div>
-                                    <p class="text-[#6c757d] text-sm font-satoshi font-medium leading-relaxed mt-1">
-                                        Das zentrale Energiemanagementsystem für Wärmepumpen, Batteriespeicher und WARP
-                                        Charger.
-                                    </p>
-                                </div>
-                                <!-- Product Image -->
-                                <div class="flex-1 relative overflow-hidden">
-                                    <img src="./assets/images/warp-energy-manager.png" alt="WARP Energy Manager 2.0"
-                                        class="w-full h-full object-contain object-bottom">
-                                </div>
-                            </div>
-                        </article>
+                    <!-- Add more articles here -->
 
-                        <!-- Spacer to allow the last card to scroll to the active position -->
-                        <div class="shrink-0 w-[80vw]"></div>
-
-                    </div>
+                    <div class="shrink-0 w-[80vw]"></div>
+                </div>
                 </div>
             </div>
 
-            <!-- CTA completely centered in the section -->
+            <!-- CTA  -->
             <div class="w-full flex justify-center mt-12 px-4 relative z-10">
-                <button
-                    class="bg-linear-to-b from-[#474850] to-[#1a1a1e] text-white font-bold px-8 py-2.5 rounded-[10px] shadow-md hover:from-[#575760] hover:to-[#2a2a2e] transition-all active:scale-95">
+                <button type="button" class="btn-primary">
                     Alle Produkte entdecken
                 </button>
             </div>
