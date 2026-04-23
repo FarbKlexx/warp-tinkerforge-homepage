@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Elements to update
     const sliderImage = document.getElementById('slider-image');
+    const sliderImageBg = document.getElementById('slider-image-bg');
     const sliderBadge = document.getElementById('slider-badge');
     const sliderHeadline = document.getElementById('slider-headline');
     const sliderBody = document.getElementById('slider-body');
@@ -34,6 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!sliderImage || !sliderHeadline || !sliderBody) return;
 
+    let transitionTimeout;
+
     tabs.forEach((tab, index) => {
         tab.addEventListener('click', () => {
             // Update tabs state
@@ -53,12 +56,30 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = tabData[index];
             
             // Image transition
-            sliderImage.style.opacity = '0.5';
-            setTimeout(() => {
-                sliderImage.src = data.image;
-                sliderImage.alt = data.headline;
-                sliderImage.style.opacity = '1';
-            }, 150);
+            if (sliderImageBg) {
+                clearTimeout(transitionTimeout);
+                
+                // Put the new image in the background
+                sliderImageBg.src = data.image;
+                
+                // Fade out the foreground image to reveal the background
+                sliderImage.style.transition = '';
+                sliderImage.style.opacity = '0';
+                
+                transitionTimeout = setTimeout(() => {
+                    // Update foreground silently
+                    sliderImage.style.transition = 'none';
+                    sliderImage.src = data.image;
+                    sliderImage.alt = data.headline;
+                    sliderImage.style.opacity = '1';
+                    
+                    // Force browser reflow
+                    void sliderImage.offsetWidth;
+                    
+                    // Restore transition class behavior
+                    sliderImage.style.transition = '';
+                }, 300);
+            }
 
             // Text update
             sliderHeadline.textContent = data.headline;

@@ -359,7 +359,7 @@
         </section>
 
         <!-- Philosophy Section -->
-        <section class="w-full pt-32">
+        <section class="w-full pt-16 md:pt-32 lg:pt-32">
             <div class="flex flex-col gap-[20px] items-center justify-center">
 
                 <!-- Text -->
@@ -513,25 +513,27 @@
         </section>
 
         <!-- Slider Section -->
-        <section class="w-full bg-background py-16 px-4 md:px-8 pt-32">
+        <section class="w-full bg-background py-16 px-4 md:px-8 pt-16 md:pt-32 lg:pt-32">
             <div class="max-w-5xl mx-auto flex flex-col items-center gap-5">
                 
                 <!-- Tab Bar -->
-                <nav aria-label="Slider tabs" class="bg-black/30 p-1.5 rounded-[20px] flex gap-1">
-                    <button type="button" class="px-8 py-1.5 rounded-[15px] text-white font-satoshi font-bold text-base transition-all duration-200 bg-white/30 cursor-pointer" aria-selected="true">
+                <nav aria-label="Slider tabs" class="bg-black/30 p-1.5 rounded-[20px] flex gap-3">
+                    <button type="button" class="px-4 md:px-8 lg:px-8 py-1 rounded-[15px] text-white text-btn transition-all duration-200 bg-white/30 cursor-pointer" aria-selected="true">
                         WARP4
                     </button>
-                    <button type="button" class="px-8 py-1.5 rounded-[15px] text-white font-satoshi font-bold text-base transition-all duration-200 hover:bg-white/10 cursor-pointer" aria-selected="false">
+                    <button type="button" class="px-4 md:px-8 lg:px-8 py-1 rounded-[15px] text-white text-btn transition-all duration-200 hover:bg-white/10 cursor-pointer" aria-selected="false">
                         Autocharge
                     </button>
-                    <button type="button" class="px-8 py-1.5 rounded-[15px] text-white font-satoshi font-bold text-base transition-all duration-200 hover:bg-white/10 cursor-pointer" aria-selected="false">
+                    <button type="button" class="px-4 md:px-8 lg:px-8 py-1 rounded-[15px] text-white text-btn transition-all duration-200 hover:bg-white/10 cursor-pointer" aria-selected="false">
                         Gehäusedesign
                     </button>
                 </nav>
 
                 <!-- Slide Container -->
                 <article class="relative w-full rounded-[20px] overflow-hidden min-h-105">
-                    <!-- Background image -->
+                    <!-- Background image for crossfade -->
+                    <img id="slider-image-bg" src="./assets/images/img-placeholder-1.png" alt="" class="absolute inset-0 w-full h-full object-cover rounded-[20px]">
+                    <!-- Foreground image -->
                     <img id="slider-image" src="./assets/images/img-placeholder-1.png" alt="Bereit für die nächste Generation des Ladens." class="absolute inset-0 w-full h-full object-cover rounded-[20px] transition-opacity duration-300">
                     
                     <!-- Gradient overlay -->
@@ -539,13 +541,13 @@
                     
                     <!-- Text content -->
                     <div class="relative z-10 flex flex-col items-start text-left gap-3 p-8 md:p-16 justify-end h-full min-h-105 md:min-h-140">
-                        <p id="slider-badge" class="font-satoshi font-black text-white text-xs tracking-[2px] uppercase">
+                        <p id="slider-badge" class="text-eyebrow text-white uppercase">
                             NEU
                         </p>
-                        <h2 id="slider-headline" class="font-satoshi font-bold text-white text-2xl md:text-4xl tracking-[-2px] leading-tight max-w-xl">
+                        <h2 id="slider-headline" class="text-h2 text-white max-w-3xl">
                             Bereit für die nächste Generation des Ladens.
                         </h2>
-                        <p id="slider-body" class="text-white/80 font-satoshi font-medium text-sm md:text-base max-w-2xl leading-relaxed">
+                        <p id="slider-body" class="text-white/80 text-body max-w-3xl">
                             Der WARP4 unterstützt den Kommunikationsstandard ISO 15118 und ist damit hardwareseitig für bidirektionales Laden vorbereitet, um Ihr Fahrzeug künftig als Energiespeicher nutzen zu können. Zudem ermöglicht die erweiterte Kommunikation das direkte Auslesen des Fahrzeug-Ladestands (SoC), wodurch sich Ladevorgänge und das eigene Energiemanagement noch präziser steuern lassen.
                         </p>
                     </div>
