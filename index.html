@@ -558,37 +558,43 @@
         <!-- Webinterface Section -->
         <section class="relative w-full overflow-hidden py-16 md:py-24 bg-gradient-radial-dark">
             
-            <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-64">
+            <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-64 flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-24">
                 
                 <!-- Text -->
                 <div class="flex flex-col gap-8 lg:w-105 shrink-0 z-20">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-[30px] text-[#8AAEE9]">dashboard</span>
-                        <span class="font-satoshi font-medium text-2xl md:text-3xl tracking-[-2px] bg-[linear-gradient(180deg,#ffffff_0%,#B0BAE9_100%)] bg-clip-text text-transparent">
+                    <!-- Badge-->
+                    <div class="flex items-center justify-center md:justify-start gap-2.5">
+                        <div class="w-7.5 h-7.5 rounded-full bg-gradient-light-blue p-px flex items-center justify-center">
+                            <div class="w-full h-full rounded-full bg-gradient-deep-blue flex items-center justify-center">
+
+                                <span class="material-symbols-outlined text-[18px]! bg-gradient-white-blue bg-clip-text text-transparent">dashboard</span>
+                            </div>
+                        </div>
+                        <span class="text-h3 bg-gradient-white-blue bg-clip-text text-transparent pr-2 -mr-2">
                             Dashboard
                         </span>
                     </div>
 
                     <div>
-                        <h2 class="font-satoshi font-bold text-white text-3xl md:text-4xl lg:text-5xl tracking-[-2px] leading-tight">
-                            All Ihre Daten,
-                            <br class="hidden md:block">
-                            vollständig einstellbar.
+                        <h2 class="text-h2 text-white text-left">
+                            All Ihre Daten, vollständig einstellbar.
                         </h2>
                     </div>
 
-                    <p class="text-light-grey font-satoshi font-medium text-base leading-relaxed">
+                    <p class="text-white/80 text-body text-left">
                         Behalten Sie Ihre Ladevorgänge immer im Blick. Das Webinterface zeigt Ihnen in Echtzeit alle relevanten Live-Daten wie die aktuelle Ladeleistung, die Ladedauer und die bereits geladene Energiemenge direkt auf einen Blick an.
                     </p>
 
                     <div class="flex flex-col gap-2">
-                        <p class="text-light-grey font-satoshi font-medium text-base leading-relaxed">
+                        <p class="text-white/80 text-body text-left">
                             Passen Sie das Ladeverhalten an Ihre Bedürfnisse an. Nutzen Sie intelligente Features wie das PV-Überschussladen, um Ihr Fahrzeug umweltfreundlich mit dem eigenen Sonnenstrom zu laden, oder definieren Sie individuelle Ladezeiten.
                         </p>
-                        <a href="#" class="flex items-center gap-1 text-primary font-satoshi font-medium text-base hover:underline transition-all self-start">
-                            Hier mehr erfahren
-                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                        </a>
+                        <div class="flex flex-row gap-1">
+                            <a href="#" class="flex items-center gap-1 text-primary text-body hover:underline transition-all self-start">
+                                Hier mehr erfahren
+                            </a>
+                            <span class="material-symbols-outlined text-primary text-[10px]">arrow_forward</span>
+                        </div>
                     </div>
                 </div>
 
@@ -601,10 +607,9 @@
                         class="absolute z-0 left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[150%] min-w-150 object-contain pointer-events-none"
                     >
 
-                    <div class="relative lg:absolute lg:-top-2.5 lg:-bottom-2.5 lg:left-0 z-10 w-full lg:w-auto bg-[rgba(255,255,255,0.1)] p-2.5 rounded-[18px] shadow-[0_0_29px_6px_rgba(0,0,0,0.5)] flex flex-col">
-                        <img src="./assets/images/dashboard-placeholder.png" alt="WARP Dashboard" class="rounded-[9px] w-full lg:w-auto h-auto lg:h-full lg:max-w-none block shadow-[0_0_27px_4.5px_rgba(0,0,0,0.25)] object-cover lg:object-left">
+                    <div class="relative lg:absolute lg:-top-1.5 lg:-bottom-1.5 lg:left-0 z-10 w-full lg:w-auto bg-[rgba(255,255,255,0.1)] p-1.5 rounded-2xl shadow-[0_0_29px_6px_rgba(0,0,0,0.5)] block">
+                        <img src="./assets/images/dashboard-placeholder.png" alt="WARP Dashboard" class="rounded-xl w-full lg:w-auto h-auto lg:h-full lg:max-w-none block shadow-[0_0_27px_4.5px_rgba(0,0,0,0.25)] object-cover lg:object-left">
                     </div>
-
                 </div>
             </div>
         </section>
