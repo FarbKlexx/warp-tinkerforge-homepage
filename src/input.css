@@ -344,7 +344,7 @@
 
 /* Das Icon selbst */
 .feature-icon {
-  @apply w-16 h-16 lg:w-32 text-dark-primary transition-colors;
+  @apply w-16 h-16 stroke-dark-primary lg:w-32 text-dark-primary transition-colors;
 }
 
 /* Der Text darunter */

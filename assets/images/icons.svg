@@ -31,15 +31,15 @@
     <path class="fill-current" d="M522.62,73.12h-97.77l-43.53,54.73c-2.79,3.51-.29,8.69,4.19,8.69h86.67l50.45-63.42Z"/>
     <path class="fill-current" d="M595.12,0l-50.45,63.42h97.77l43.53-54.73c2.79-3.51.29-8.69-4.19-8.69h-86.67Z"/>
     <path class="fill-current" d="M579.38,0h-89.68c-5.11,0-9.94,2.33-13.12,6.33l-45.41,57.09h97.77L579.38,0Z"/>
-    <path class="stroke-current" fill="none" d="M7.5,315.6h446.38c11.62,0,22.62-5.23,29.96-14.25L705.92,18.72"/>
-    <line class="stroke-current" fill="none" x1="7.5" y1="359.52" x2="705.92" y2="359.52"/>
-    <line class="stroke-current" fill="none" x1="644.65" y1="96.7" x2="644.65" y2="359.52"/>
-    <line class="stroke-current" fill="none" x1="622.98" y1="124.27" x2="622.98" y2="359.52"/>
-    <line class="stroke-current" fill="none" x1="525.63" y1="248.17" x2="525.63" y2="359.52"/>
-    <line class="stroke-current" fill="none" x1="505.27" y1="359.52" x2="505.27" y2="274.09"/>
-    <line class="stroke-current" fill="none" x1="110.44" y1="359.52" x2="110.44" y2="315.6"/>
-    <line class="stroke-current" fill="none" x1="85.83" y1="359.52" x2="85.83" y2="315.6"/>
-    <line class="stroke-current" fill="none" x1="622.98" y1="263.89" x2="562.02" y2="201.86"/>
+    <path stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M7.5,315.6h446.38c11.62,0,22.62-5.23,29.96-14.25L705.92,18.72"/>
+    <line stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" x1="7.5" y1="359.52" x2="705.92" y2="359.52"/>
+    <line stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" x1="644.65" y1="96.7" x2="644.65" y2="359.52"/>
+    <line stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" x1="622.98" y1="124.27" x2="622.98" y2="359.52"/>
+    <line stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" x1="525.63" y1="248.17" x2="525.63" y2="359.52"/>
+    <line stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" x1="505.27" y1="359.52" x2="505.27" y2="274.09"/>
+    <line stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" x1="110.44" y1="359.52" x2="110.44" y2="315.6"/>
+    <line stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" x1="85.83" y1="359.52" x2="85.83" y2="315.6"/>
+    <line stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" x1="622.98" y1="263.89" x2="562.02" y2="201.86"/>
   </symbol>
 
   <symbol id="icon-waermepumpe" viewBox="0 0 529.32 435.99">
@@ -69,10 +69,10 @@
       <path class="fill-current" d="M283.88,101.31c3.32,0,6.03,2.7,6.03,6.03v122.58c0,3.32-2.7,6.03-6.03,6.03h-122.58c-3.32,0-6.03-2.7-6.03-6.03v-122.58c0-3.32,2.7-6.03,6.03-6.03h122.58M283.88,87.31h-122.58c-11.06,0-20.03,8.97-20.03,20.03v122.58c0,11.06,8.97,20.03,20.03,20.03h122.58c11.06,0,20.03-8.97,20.03-20.03v-122.58c0-11.06-8.97-20.03-20.03-20.03h0Z"/>
       <rect class="fill-current" x="120.84" y="161.32" width="203.11" height="13.99" transform="translate(-53.88 206.56) rotate(-45)"/>
       
-      <path class="stroke-current" fill="none" d="M172.19,131.92c3.15-4.74,7.27-9.05,12.14-9.11,10.36-.11,15.24,19.1,25.55,18.96,3.29-.05,7.44-2.07,12.21-9.38"/>
-      <line class="stroke-current" fill="none" x1="232.57" y1="201.38" x2="272.28" y2="201.38"/>
-      <line class="stroke-current" fill="none" x1="232.57" y1="218.32" x2="245.37" y2="218.32"/>
-      <line class="stroke-current" fill="none" x1="259.48" y1="218.32" x2="272.28" y2="218.32"/>
+      <path stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M172.19,131.92c3.15-4.74,7.27-9.05,12.14-9.11,10.36-.11,15.24,19.1,25.55,18.96,3.29-.05,7.44-2.07,12.21-9.38"/>
+      <line stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" x1="232.57" y1="201.38" x2="272.28" y2="201.38"/>
+      <line stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" x1="232.57" y1="218.32" x2="245.37" y2="218.32"/>
+      <line stroke="currentColor" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" fill="none" x1="259.48" y1="218.32" x2="272.28" y2="218.32"/>
       
       <circle class="fill-current" cx="84.31" cy="38.22" r="11.01"/>
       <circle class="fill-current" cx="359.88" cy="38.22" r="11.01"/>
