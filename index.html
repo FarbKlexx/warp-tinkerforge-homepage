@@ -474,7 +474,7 @@
                                 <!-- Header + description -->
                                 <header class="flex flex-col gap-4 w-full">
                                     <div class="flex items-center gap-2.5">
-                                        <span class="material-symbols-outlined text-[22px]! text-[#1b1b1b]">info</span>
+                                        <span class="material-symbols-outlined text-[22px]! text-black">info</span>
                                         <h3 class="text-h4 text-black whitespace-nowrap">
                                             Brauchen Sie Hilfe?
                                         </h3>
@@ -488,13 +488,13 @@
                                 <address class="flex flex-col gap-2.5 w-full not-italic">
                                     <div class="flex items-center gap-1.25">
                                         <span class="material-symbols-outlined text-[18px]! text-primary">mail</span>
-                                        <a href="mailto:support@example.com" class="text-body text-[#1b1b1b] hover:underline">
+                                        <a href="mailto:support@example.com" class="text-body text-black hover:underline">
                                             support@example.com
                                         </a>
                                     </div>
                                     <div class="flex items-center gap-1.25">
                                         <span class="material-symbols-outlined text-[18px]! text-primary">call</span>
-                                        <a href="tel:052078973000" class="text-body text-[#1b1b1b] hover:underline">
+                                        <a href="tel:052078973000" class="text-body text-black hover:underline">
                                             05207 897300-0
                                         </a>
                                     </div>
@@ -513,7 +513,7 @@
         </section>
 
         <!-- Slider Section -->
-        <section class="w-full bg-background py-16 px-4 md:px-8 pt-16 md:pt-32 lg:pt-32">
+        <section class="w-full py-16 px-4 md:px-8 pt-16 md:pt-32 lg:pt-32">
             <div class="max-w-5xl mx-auto flex flex-col items-center gap-5">
                 
                 <!-- Tab Bar -->
@@ -552,6 +552,60 @@
                         </p>
                     </div>
                 </article>
+            </div>
+        </section>
+
+        <!-- Webinterface Section -->
+        <section class="relative w-full overflow-hidden py-16 md:py-24 bg-gradient-radial-dark">
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-64">
+                
+                <!-- Text -->
+                <div class="flex flex-col gap-8 lg:w-105 shrink-0 z-20">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-[30px] text-[#8AAEE9]">dashboard</span>
+                        <span class="font-satoshi font-medium text-2xl md:text-3xl tracking-[-2px] bg-[linear-gradient(180deg,#ffffff_0%,#B0BAE9_100%)] bg-clip-text text-transparent">
+                            Dashboard
+                        </span>
+                    </div>
+
+                    <div>
+                        <h2 class="font-satoshi font-bold text-white text-3xl md:text-4xl lg:text-5xl tracking-[-2px] leading-tight">
+                            All Ihre Daten,
+                            <br class="hidden md:block">
+                            vollständig einstellbar.
+                        </h2>
+                    </div>
+
+                    <p class="text-light-grey font-satoshi font-medium text-base leading-relaxed">
+                        Behalten Sie Ihre Ladevorgänge immer im Blick. Das Webinterface zeigt Ihnen in Echtzeit alle relevanten Live-Daten wie die aktuelle Ladeleistung, die Ladedauer und die bereits geladene Energiemenge direkt auf einen Blick an.
+                    </p>
+
+                    <div class="flex flex-col gap-2">
+                        <p class="text-light-grey font-satoshi font-medium text-base leading-relaxed">
+                            Passen Sie das Ladeverhalten an Ihre Bedürfnisse an. Nutzen Sie intelligente Features wie das PV-Überschussladen, um Ihr Fahrzeug umweltfreundlich mit dem eigenen Sonnenstrom zu laden, oder definieren Sie individuelle Ladezeiten.
+                        </p>
+                        <a href="#" class="flex items-center gap-1 text-primary font-satoshi font-medium text-base hover:underline transition-all self-start">
+                            Hier mehr erfahren
+                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="flex-1 relative w-full lg:w-auto flex items-center lg:items-stretch min-h-75 lg:min-h-0">
+
+                    <img 
+                        src="./assets/images/glow-effect.png" 
+                        alt="" 
+                        class="absolute z-0 left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[150%] min-w-150 object-contain pointer-events-none"
+                    >
+
+                    <div class="relative lg:absolute lg:-top-2.5 lg:-bottom-2.5 lg:left-0 z-10 w-full lg:w-auto bg-[rgba(255,255,255,0.1)] p-2.5 rounded-[18px] shadow-[0_0_29px_6px_rgba(0,0,0,0.5)] flex flex-col">
+                        <img src="./assets/images/dashboard-placeholder.png" alt="WARP Dashboard" class="rounded-[9px] w-full lg:w-auto h-auto lg:h-full lg:max-w-none block shadow-[0_0_27px_4.5px_rgba(0,0,0,0.25)] object-cover lg:object-left">
+                    </div>
+
+                </div>
             </div>
         </section>
     </main>

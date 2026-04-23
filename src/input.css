@@ -292,7 +292,7 @@
 @utility glow-layer-normal {
   position: absolute;
   inset: 0;
-  border-radius: inherit; /* Passt sich automatisch dem Parent an! */
+  border-radius: inherit;
   z-index: -3;
   box-shadow:
     0 -50px 170px -60px #2563eb,
@@ -314,7 +314,7 @@
   border-radius: inherit;
   z-index: -1;
   mix-blend-mode: overlay;
-  box-shadow: 0 -50px 50px -60px #bfd3ff;
+  box-shadow: 0 -50px 50px -60px #9ee6ff;
 }
 
 /* =========================================
