@@ -11,3 +11,4 @@
 - Andere Fonts (Satoshi Variable) müssen im Ordner `assets/fonts` abgelegt werden damit sie geladen werden können
 - Icons werden über die Google Material Design API (https://fonts.google.com/icons) geladen.
 - Individuelle Icons werden aufgrund von Ladezeitoptimierung aus einem SVG-Spritesheet geladen (`assets/images/icons.svg`).
+- Da wo es Sinnvoll ist wurden Style-Klassen in die `input.css` ausgelagert Dies betrifft vor allem wiederverwendbare Klassen. Wo es nicht Sinnvoll ist wurden die Tailwind-Klassen direkt inline in die HTML-Dateien geschrieben.
