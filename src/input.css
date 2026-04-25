@@ -396,3 +396,18 @@
 .card-img {
   @apply w-full h-full object-contain object-bottom;
 }
+
+/* --- GLASS IMAGE FRAME --- */
+.glass-frame {
+  --_gf-pad: clamp(4px, 0.5vw, 10px);
+  --_gf-radius: clamp(10px, 1.4vw, 22px);
+  @apply bg-white/10 shadow-normal;
+  padding: var(--_gf-pad);
+  border-radius: var(--_gf-radius);
+}
+
+.glass-frame-inner {
+  @apply overflow-hidden;
+  /* inner radius always equals outer radius minus the glass border thickness */
+  border-radius: calc(var(--_gf-radius) - var(--_gf-pad));
+}
