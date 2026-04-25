@@ -347,12 +347,17 @@
 
 /* Der äußere Container */
 .feature-box {
-  @apply bg-white flex flex-col gap-1 lg:gap-4 items-center justify-center py-4 lg:py-10 lg:px-6 rounded-2xl flex-1 min-w-30 lg:min-w-70;
+  @apply flex flex-col gap-1 lg:gap-4 items-center justify-center py-4 lg:py-10 lg:px-6 rounded-2xl flex-1 min-w-30 lg:min-w-70;
+}
+
+/* Blauer Kreis-Hintergrund für Icons */
+.feature-icon-circle {
+  @apply flex items-center justify-center rounded-full bg-dark-primary w-18 h-18 lg:w-27 lg:h-27 shrink-0;
 }
 
 /* Das Icon selbst */
 .feature-icon {
-  @apply w-16 h-16 stroke-dark-primary lg:w-32 text-dark-primary transition-colors;
+  @apply w-10.5 h-10.5 lg:w-15 lg:h-15 text-white transition-colors;
 }
 
 /* Der Text darunter */

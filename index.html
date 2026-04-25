@@ -165,27 +165,33 @@
             <div class="flex flex-row gap-2 lg:gap-8 items-center justify-center px-2 md:px-10 md:max-w-2xl lg:px-20 lg:max-w-5xl mx-auto w-full">
 
                 <div class="feature-box">
-                    <svg class="feature-icon">
-                        <use href="./assets/images/icons.svg#icon-waermepumpe"></use>
-                    </svg>
+                    <div class="feature-icon-circle">
+                        <svg class="feature-icon">
+                            <use href="./assets/images/icons.svg#icon-waermepumpe"></use>
+                        </svg>
+                    </div>
                     <p class="feature-text">
                         Wärmepumpe
                     </p>
                 </div>
 
                 <div class="feature-box">
-                    <svg class="feature-icon">
-                        <use href="./assets/images/icons.svg#icon-solar"></use>
-                    </svg>
+                    <div class="feature-icon-circle">
+                        <svg class="feature-icon">
+                            <use href="./assets/images/icons.svg#icon-solar"></use>
+                        </svg>
+                    </div>
                     <p class="feature-text">
                         PV-Anlage
                     </p>
                 </div>
 
                 <div class="feature-box">
-                    <svg class="feature-icon">
-                        <use href="./assets/images/icons.svg#icon-wechselrichter"></use>
-                    </svg>
+                    <div class="feature-icon-circle">
+                        <svg class="feature-icon">
+                            <use href="./assets/images/icons.svg#icon-wechselrichter"></use>
+                        </svg>
+                    </div>
                     <p class="feature-text">
                         Wechselrichter
                     </p>
@@ -503,22 +509,22 @@
                                 <address class="flex flex-col gap-2.5 w-full not-italic">
                                     <div class="flex items-center gap-1.25">
                                         <span class="material-symbols-outlined text-[18px]! text-primary">mail</span>
-                                        <a href="mailto:support@example.com" class="text-body text-black hover:underline">
-                                            support@example.com
+                                        <a href="mailto:info@tinkerforge.com" class="text-body text-black hover:underline">
+                                            info@tinkerforge.com
                                         </a>
                                     </div>
                                     <div class="flex items-center gap-1.25">
                                         <span class="material-symbols-outlined text-[18px]! text-primary">call</span>
-                                        <a href="tel:052078973000" class="text-body text-black hover:underline">
-                                            05207 897300-0
+                                        <a href="tel:+4952078973000" class="text-body text-black hover:underline">
+                                            +49 5207 897300-0
                                         </a>
                                     </div>
                                 </address>
 
                                 <!-- CTA button -->
-                                <button type="button" class="btn-primary w-full">
+                                <a href="#footer" type="button" class="btn-primary w-full">
                                     Kontakt aufnehmen
-                                </button>
+                                </a>
                             </div>
                             <div aria-hidden="true" class="absolute border border-[rgba(255,255,255,0.8)] inset-0 pointer-events-none rounded-xl"></div>
                         </article>
@@ -876,71 +882,93 @@
                     <div class="flex flex-col gap-4.75 flex-1 w-full">
 
                         <!-- News Card 1 -->
-                        <article class="bg-very-light-grey rounded-xl w-full overflow-hidden">
-                            <div class="flex items-center justify-between px-4.75 py-text-gap-sm gap-4 min-h-39.5">
+                        <article class="news-card bg-very-light-grey rounded-xl w-full overflow-hidden">
+                            <div class="flex items-start justify-between px-4.75 py-text-gap-sm gap-4 min-h-39.5">
                                 <!-- Text Block -->
                                 <div class="flex flex-col gap-3 flex-1 min-w-0">
                                     <!-- Meta: Category · Date -->
                                     <div class="flex items-center gap-6 flex-wrap">
-                                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent whitespace-nowrap">Category</span>
+                                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent whitespace-nowrap">New Shop Online</span>
                                         <svg class="shrink-0 size-1.5" fill="none" viewBox="0 0 6 6" aria-hidden="true"><circle cx="3" cy="3" fill="#A1A1A1" r="3"/></svg>
-                                        <span class="text-[#a1a1a1] text-eyebrow whitespace-nowrap">15.02.2026</span>
+                                        <span class="text-[#a1a1a1] text-eyebrow whitespace-nowrap">3 months, 3 weeks ago</span>
                                     </div>
                                     <!-- Excerpt -->
-                                    <p class="text-black text-body font-medium">
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat...
+                                    <p class="news-excerpt text-black text-body font-medium line-clamp-2">
+                                        Dear Tinkerforge Community,
+                                        <br>
+                                        it was a lot of work, but as of today our new shop is online!<br>
+                                        Your login credentials from the old shop should also work in the new shop. All settings and addresses in your user accounts should have been transferred. If anything does not work as expected or if you notice any issues, please let us know by sending an email to info@tinkerforge.com.
+                                        <br><br>
+                                        In addition, we have updated our ERP system. Please do not be surprised if our emails as well as delivery notes and invoices now look slightly different. As always, if you notice any inconsistencies, please get in touch with us.
+                                        <br><br>
+                                        We would like to sincerely thank you for your trust and support!<br>
+                                        2025 has been an exciting year for us – especially with many new features added to the firmware for Wallboxes and the Energy Manager. Integrating products from other manufacturers is not always easy and often more complex than it may seem at first. Since we cannot have all systems available on-site, we rely on your support. Together with you, however, we were able to overcome all challenges.
+                                        <br><br>
+                                        For 2026, we already have many new features in preparation, which we will roll out as usual via firmware updates. Some of these are already available as beta versions on Tinkerunity.org, such as storage control or centralized user management for load management. Stay tuned!
+                                        <br><br>
+                                        Thank you very much for your patience and your great support!<br>
+                                        We wish you and your families a happy New Year and all the best for 2026.
+                                        <br><br>
+                                        Kind regards,<br>
+                                        The Tinkerforge Team
                                     </p>
-                                    <!-- Read More -->
-                                    <button type="button" class="text-medium-grey text-body font-medium underline self-start hover:text-grey transition-colors focus:outline-none cursor-pointer">
+                                    <!-- Read More / Read Less -->
+                                    <button type="button" class="news-toggle text-medium-grey text-body font-medium underline self-start hover:text-grey transition-colors focus:outline-none cursor-pointer">
                                         mehr anzeigen
                                     </button>
                                 </div>
                                 <!-- Article Arrow -->
-                                <button type="button" class="shrink-0 hover:opacity-60 transition-opacity active:opacity-40 focus:outline-none cursor-pointer" aria-label="Artikel öffnen">
+                                <button type="button" class="shrink-0 hover:opacity-60 transition-opacity active:opacity-40 focus:outline-none cursor-pointer mt-1" aria-label="Artikel öffnen">
                                     <span class="material-symbols-outlined text-[30px]! text-[#021273]">chevron_right</span>
                                 </button>
                             </div>
                         </article>
 
                         <!-- News Card 2 -->
-                        <article class="bg-very-light-grey rounded-xl w-full overflow-hidden">
-                            <div class="flex items-center justify-between px-4.75 py-text-gap-sm gap-4 min-h-39.5">
+                        <article class="news-card bg-very-light-grey rounded-xl w-full overflow-hidden">
+                            <div class="flex items-start justify-between px-4.75 py-text-gap-sm gap-4 min-h-39.5">
                                 <div class="flex flex-col gap-3 flex-1 min-w-0">
                                     <div class="flex items-center gap-6 flex-wrap">
-                                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent whitespace-nowrap">Category</span>
+                                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent whitespace-nowrap">Shop Down</span>
                                         <svg class="shrink-0 size-1.5" fill="none" viewBox="0 0 6 6" aria-hidden="true"><circle cx="3" cy="3" fill="#A1A1A1" r="3"/></svg>
-                                        <span class="text-[#a1a1a1] text-eyebrow whitespace-nowrap">15.02.2026</span>
+                                        <span class="text-[#a1a1a1] text-eyebrow whitespace-nowrap">3 months, 4 weeks ago</span>
                                     </div>
-                                    <p class="text-black text-body font-medium">
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat...
+                                    <p class="news-excerpt text-black text-body font-medium line-clamp-2">
+                                        You may have already noticed that our shop is currently unavailable.
+                                        <br><br>
+                                        We are in the process of upgrading our ERP system and, as part of this, also modernizing our online shop. As this is a larger project, we unfortunately had to take our current shop offline earlier than planned.
+                                        <br><br>
+                                        We will relaunch our new shop on 30 December 2025. Of course, your login details from the old shop will remain valid.
+                                        <br><br>
+                                        We appreciate your understanding and apologize for any inconvenience caused.
                                     </p>
-                                    <button type="button" class="text-medium-grey text-body font-medium underline self-start hover:text-grey transition-colors focus:outline-none cursor-pointer">
+                                    <button type="button" class="news-toggle text-medium-grey text-body font-medium underline self-start hover:text-grey transition-colors focus:outline-none cursor-pointer">
                                         mehr anzeigen
                                     </button>
                                 </div>
-                                <button type="button" class="shrink-0 hover:opacity-60 transition-opacity active:opacity-40 focus:outline-none cursor-pointer" aria-label="Artikel öffnen">
+                                <button type="button" class="shrink-0 hover:opacity-60 transition-opacity active:opacity-40 focus:outline-none cursor-pointer mt-1" aria-label="Artikel öffnen">
                                     <span class="material-symbols-outlined text-[30px]! text-[#021273]">chevron_right</span>
                                 </button>
                             </div>
                         </article>
 
                         <!-- News Card 3 -->
-                        <article class="bg-very-light-grey rounded-xl w-full overflow-hidden">
-                            <div class="flex items-center justify-between px-4.75 py-text-gap-sm gap-4 min-h-39.5">
+                        <article class="news-card bg-very-light-grey rounded-xl w-full overflow-hidden">
+                            <div class="flex items-start justify-between px-4.75 py-text-gap-sm gap-4 min-h-39.5">
                                 <div class="flex flex-col gap-3 flex-1 min-w-0">
                                     <div class="flex items-center gap-6 flex-wrap">
-                                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent whitespace-nowrap">Category</span>
+                                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent whitespace-nowrap">Booth at Power2Drive</span>
                                         <svg class="shrink-0 size-1.5" fill="none" viewBox="0 0 6 6" aria-hidden="true"><circle cx="3" cy="3" fill="#A1A1A1" r="3"/></svg>
-                                        <span class="text-[#a1a1a1] text-eyebrow whitespace-nowrap">15.02.2026</span>
+                                        <span class="text-[#a1a1a1] text-eyebrow whitespace-nowrap">11 months, 2 weeks ago</span>
                                     </div>
-                                    <p class="text-black text-body font-medium">
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat...
+                                    <p class="news-excerpt text-black text-body font-medium line-clamp-2">
+                                        Our booth at Power2Drive is ready! If you want to drop by spontaneously, send us an email — we still have free tickets available.
                                     </p>
-                                    <button type="button" class="text-medium-grey text-body font-medium underline self-start hover:text-grey transition-colors focus:outline-none cursor-pointer">
+                                    <button type="button" class="news-toggle text-medium-grey text-body font-medium underline self-start hover:text-grey transition-colors focus:outline-none cursor-pointer">
                                         mehr anzeigen
                                     </button>
                                 </div>
-                                <button type="button" class="shrink-0 hover:opacity-60 transition-opacity active:opacity-40 focus:outline-none cursor-pointer" aria-label="Artikel öffnen">
+                                <button type="button" class="shrink-0 hover:opacity-60 transition-opacity active:opacity-40 focus:outline-none cursor-pointer mt-1" aria-label="Artikel öffnen">
                                     <span class="material-symbols-outlined text-[30px]! text-[#021273]">chevron_right</span>
                                 </button>
                             </div>
@@ -950,21 +978,20 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- Footer -->
-    <footer class="w-full bg-black">
+    <footer id="footer" class="w-full bg-black">
         <div class="max-w-7xl mx-auto px-4 md:px-8 py-16">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
                 <!-- Left: Contact / Feedback Form -->
                 <div class="bg-[#151515] rounded-2xl p-6 md:p-8">
-                    <form class="flex flex-col gap-5">
+                    <form id="contact-form" class="flex flex-col gap-5" novalidate>
 
                         <!-- Intro -->
                         <div class="flex flex-col gap-4">
-                            <span class="text-eyebrow bg-[linear-gradient(90deg,#3851e8_0%,#487ddf_49.73%,#58b5ff_100%)] bg-clip-text text-transparent">
+                            <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent">
                                 Feedback
                             </span>
                             <p class="text-white/40 text-xl leading-relaxed">
@@ -977,26 +1004,35 @@
                         <div class="flex flex-col gap-4">
 
                             <!-- Name -->
-                            <div class="rounded-xl border border-white/60 px-4 py-3">
-                                <label for="footer-name" class="block text-white/40 text-xs font-medium tracking-widest uppercase mb-1">Name</label>
-                                <input type="text" id="footer-name" name="name" placeholder="Ihr Name" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none">
+                            <div class="flex flex-col gap-1">
+                                <div id="wrap-name" data-border="border-white/60" class="rounded-xl border border-white/60 px-4 py-3 transition-colors">
+                                    <label for="footer-name" class="block text-white/40 text-xs font-medium tracking-widest uppercase mb-1">Name</label>
+                                    <input type="text" id="footer-name" name="name" placeholder="Ihr Name" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none">
+                                </div>
+                                <p id="error-name" class="text-red-400 text-xs pl-1 hidden">Bitte geben Sie Ihren Namen ein.</p>
                             </div>
 
                             <!-- E-Mail -->
-                            <div class="rounded-xl border border-white/25 px-4 py-3">
-                                <label for="footer-email" class="block text-white/40 text-xs font-medium tracking-widest uppercase mb-1">E-Mail</label>
-                                <input type="email" id="footer-email" name="email" placeholder="ihre@email.de" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none">
+                            <div class="flex flex-col gap-1">
+                                <div id="wrap-email" data-border="border-white/25" class="rounded-xl border border-white/25 px-4 py-3 transition-colors">
+                                    <label for="footer-email" class="block text-white/40 text-xs font-medium tracking-widest uppercase mb-1">E-Mail</label>
+                                    <input type="email" id="footer-email" name="email" placeholder="ihre@email.de" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none">
+                                </div>
+                                <p id="error-email" class="text-red-400 text-xs pl-1 hidden">Bitte geben Sie eine gültige E-Mail-Adresse ein.</p>
                             </div>
 
                             <!-- Nachricht -->
-                            <div class="rounded-xl border border-white/25 px-4 py-3">
-                                <label for="footer-message" class="block text-white/40 text-xs font-medium tracking-widest uppercase mb-1">Nachricht</label>
-                                <textarea id="footer-message" name="message" placeholder="Ihre Nachricht..." rows="4" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none resize-none"></textarea>
+                            <div class="flex flex-col gap-1">
+                                <div id="wrap-message" data-border="border-white/25" class="rounded-xl border border-white/25 px-4 py-3 transition-colors">
+                                    <label for="footer-message" class="block text-white/40 text-xs font-medium tracking-widest uppercase mb-1">Nachricht</label>
+                                    <textarea id="footer-message" name="message" placeholder="Ihre Nachricht..." rows="4" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none resize-none"></textarea>
+                                </div>
+                                <p id="error-message" class="text-red-400 text-xs pl-1 hidden">Bitte geben Sie eine Nachricht ein.</p>
                             </div>
                         </div>
 
                         <!-- Submit -->
-                        <button type="submit" class="px-5 py-2.5 text-white font-bold text-base bg-[linear-gradient(to_bottom,#2137b8,#487ddf,#58b5ff)] rounded-md hover:opacity-90 transition-all active:scale-95 shadow-md">
+                        <button id="contact-submit" type="submit" class="px-5 py-2.5 text-white font-bold text-base bg-[linear-gradient(to_bottom,#2137b8,#487ddf,#58b5ff)] rounded-md hover:opacity-90 transition-all active:scale-95 shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
                             Beratung anfragen
                         </button>
                     </form>
@@ -1008,7 +1044,7 @@
                     <!-- Info Links + Logo -->
                     <div class="flex justify-between items-start gap-6">
                         <div class="flex flex-col gap-5">
-                            <span class="text-eyebrow bg-[linear-gradient(90deg,#3851e8_0%,#487ddf_49.73%,#58b5ff_100%)] bg-clip-text text-transparent">
+                            <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent">
                                 Info
                             </span>
                             <nav class="flex flex-col gap-1.5">
@@ -1029,29 +1065,32 @@
 
                     <!-- Contact -->
                     <div class="flex flex-col gap-4">
-                        <span class="text-eyebrow bg-[linear-gradient(90deg,#3851e8_0%,#487ddf_49.73%,#58b5ff_100%)] bg-clip-text text-transparent">
+                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent">
                             Kontakt
                         </span>
                         <address class="flex flex-col gap-1.5 not-italic">
-                            <a href="tel:+19999999999" class="text-white font-medium hover:text-white/70 transition-colors">+1 (999) 999-99-99</a>
-                            <a href="mailto:hello@logoipsum.com" class="text-white font-medium hover:text-white/70 transition-colors">hello@logoipsum.com</a>
+                            <a href="tel:+4952078973000" class="text-white font-medium hover:text-white/70 transition-colors">+49 5207 897300-0</a>
+                            <a href="mailto:info@tinkerforge.com" class="text-white font-medium hover:text-white/70 transition-colors">info@tinkerforge.com</a>
                         </address>
                     </div>
 
                     <!-- Newsletter -->
                     <div class="flex flex-col gap-4">
-                        <span class="text-eyebrow bg-[linear-gradient(90deg,#3851e8_0%,#487ddf_49.73%,#58b5ff_100%)] bg-clip-text text-transparent">
+                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent">
                             Newsletter
                         </span>
-                        <form>
-                            <div class="flex items-center border border-white/13 rounded-xl overflow-hidden">
-                                <input type="email" name="newsletter" placeholder="E-mail" class="flex-1 bg-transparent text-white/40 placeholder:text-white/40 text-sm px-5 py-4 focus:outline-none">
-                                <button type="submit" class="flex items-center gap-4 pr-5 py-4 text-white hover:text-[#1e55c3] transition-colors" aria-label="Newsletter abonnieren">
-                                    <div class="h-6 w-px bg-white/13"></div>
-                                    <svg viewBox="0 0 5 9" fill="none" class="size-3" aria-hidden="true">
-                                        <path d="M0.5 0.5L4.5 4.5L0.5 8.5" stroke="#1E55C3" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
+                        <form id="newsletter-form" novalidate>
+                            <div class="flex flex-col gap-1">
+                                <div id="wrap-newsletter" data-border="border-white/13" class="flex items-center border border-white/13 rounded-xl overflow-hidden transition-colors">
+                                    <input type="email" id="newsletter-email" name="newsletter" placeholder="E-mail" class="flex-1 bg-transparent text-white/40 placeholder:text-white/40 text-sm px-5 py-4 focus:outline-none">
+                                    <button id="newsletter-submit" type="submit" class="flex items-center gap-4 pr-5 py-4 text-white hover:text-[#1e55c3] transition-colors disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Newsletter abonnieren">
+                                        <div class="h-6 w-px bg-white/13"></div>
+                                        <svg viewBox="0 0 5 9" fill="none" class="size-3" aria-hidden="true">
+                                            <path d="M0.5 0.5L4.5 4.5L0.5 8.5" stroke="#1E55C3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <p id="error-newsletter" class="text-red-400 text-xs pl-1 hidden">Bitte geben Sie eine gültige E-Mail-Adresse ein.</p>
                             </div>
                         </form>
                     </div>
@@ -1063,20 +1102,17 @@
 
                 <!-- Social Icons -->
                 <div class="flex gap-4 items-center">
-                    <a href="#" aria-label="GitHub" class="text-white hover:text-white/70 transition-colors">
+                    <a href="https://github.com/Tinkerforge" aria-label="GitHub" class="text-white hover:text-white/70 transition-colors">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="size-5"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
                     </a>
-                    <a href="#" aria-label="X (Twitter)" class="text-white hover:text-white/70 transition-colors">
+                    <a href="https://x.com/tinkerforge" aria-label="X (Twitter)" class="text-white hover:text-white/70 transition-colors">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="size-5"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     </a>
-                    <a href="#" aria-label="YouTube" class="text-white hover:text-white/70 transition-colors">
+                    <a href="https://www.youtube.com/@tinkerforge42" aria-label="YouTube" class="text-white hover:text-white/70 transition-colors">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="size-5"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                     </a>
-                    <a href="#" aria-label="LinkedIn" class="text-white hover:text-white/70 transition-colors">
+                    <a href="https://de.linkedin.com/company/tinkerforge-gmbh" aria-label="LinkedIn" class="text-white hover:text-white/70 transition-colors">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="size-5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    </a>
-                    <a href="#" aria-label="Discord" class="text-white hover:text-white/70 transition-colors">
-                        <svg viewBox="0 0 24 24" fill="currentColor" class="size-5"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.101 18.08.114 18.1.134 18.11a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
                     </a>
                 </div>
 
@@ -1087,6 +1123,8 @@
     <!-- Scripts -->
     <script type="module" src="./src/scripts/products.js"></script>
     <script type="module" src="./src/scripts/slider.js"></script>
+    <script type="module" src="./src/scripts/contact.js"></script>
+    <script type="module" src="./src/scripts/news.js"></script>
 </body>
 
 </html>
