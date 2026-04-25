@@ -1,5 +1,6 @@
 # warp-tinkerforge-homepage
 
+## Technisches Zeug
 - Styling Development läuft über `Tailwind CLI`
   - Überwacht `index.html` und schreibt Tailwind Styling in echtzeit in die `output.css`.
 > [!IMPORTANT]  
@@ -12,4 +13,8 @@
 - Icons werden über die Google Material Design API (https://fonts.google.com/icons) geladen.
 - Individuelle Icons werden aufgrund von Ladezeitoptimierung aus einem SVG-Spritesheet geladen (`assets/images/icons.svg`).
 - Da wo es Sinnvoll ist wurden Style-Klassen in die `input.css` ausgelagert Dies betrifft vor allem wiederverwendbare Klassen. Wo es nicht Sinnvoll ist wurden die Tailwind-Klassen direkt inline in die HTML-Dateien geschrieben.
+
+## SEO-Zeug
+- Metadaten in Head wichtig
+- Lazyloading der Bilder extrem wichtig für performance
 - Die `output.css` ist zurzeit minified, um Ladezeit einzusparen.
