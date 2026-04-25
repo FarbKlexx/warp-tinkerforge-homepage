@@ -20,6 +20,10 @@
 
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --font-satoshi: "Satoshi Variable", sans-serif;
   /* =========================================
@@ -141,6 +145,13 @@
     #ffffff 15%,
     #ffffff 85%,
     #ffffff80 100%
+  );
+
+  --background-image-gradient-light-blue-alt: linear-gradient(
+    to bottom,
+    #2137B8 0%,
+    #487DDF 50%,
+    #58B5FF 100%
   );
 
   /* Font Families */
@@ -322,15 +333,19 @@
      ========================================= */
 
 .btn-primary {
-  @apply bg-gradient-grey-dark z-10 text-white text-btn px-4 py-2 md:px-6 md:py-3 lg:px-6 lg:py-3 rounded-lg md:rounded-[10px] lg:rounded-[10px] shadow-md transition-all active:scale-95 hover:opacity-90;
+  @apply bg-gradient-grey-dark z-10 text-white text-btn px-4 py-2 md:px-6 md:py-3 lg:px-6 lg:py-3 rounded-lg md:rounded-[10px] lg:rounded-[10px] shadow-md transition-all active:scale-95 hover:opacity-90 cursor-pointer;
 }
 
 .btn-secondary {
-  @apply bg-white z-10 text-black border-2 border-white text-btn px-4 py-2 md:px-6 md:py-3 lg:px-6 lg:py-3 rounded-[5px] transition-all active:scale-95 hover:opacity-90;
+  @apply bg-white z-10 text-black border-2 border-white text-btn px-4 py-2 md:px-6 md:py-3 lg:px-6 lg:py-3 rounded-[5px] transition-all active:scale-95 hover:opacity-90 cursor-pointer;
 }
 
 .btn-tertiary {
   @apply bg-transparent text-white border-2 border-white text-btn px-4 py-2 md:px-6 md:py-3 lg:px-6 lg:py-3 rounded-[5px] transition-all active:scale-95 hover:opacity-90;
+}
+
+.btn-alt-color {
+  @apply bg-gradient-light-blue-alt z-10 text-white text-btn px-4 py-2 md:px-6 md:py-3 lg:px-6 lg:py-3 rounded-lg md:rounded-[10px] lg:rounded-[10px] shadow-md transition-all active:scale-95 hover:opacity-90 cursor-pointer;
 }
 
 .nav-item {
@@ -347,12 +362,12 @@
 
 /* Der äußere Container */
 .feature-box {
-  @apply flex flex-col gap-1 lg:gap-4 items-center justify-center py-4 lg:py-10 lg:px-6 rounded-2xl flex-1 min-w-30 lg:min-w-70;
+  @apply flex flex-col gap-1 lg:gap-4 items-center justify-center py-4 lg:py-10 rounded-2xl;
 }
 
 /* Blauer Kreis-Hintergrund für Icons */
 .feature-icon-circle {
-  @apply flex items-center justify-center rounded-full bg-dark-primary w-18 h-18 lg:w-27 lg:h-27 shrink-0;
+  @apply flex items-center justify-center rounded-full bg-gradient-deep-blue w-18 h-18 lg:w-27 lg:h-27 shrink-0;
 }
 
 /* Das Icon selbst */

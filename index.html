@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WARP by Tinkerforge</title>
+    <title>WARP Charger | Open Source Ladelösungen</title>
+    <meta name="description" content="Entdecke die WARP3 Charger, Ladesäulen & Energy Manager. Open Source Ladelösungen Made in Germany!">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -162,13 +163,15 @@
             </div>
 
             <!-- Icon Boxes -->
-            <div class="flex flex-row gap-2 lg:gap-8 items-center justify-center px-2 md:px-10 md:max-w-2xl lg:px-20 lg:max-w-5xl mx-auto w-full">
+            <div class="flex flex-row gap-10 md:gap-16 lg:gap-25 items-center justify-center px-2 md:px-10 md:max-w-2xl lg:px-20 lg:max-w-5xl mx-auto w-full">
 
                 <div class="feature-box">
-                    <div class="feature-icon-circle">
-                        <svg class="feature-icon">
-                            <use href="./assets/images/icons.svg#icon-waermepumpe"></use>
-                        </svg>
+                    <div class="w-18 h-18 lg:w-27 lg:h-27 rounded-full bg-gradient-light-blue p-0.5 flex items-center justify-center shrink-0">
+                        <div class="w-full h-full rounded-full bg-gradient-deep-blue flex items-center justify-center">
+                            <svg class="feature-icon">
+                                <use href="./assets/images/icons.svg#icon-waermepumpe"></use>
+                            </svg>
+                        </div>
                     </div>
                     <p class="feature-text">
                         Wärmepumpe
@@ -176,10 +179,12 @@
                 </div>
 
                 <div class="feature-box">
-                    <div class="feature-icon-circle">
-                        <svg class="feature-icon">
-                            <use href="./assets/images/icons.svg#icon-solar"></use>
-                        </svg>
+                    <div class="w-18 h-18 lg:w-27 lg:h-27 rounded-full bg-gradient-light-blue p-0.5 flex items-center justify-center shrink-0">
+                        <div class="w-full h-full rounded-full bg-gradient-deep-blue flex items-center justify-center">
+                            <svg class="feature-icon">
+                                <use href="./assets/images/icons.svg#icon-solar"></use>
+                            </svg>
+                        </div>
                     </div>
                     <p class="feature-text">
                         PV-Anlage
@@ -187,10 +192,12 @@
                 </div>
 
                 <div class="feature-box">
-                    <div class="feature-icon-circle">
-                        <svg class="feature-icon">
-                            <use href="./assets/images/icons.svg#icon-wechselrichter"></use>
-                        </svg>
+                    <div class="w-18 h-18 lg:w-27 lg:h-27 rounded-full bg-gradient-light-blue p-0.5 flex items-center justify-center shrink-0">
+                        <div class="w-full h-full rounded-full bg-gradient-deep-blue flex items-center justify-center">
+                            <svg class="feature-icon">
+                                <use href="./assets/images/icons.svg#icon-wechselrichter"></use>
+                            </svg>
+                        </div>
                     </div>
                     <p class="feature-text">
                         Wechselrichter
@@ -561,7 +568,7 @@
                     <div aria-hidden="true" class="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent rounded-[20px] pointer-events-none"></div>
                     
                     <!-- Text content -->
-                    <div class="relative z-10 flex flex-col items-start text-left gap-3 p-8 md:p-16 justify-end h-full min-h-105 md:min-h-140">
+                    <div id="slider-text-content" class="relative z-10 flex flex-col items-start text-left gap-3 p-8 md:p-16 justify-end h-full min-h-105 md:min-h-140">
                         <p id="slider-badge" class="text-eyebrow text-white uppercase">
                             NEU
                         </p>
@@ -571,6 +578,9 @@
                         <p id="slider-body" class="text-white/80 text-body max-w-3xl">
                             Der WARP4 unterstützt den Kommunikationsstandard ISO 15118 und ist damit hardwareseitig für bidirektionales Laden vorbereitet, um Ihr Fahrzeug künftig als Energiespeicher nutzen zu können. Zudem ermöglicht die erweiterte Kommunikation das direkte Auslesen des Fahrzeug-Ladestands (SoC), wodurch sich Ladevorgänge und das eigene Energiemanagement noch präziser steuern lassen.
                         </p>
+                        <button id="slider-mehr-btn" type="button" class="hidden text-white/80 text-body font-medium underline self-start hover:text-white transition-colors focus:outline-none cursor-pointer">
+                            mehr anzeigen
+                        </button>
                     </div>
                 </article>
             </div>
@@ -782,9 +792,8 @@
                 <!-- TinkerUnity badge -->
                 <div class="relative rounded-[10px] shrink-0 inline-flex bg-gradient-deep-blue">
                     <div class="flex flex-col items-start overflow-clip p-1.25 relative rounded-[inherit]">
-                        <span class="block px-4.5 py-1.5 font-satoshi font-bold text-lg bg-gradient-white-blue bg-clip-text text-transparent">
-                            TinkerUnity
-                        </span>
+                        <img src="./assets/images/tinkerunity.svg" alt="WARP Charger Logo"
+                            class="h-5 lg:h-8 w-auto transition-all">
                     </div>
                     <!-- Border overlay -->
                     <div aria-hidden="true" class="absolute border border-[#8aaee9] inset-0 pointer-events-none rounded-[10px]"></div>
@@ -804,10 +813,8 @@
                 </p>
 
                 <!-- CTA button -->
-                <a href="#" class="mt-2 cursor-pointer transition-opacity hover:opacity-80 active:opacity-60 rounded-[10px] overflow-hidden bg-gradient-grey-dark">
-                    <span class="block px-5 py-2 text-btn text-white">
-                        Entdecken Sie die Tinkerunity
-                    </span>
+                <a href="https://www.tinkerunity.org/" type="button" class="btn-primary">
+                    Entdecken Sie die Tinkerunity
                 </a>
             </div>
 
@@ -991,7 +998,7 @@
 
                         <!-- Intro -->
                         <div class="flex flex-col gap-4">
-                            <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent">
+                            <span class="text-eyebrow bg-gradient-light-blue-alt bg-clip-text text-transparent">
                                 Feedback
                             </span>
                             <p class="text-white/40 text-xl leading-relaxed">
@@ -1032,7 +1039,7 @@
                         </div>
 
                         <!-- Submit -->
-                        <button id="contact-submit" type="submit" class="px-5 py-2.5 text-white font-bold text-base bg-[linear-gradient(to_bottom,#2137b8,#487ddf,#58b5ff)] rounded-md hover:opacity-90 transition-all active:scale-95 shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+                        <button id="contact-submit" type="submit" class="btn-alt-color">
                             Beratung anfragen
                         </button>
                     </form>
@@ -1044,7 +1051,7 @@
                     <!-- Info Links + Logo -->
                     <div class="flex justify-between items-start gap-6">
                         <div class="flex flex-col gap-5">
-                            <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent">
+                            <span class="text-eyebrow bg-gradient-light-blue-alt bg-clip-text text-transparent">
                                 Info
                             </span>
                             <nav class="flex flex-col gap-1.5">
@@ -1065,7 +1072,7 @@
 
                     <!-- Contact -->
                     <div class="flex flex-col gap-4">
-                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent">
+                        <span class="text-eyebrow bg-gradient-light-blue-alt bg-clip-text text-transparent">
                             Kontakt
                         </span>
                         <address class="flex flex-col gap-1.5 not-italic">
@@ -1076,7 +1083,7 @@
 
                     <!-- Newsletter -->
                     <div class="flex flex-col gap-4">
-                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent">
+                        <span class="text-eyebrow bg-gradient-light-blue-alt bg-clip-text text-transparent">
                             Newsletter
                         </span>
                         <form id="newsletter-form" novalidate>

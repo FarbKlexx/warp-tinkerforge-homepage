@@ -33,16 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 4000);
         };
 
-        const stopAutoplay = () => {
-            clearInterval(autoplayTimer);
-        };
+        const stopAutoplay = () => clearInterval(autoplayTimer);
 
         showcaseTrack.addEventListener("scroll", () => {
             const index = Math.round(showcaseTrack.scrollLeft / showcaseTrack.offsetWidth);
             updateDots(index);
         }, { passive: true });
 
-        // Reset autoplay timer on manual swipe
         showcaseTrack.addEventListener("touchstart", () => stopAutoplay(), { passive: true });
         showcaseTrack.addEventListener("touchend", () => startAutoplay(), { passive: true });
 
@@ -60,15 +57,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!sliderNav) return;
 
     const tabs = Array.from(sliderNav.querySelectorAll('button'));
-    
-    // Elements to update
-    const sliderImage = document.getElementById('slider-image');
-    const sliderImageBg = document.getElementById('slider-image-bg');
-    const sliderBadge = document.getElementById('slider-badge');
-    const sliderHeadline = document.getElementById('slider-headline');
-    const sliderBody = document.getElementById('slider-body');
 
-    // Data corresponding to the tabs
+    const sliderImage       = document.getElementById('slider-image');
+    const sliderImageBg     = document.getElementById('slider-image-bg');
+    const sliderBadge       = document.getElementById('slider-badge');
+    const sliderHeadline    = document.getElementById('slider-headline');
+    const sliderBody        = document.getElementById('slider-body');
+    const sliderTextContent = document.getElementById('slider-text-content');
+    const sliderMehrBtn     = document.getElementById('slider-mehr-btn');
+    const sliderArticle     = sliderTextContent?.closest('article');
+
     const tabData = [
         {
             badge: "NEU",
@@ -92,11 +90,152 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!sliderImage || !sliderHeadline || !sliderBody) return;
 
+    // ── Mobile "mehr anzeigen" ─────────────────────────────────────────────
+
+    let bodyExpanded = false;
+    let isAnimating  = false;
+    let savedClampedHeight = 0;
+
+    const isMobile = () => window.innerWidth < 768;
+
+    function applyClamp() {
+        sliderBody.style.display           = '-webkit-box';
+        sliderBody.style.webkitLineClamp   = '4';
+        sliderBody.style.webkitBoxOrient   = 'vertical';
+        sliderBody.style.overflow          = 'hidden';
+        sliderBody.style.maxHeight         = '';
+    }
+
+    function checkMehrAnzeigen() {
+        if (!sliderMehrBtn) return;
+        if (!isMobile()) {
+            sliderMehrBtn.classList.add('hidden');
+            sliderBody.style.display = sliderBody.style.webkitLineClamp = sliderBody.style.webkitBoxOrient = sliderBody.style.overflow = sliderBody.style.maxHeight = '';
+            return;
+        }
+        applyClamp();
+        sliderMehrBtn.classList.toggle('hidden', sliderBody.scrollHeight <= sliderBody.clientHeight + 1);
+    }
+
+    // Returns the max height the body can grow to before it would overflow the image.
+    // justify-end keeps items at bottom; body growing pushes siblings upward naturally.
+    function getAvailableBodyHeight() {
+        const style  = getComputedStyle(sliderTextContent);
+        const pt     = parseFloat(style.paddingTop)  || 0;
+        const pb     = parseFloat(style.paddingBottom) || 0;
+        const gap    = parseFloat(style.rowGap) || 12;
+        const innerH = sliderTextContent.clientHeight - pt - pb;
+
+        let siblingsH = 0;
+        let count = 0;
+        for (const child of sliderTextContent.children) {
+            if (child === sliderBody) continue;
+            if (getComputedStyle(child).display === 'none') continue;
+            siblingsH += child.offsetHeight;
+            count++;
+        }
+        // count visible siblings → count gaps between body and each of them
+        return innerH - siblingsH - count * gap;
+    }
+
+    function resetBodyStyles() {
+        sliderBody.style.transition     = '';
+        sliderBody.style.maxHeight      = '';
+        sliderBody.style.overflow       = '';
+        sliderBody.style.overflowY      = '';
+        sliderBody.style.display        = '';
+        sliderBody.style.webkitLineClamp   = '';
+        sliderBody.style.webkitBoxOrient   = '';
+        if (sliderArticle) sliderArticle.style.height = '';
+    }
+
+    // Instant reset (tab switch / resize — no animation)
+    function collapseBodyImmediate() {
+        isAnimating  = false;
+        bodyExpanded = false;
+        resetBodyStyles();
+        if (sliderMehrBtn) sliderMehrBtn.textContent = 'mehr anzeigen';
+        checkMehrAnzeigen();
+    }
+
+    function expandBody() {
+        if (isAnimating) return;
+        isAnimating  = true;
+        bodyExpanded = true;
+
+        // Capture the 4-line height before removing clamp
+        savedClampedHeight = sliderBody.clientHeight;
+
+        // Lock the article so the image never resizes
+        if (sliderArticle) sliderArticle.style.height = sliderArticle.offsetHeight + 'px';
+
+        // Switch from webkit-box to block while staying at the same visual height
+        sliderBody.style.maxHeight      = savedClampedHeight + 'px';
+        sliderBody.style.overflow       = 'hidden';
+        sliderBody.style.display        = 'block';
+        sliderBody.style.webkitLineClamp   = '';
+        sliderBody.style.webkitBoxOrient   = '';
+
+        // Measure how tall the full text is and how much space is actually available
+        const naturalHeight  = sliderBody.scrollHeight;
+        const available      = getAvailableBodyHeight();
+        const targetHeight   = Math.min(naturalHeight, available);
+        const needsScroll    = naturalHeight > available;
+
+        if (sliderMehrBtn) sliderMehrBtn.textContent = 'weniger anzeigen';
+
+        // Two rAFs: first registers the initial height, second starts the transition
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                sliderBody.style.transition = 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                sliderBody.style.maxHeight  = targetHeight + 'px';
+                sliderBody.addEventListener('transitionend', () => {
+                    sliderBody.style.transition = '';
+                    if (needsScroll) sliderBody.style.overflowY = 'auto';
+                    isAnimating = false;
+                }, { once: true });
+            });
+        });
+    }
+
+    function collapseBody() {
+        if (isAnimating) return;
+        isAnimating  = true;
+        bodyExpanded = false;
+
+        // Hide scrollbar during collapse
+        sliderBody.style.overflowY  = '';
+        sliderBody.style.overflow   = 'hidden';
+
+        if (sliderMehrBtn) sliderMehrBtn.textContent = 'mehr anzeigen';
+
+        sliderBody.style.transition = 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        sliderBody.style.maxHeight  = savedClampedHeight + 'px';
+
+        sliderBody.addEventListener('transitionend', () => {
+            sliderBody.style.transition = '';
+            if (sliderArticle) sliderArticle.style.height = '';
+            // Re-apply clamp (shows "…") and re-evaluate button visibility
+            checkMehrAnzeigen();
+            isAnimating = false;
+        }, { once: true });
+    }
+
+    if (sliderMehrBtn) {
+        sliderMehrBtn.addEventListener('click', () => {
+            bodyExpanded ? collapseBody() : expandBody();
+        });
+    }
+
+    checkMehrAnzeigen();
+    window.addEventListener('resize', collapseBodyImmediate, { passive: true });
+
+    // ── Tab switching ──────────────────────────────────────────────────────
+
     let transitionTimeout;
 
     tabs.forEach((tab, index) => {
         tab.addEventListener('click', () => {
-            // Update tabs state
             tabs.forEach((t, i) => {
                 if (i === index) {
                     t.setAttribute('aria-selected', 'true');
@@ -109,40 +248,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // Update content dynamically to match React state behavior
             const data = tabData[index];
-            
-            // Image transition
+
             if (sliderImageBg) {
                 clearTimeout(transitionTimeout);
-                
-                // Put the new image in the background
                 sliderImageBg.src = data.image;
-                
-                // Fade out the foreground image to reveal the background
                 sliderImage.style.transition = '';
                 sliderImage.style.opacity = '0';
-                
+
                 transitionTimeout = setTimeout(() => {
-                    // Update foreground silently
                     sliderImage.style.transition = 'none';
                     sliderImage.src = data.image;
                     sliderImage.alt = data.headline;
                     sliderImage.style.opacity = '1';
-                    
-                    // Force browser reflow
                     void sliderImage.offsetWidth;
-                    
-                    // Restore transition class behavior
                     sliderImage.style.transition = '';
                 }, 300);
             }
 
-            // Text update
             sliderHeadline.textContent = data.headline;
             sliderBody.textContent = data.body;
 
-            // Handle optional badge
             if (sliderBadge) {
                 if (data.badge) {
                     sliderBadge.textContent = data.badge;
@@ -151,6 +277,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     sliderBadge.style.display = 'none';
                 }
             }
+
+            // Always reset expand state on slide change, then check new content
+            collapseBodyImmediate();
         });
     });
 });
