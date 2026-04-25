@@ -551,9 +551,6 @@
   .h-\[55\%\] {
     height: 55%;
   }
-  .h-\[500px\] {
-    height: 500px;
-  }
   .h-auto {
     height: auto;
   }
@@ -685,9 +682,6 @@
   .flex-row {
     flex-direction: row;
   }
-  .items-baseline {
-    align-items: baseline;
-  }
   .items-center {
     align-items: center;
   }
@@ -714,9 +708,6 @@
   }
   .gap-1 {
     gap: calc(var(--spacing) * 1);
-  }
-  .gap-1\.5 {
-    gap: calc(var(--spacing) * 1.5);
   }
   .gap-1\.25 {
     gap: calc(var(--spacing) * 1.25);
@@ -1149,7 +1140,7 @@
   .text-h4 {
     font-family: var(--font-satoshi);
     font-size: 0.9375rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -0.05em;
     line-height: 1.3;
     @media (width >= 64rem) {
@@ -1499,6 +1490,11 @@
       min-height: calc(var(--spacing) * 175);
     }
   }
+  .md\:max-w-2xl {
+    @media (width >= 48rem) {
+      max-width: var(--container-2xl);
+    }
+  }
   .md\:max-w-5xl {
     @media (width >= 48rem) {
       max-width: var(--container-5xl);
@@ -1542,6 +1538,11 @@
   .md\:px-8 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .md\:px-10 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 10);
     }
   }
   .md\:pt-24 {
@@ -1676,11 +1677,6 @@
       width: 150%;
     }
   }
-  .lg\:w-\[420px\] {
-    @media (width >= 64rem) {
-      width: 420px;
-    }
-  }
   .lg\:w-auto {
     @media (width >= 64rem) {
       width: auto;
@@ -1744,6 +1740,11 @@
   .lg\:px-8 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:px-20 {
+    @media (width >= 64rem) {
+      padding-inline: calc(var(--spacing) * 20);
     }
   }
   .lg\:py-32 {
@@ -1975,18 +1976,18 @@
   gap: calc(var(--spacing) * 1);
   border-radius: var(--radius-2xl);
   background-color: var(--color-white);
-  padding-block: calc(var(--spacing) * 5);
+  padding-block: calc(var(--spacing) * 4);
   @media (width >= 64rem) {
     min-width: calc(var(--spacing) * 70);
   }
   @media (width >= 64rem) {
-    gap: calc(var(--spacing) * 6);
+    gap: calc(var(--spacing) * 4);
   }
   @media (width >= 64rem) {
-    padding-inline: calc(var(--spacing) * 10);
+    padding-inline: calc(var(--spacing) * 6);
   }
   @media (width >= 64rem) {
-    padding-block: calc(var(--spacing) * 16);
+    padding-block: calc(var(--spacing) * 10);
   }
 }
 .feature-icon {
@@ -2005,14 +2006,12 @@
   text-align: center;
   font-family: var(--font-satoshi);
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.05em;
   line-height: 1.3;
   @media (width >= 64rem) {
     font-size: 1.25rem;
   }
-  --tw-font-weight: var(--font-weight-medium);
-  font-weight: var(--font-weight-medium);
   color: var(--color-dark-primary);
 }
 .card-wrapper {
@@ -2075,7 +2074,7 @@
 .card-price {
   font-family: var(--font-satoshi);
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.05em;
   line-height: 1.3;
   @media (width >= 64rem) {
