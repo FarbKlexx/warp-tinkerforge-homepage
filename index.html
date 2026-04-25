@@ -194,7 +194,7 @@
         </section>
 
         <!-- Product Section -->
-        <section id="products" class="relative w-full py-16 overflow-x-clip bg-gradient-radial-dark">
+        <section id="products" class="relative w-full py-section overflow-x-clip bg-gradient-radial-dark">
             <div class="max-w-7xl mx-auto flex flex-col">
                 <!-- Header Wrapper -->
                 <div
@@ -374,7 +374,7 @@
         </section>
 
         <!-- Philosophy Section -->
-        <section class="w-full pt-16 md:pt-32 lg:pt-32">
+        <section class="w-full pt-section">
             <div class="flex flex-col gap-[20px] items-center justify-center">
 
                 <!-- Text -->
@@ -571,7 +571,7 @@
         </section>
 
         <!-- Webinterface Section -->
-        <section class="relative w-full overflow-hidden pt-16 pb-4 md:pt-24 md:pb-8 lg:pb-24 bg-gradient-radial-dark">
+        <section class="relative w-full overflow-hidden pt-section pb-4 md:pb-8 lg:pb-24 bg-gradient-radial-dark">
             
             <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:pl-64 lg:pr-0 flex flex-col lg:flex-row items-center lg:items-stretch gap-20 lg:gap-24">
                 
@@ -771,7 +771,7 @@
         <section class="relative w-full overflow-hidden bg-linear-to-t from-[#1b1b25] to-[#05050a]">
 
             <!-- Text content -->
-            <div class="relative z-10 flex flex-col items-center text-center gap-5 pt-20 md:pt-28 pb-0 px-4 md:px-8 max-w-3xl mx-auto">
+            <div class="relative z-10 flex flex-col items-center text-center gap-5 pt-section pb-0 px-4 md:px-8 max-w-3xl mx-auto">
 
                 <!-- TinkerUnity badge -->
                 <div class="relative rounded-[10px] shrink-0 inline-flex bg-gradient-deep-blue">
@@ -830,8 +830,127 @@
                     </div>
                 </div>
             </div>
-
         </section>
+
+        <!-- News Section -->
+        <section class="w-full bg-white text-left">
+            <div class="max-w-7xl mx-auto px-4 md:px-8 pt-section pb-4 md:pb-8">
+                <div class="flex flex-col lg:flex-row gap-12 lg:gap-18.75 items-start">
+
+                    <!-- Left Panel: Eyebrow, Heading, Body, CTA -->
+                    <div class="flex flex-col gap-7.5 items-start shrink-0 w-full lg:w-91">
+
+                        <!-- Badge + Heading -->
+                        <div class="flex flex-col gap-text-gap-sm items-start w-full">
+
+                            <!-- "Neuigkeiten" Badge -->
+                            <div class="flex gap-2.5 items-center">
+                                <div class="w-7.5 h-7.5 rounded-full bg-gradient-overlay-blue p-px flex items-center justify-center shrink-0">
+                                    <div class="w-full h-full rounded-full bg-gradient-blue flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[18px]! text-white">newspaper</span>
+                                    </div>
+                                </div>
+                                <span class="text-h3 bg-gradient-blue bg-clip-text text-transparent leading-normal whitespace-nowrap pr-2 -mr-2">
+                                    Neuigkeiten
+                                </span>
+                            </div>
+
+                            <h2 class="text-h2 text-black">
+                                Aktuelle Entwicklungen
+                            </h2>
+                        </div>
+
+                        <!-- Body Copy -->
+                        <p class="text-body text-grey leading-6.5">
+                            Bleiben Sie stets informiert über die neuesten Hardware-Releases,
+                            Firmware-Updates und Innovationen aus dem Tinkerforge-Ökosystem.
+                        </p>
+
+                        <!-- CTA Button -->
+                        <button type="button" class="btn-primary">
+                            Alle Neuigkeiten
+                        </button>
+                    </div>
+
+                    <!-- Right: News Card List -->
+                    <div class="flex flex-col gap-4.75 flex-1 w-full">
+
+                        <!-- News Card 1 -->
+                        <article class="bg-very-light-grey rounded-xl w-full overflow-hidden">
+                            <div class="flex items-center justify-between px-4.75 py-text-gap-sm gap-4 min-h-39.5">
+                                <!-- Text Block -->
+                                <div class="flex flex-col gap-3 flex-1 min-w-0">
+                                    <!-- Meta: Category · Date -->
+                                    <div class="flex items-center gap-6 flex-wrap">
+                                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent whitespace-nowrap">Category</span>
+                                        <svg class="shrink-0 size-1.5" fill="none" viewBox="0 0 6 6" aria-hidden="true"><circle cx="3" cy="3" fill="#A1A1A1" r="3"/></svg>
+                                        <span class="text-[#a1a1a1] text-eyebrow whitespace-nowrap">15.02.2026</span>
+                                    </div>
+                                    <!-- Excerpt -->
+                                    <p class="text-black text-body font-medium">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat...
+                                    </p>
+                                    <!-- Read More -->
+                                    <button type="button" class="text-medium-grey text-body font-medium underline self-start hover:text-grey transition-colors focus:outline-none cursor-pointer">
+                                        mehr anzeigen
+                                    </button>
+                                </div>
+                                <!-- Article Arrow -->
+                                <button type="button" class="shrink-0 hover:opacity-60 transition-opacity active:opacity-40 focus:outline-none cursor-pointer" aria-label="Artikel öffnen">
+                                    <span class="material-symbols-outlined text-[30px]! text-[#021273]">chevron_right</span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- News Card 2 -->
+                        <article class="bg-very-light-grey rounded-xl w-full overflow-hidden">
+                            <div class="flex items-center justify-between px-4.75 py-text-gap-sm gap-4 min-h-39.5">
+                                <div class="flex flex-col gap-3 flex-1 min-w-0">
+                                    <div class="flex items-center gap-6 flex-wrap">
+                                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent whitespace-nowrap">Category</span>
+                                        <svg class="shrink-0 size-1.5" fill="none" viewBox="0 0 6 6" aria-hidden="true"><circle cx="3" cy="3" fill="#A1A1A1" r="3"/></svg>
+                                        <span class="text-[#a1a1a1] text-eyebrow whitespace-nowrap">15.02.2026</span>
+                                    </div>
+                                    <p class="text-black text-body font-medium">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat...
+                                    </p>
+                                    <button type="button" class="text-medium-grey text-body font-medium underline self-start hover:text-grey transition-colors focus:outline-none cursor-pointer">
+                                        mehr anzeigen
+                                    </button>
+                                </div>
+                                <button type="button" class="shrink-0 hover:opacity-60 transition-opacity active:opacity-40 focus:outline-none cursor-pointer" aria-label="Artikel öffnen">
+                                    <span class="material-symbols-outlined text-[30px]! text-[#021273]">chevron_right</span>
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- News Card 3 -->
+                        <article class="bg-very-light-grey rounded-xl w-full overflow-hidden">
+                            <div class="flex items-center justify-between px-4.75 py-text-gap-sm gap-4 min-h-39.5">
+                                <div class="flex flex-col gap-3 flex-1 min-w-0">
+                                    <div class="flex items-center gap-6 flex-wrap">
+                                        <span class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent whitespace-nowrap">Category</span>
+                                        <svg class="shrink-0 size-1.5" fill="none" viewBox="0 0 6 6" aria-hidden="true"><circle cx="3" cy="3" fill="#A1A1A1" r="3"/></svg>
+                                        <span class="text-[#a1a1a1] text-eyebrow whitespace-nowrap">15.02.2026</span>
+                                    </div>
+                                    <p class="text-black text-body font-medium">
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat...
+                                    </p>
+                                    <button type="button" class="text-medium-grey text-body font-medium underline self-start hover:text-grey transition-colors focus:outline-none cursor-pointer">
+                                        mehr anzeigen
+                                    </button>
+                                </div>
+                                <button type="button" class="shrink-0 hover:opacity-60 transition-opacity active:opacity-40 focus:outline-none cursor-pointer" aria-label="Artikel öffnen">
+                                    <span class="material-symbols-outlined text-[30px]! text-[#021273]">chevron_right</span>
+                                </button>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
     <!-- Scripts -->
     <script type="module" src="./src/scripts/products.js"></script>
