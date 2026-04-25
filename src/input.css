@@ -337,6 +337,14 @@
   @apply text-nav hover:text-white/60 transition-colors cursor-pointer;
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Der äußere Container */
 .feature-box {
   @apply bg-white flex flex-col gap-1 lg:gap-4 items-center justify-center py-4 lg:py-10 lg:px-6 rounded-2xl flex-1 min-w-30 lg:min-w-70;

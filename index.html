@@ -631,67 +631,140 @@
 
         <!-- Scroll Showcase Section -->
         <section class="w-full bg-background">
-            <div class="flex flex-col lg:flex-row items-start max-w-7xl mx-auto px-4 md:px-8">
-                
-                <!-- Left: Scrolling image stack -->
-                <div class="flex-1 flex flex-col gap-40 py-32">
-                    
-                    <!-- Image 1 -->
-                    <article class="relative w-full rounded-2xl overflow-hidden shadow-lg h-125">
-                        <img src="./assets/images/img-placeholder-1.png" alt="WARP Charger – Design" class="w-full h-full object-cover">
-                    </article>
-                    
-                    <!-- Image 2 -->
-                    <article class="relative w-full rounded-2xl overflow-hidden shadow-lg h-125">
-                        <img src="./assets/images/img-placeholder-1.png" alt="WARP Charger – Installation" class="w-full h-full object-cover">
-                    </article>
-                    
-                    <!-- Image 3 -->
-                    <article class="relative w-full rounded-2xl overflow-hidden shadow-lg h-125">
-                        <img src="./assets/images/img-placeholder-1.png" alt="WARP Charger – Nacht" class="w-full h-full object-cover">
-                    </article>
-                    
-                </div>
 
-                <!-- Right: Sticky product card -->
-                <div class="lg:w-105 shrink-0 lg:sticky lg:top-24 self-start py-8 lg:py-32 lg:pl-12">
-                    <article class="relative rounded-2xl overflow-hidden shadow-[0px_5.9px_14.8px_0px_rgba(0,0,0,0.15)] ring-1 ring-[#e4e4e7] bg-[linear-gradient(180deg,#ffffff_19.77%,#f5f5f5_84.88%)]">
-                        <div class="p-8 flex flex-col gap-6 text-left">
-                            
-                            <!-- Badge -->
-                            <p class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent">
-                                NEU
-                            </p>
+            <!-- Mobile / Tablet: Image slider + CTA card -->
+            <div class="lg:hidden">
+                <div class="flex flex-col gap-4 px-4 py-8 w-full max-w-lg mx-auto">
 
-                            <!-- Product Name + Price -->
-                            <header>
-                                <h3 class="card-title">WARP4 Wallbox</h3>
-                                <div class="card-price-row mt-3">
-                                    <span class="card-price">ab 699,00€</span>
-                                    <span class="text-body text-medium-grey">inkl. MwSt</span>
+                    <!-- Image Slider -->
+                    <div class="relative w-full rounded-[15px] overflow-hidden shadow-md">
+                        <!-- Track -->
+                        <div id="showcase-slider-track" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide">
+                            <div class="w-full shrink-0 snap-start aspect-4/3">
+                                <img src="./assets/images/img-placeholder-1.png" alt="WARP Charger – Design" class="w-full h-full object-cover" draggable="false">
+                            </div>
+                            <div class="w-full shrink-0 snap-start aspect-4/3">
+                                <img src="./assets/images/img-placeholder-1.png" alt="WARP Charger – Installation" class="w-full h-full object-cover" draggable="false">
+                            </div>
+                            <div class="w-full shrink-0 snap-start aspect-4/3">
+                                <img src="./assets/images/img-placeholder-1.png" alt="WARP Charger – Nacht" class="w-full h-full object-cover" draggable="false">
+                            </div>
+                        </div>
+                        <!-- Dot Indicators -->
+                        <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 pointer-events-none">
+                            <button type="button" data-showcase-dot="0" aria-label="Bild 1" class="showcase-dot pointer-events-auto size-2 rounded-full transition-all duration-200 focus:outline-none bg-white scale-125"></button>
+                            <button type="button" data-showcase-dot="1" aria-label="Bild 2" class="showcase-dot pointer-events-auto size-2 rounded-full transition-all duration-200 focus:outline-none bg-white/45"></button>
+                            <button type="button" data-showcase-dot="2" aria-label="Bild 3" class="showcase-dot pointer-events-auto size-2 rounded-full transition-all duration-200 focus:outline-none bg-white/45"></button>
+                        </div>
+                    </div>
+
+                    <!-- CTA Card -->
+                    <div class="w-full rounded-[15px] overflow-hidden ring-[0.75px] ring-[#e4e4e7] bg-[linear-gradient(180deg,#ffffff_19.77%,#f5f5f5_84.88%)] shadow-[0px_4.43px_11.07px_0px_rgba(0,0,0,0.15)]">
+                        <div class="flex flex-col gap-[22.5px] px-[22.5px] py-6 text-left">
+
+                            <!-- Badge + Title + Price -->
+                            <div class="flex flex-col gap-[10.5px]">
+                                <span class="text-[10.5px] font-black tracking-[1.5px] uppercase bg-gradient-blue bg-clip-text text-transparent leading-[1.4]">
+                                    NEU
+                                </span>
+                                <p class="text-black text-[24px] font-medium tracking-[-1.5px] leading-normal">
+                                    WARP4 Wallbox
+                                </p>
+                                <div class="flex items-baseline gap-[3.75px]">
+                                    <span class="text-black text-[15px] tracking-[-0.15px]">ab 699,00€</span>
+                                    <span class="text-medium-grey text-[12px] leading-[19.5px]">inkl. MwSt</span>
                                 </div>
-                            </header>
+                            </div>
 
                             <!-- Description -->
-                            <div>
-                                <p class="text-body text-black">
-                                    Die WARP Wallbox ist die ideale Lösung lorem ipsum dolor sit amet, consetetur
-                                    sadipscing elitr...
+                            <div class="flex flex-col items-start gap-0">
+                                <p class="text-black text-[12px] font-medium leading-[19.5px]">
+                                    Die WARP Wallbox ist die ideale Lösung lorem ipsum dolor sit amet, consetetur sadipscing elitr...
                                 </p>
-                                <button type="button" class="text-medium-grey text-body underline mt-1 hover:text-grey transition-colors focus:outline-none cursor-pointer">
+                                <button type="button" class="text-medium-grey text-[12px] font-medium underline decoration-solid leading-[19.5px] hover:text-grey transition-colors focus:outline-none cursor-pointer">
                                     mehr anzeigen
                                 </button>
                             </div>
 
-                            <!-- CTA Button -->
-                            <button type="button" class="btn-primary w-full">
-                                Jetzt Kaufen
+                            <!-- CTA -->
+                            <button type="button" class="w-full rounded-[5px] overflow-hidden shadow-[0px_3px_3px_0px_rgba(0,0,0,0.25)] hover:opacity-90 active:scale-[0.98] transition-all focus:outline-none bg-[linear-gradient(180deg,#4a4a4a_0%,#1b1b1b_100%)]">
+                                <span class="flex items-center justify-center px-text-gap-sm py-[7.5px] text-white text-[12px] font-bold leading-normal whitespace-nowrap">
+                                    Jetzt Kaufen
+                                </span>
                             </button>
-                            
+
                         </div>
-                    </article>
+                    </div>
+
                 </div>
             </div>
+
+            <!-- Desktop: Scrolling image stack + Sticky card -->
+            <div class="hidden lg:block">
+                <div class="flex flex-row items-start max-w-7xl mx-auto px-8">
+
+                    <!-- Left: Scrolling image stack -->
+                    <div class="flex-1 flex flex-col gap-40 py-32">
+
+                        <!-- Image 1 -->
+                        <article class="relative w-full rounded-2xl overflow-hidden shadow-lg h-125">
+                            <img src="./assets/images/img-placeholder-1.png" alt="WARP Charger – Design" class="w-full h-full object-cover">
+                        </article>
+
+                        <!-- Image 2 -->
+                        <article class="relative w-full rounded-2xl overflow-hidden shadow-lg h-125">
+                            <img src="./assets/images/img-placeholder-1.png" alt="WARP Charger – Installation" class="w-full h-full object-cover">
+                        </article>
+
+                        <!-- Image 3 -->
+                        <article class="relative w-full rounded-2xl overflow-hidden shadow-lg h-125">
+                            <img src="./assets/images/img-placeholder-1.png" alt="WARP Charger – Nacht" class="w-full h-full object-cover">
+                        </article>
+
+                    </div>
+
+                    <!-- Right: Sticky product card -->
+                    <div class="w-105 shrink-0 sticky top-24 self-start py-32 pl-12">
+                        <article class="relative rounded-2xl overflow-hidden shadow-[0px_5.9px_14.8px_0px_rgba(0,0,0,0.15)] ring-1 ring-[#e4e4e7] bg-[linear-gradient(180deg,#ffffff_19.77%,#f5f5f5_84.88%)]">
+                            <div class="p-8 flex flex-col gap-6 text-left">
+
+                                <!-- Badge -->
+                                <p class="text-eyebrow bg-gradient-blue bg-clip-text text-transparent">
+                                    NEU
+                                </p>
+
+                                <!-- Product Name + Price -->
+                                <header>
+                                    <h3 class="card-title">WARP4 Wallbox</h3>
+                                    <div class="card-price-row mt-3">
+                                        <span class="card-price">ab 699,00€</span>
+                                        <span class="text-body text-medium-grey">inkl. MwSt</span>
+                                    </div>
+                                </header>
+
+                                <!-- Description -->
+                                <div>
+                                    <p class="text-body text-black">
+                                        Die WARP Wallbox ist die ideale Lösung lorem ipsum dolor sit amet, consetetur
+                                        sadipscing elitr...
+                                    </p>
+                                    <button type="button" class="text-medium-grey text-body underline mt-1 hover:text-grey transition-colors focus:outline-none cursor-pointer">
+                                        mehr anzeigen
+                                    </button>
+                                </div>
+
+                                <!-- CTA Button -->
+                                <button type="button" class="btn-primary w-full">
+                                    Jetzt Kaufen
+                                </button>
+
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+
         </section>
 
         <!-- Community Section -->

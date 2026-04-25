@@ -1,4 +1,61 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Scroll Showcase mobile/tablet image slider
+    const showcaseTrack = document.getElementById("showcase-slider-track");
+    const showcaseDots = Array.from(document.querySelectorAll("[data-showcase-dot]"));
+
+    if (showcaseTrack && showcaseDots.length) {
+        const slideCount = showcaseDots.length;
+        let activeIndex = 0;
+        let autoplayTimer = null;
+
+        const updateDots = (index) => {
+            activeIndex = index;
+            showcaseDots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add("bg-white", "scale-125");
+                    dot.classList.remove("bg-white/45");
+                } else {
+                    dot.classList.add("bg-white/45");
+                    dot.classList.remove("bg-white", "scale-125");
+                }
+            });
+        };
+
+        const goToSlide = (index, smooth = true) => {
+            showcaseTrack.scrollTo({ left: showcaseTrack.offsetWidth * index, behavior: smooth ? "smooth" : "instant" });
+            updateDots(index);
+        };
+
+        const startAutoplay = () => {
+            stopAutoplay();
+            autoplayTimer = setInterval(() => {
+                goToSlide((activeIndex + 1) % slideCount);
+            }, 4000);
+        };
+
+        const stopAutoplay = () => {
+            clearInterval(autoplayTimer);
+        };
+
+        showcaseTrack.addEventListener("scroll", () => {
+            const index = Math.round(showcaseTrack.scrollLeft / showcaseTrack.offsetWidth);
+            updateDots(index);
+        }, { passive: true });
+
+        // Reset autoplay timer on manual swipe
+        showcaseTrack.addEventListener("touchstart", () => stopAutoplay(), { passive: true });
+        showcaseTrack.addEventListener("touchend", () => startAutoplay(), { passive: true });
+
+        showcaseDots.forEach((dot) => {
+            dot.addEventListener("click", () => {
+                goToSlide(parseInt(dot.dataset.showcaseDot, 10));
+                startAutoplay();
+            });
+        });
+
+        startAutoplay();
+    }
+
     const sliderNav = document.querySelector('nav[aria-label="Slider tabs"]');
     if (!sliderNav) return;
 
