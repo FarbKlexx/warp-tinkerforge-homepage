@@ -1649,6 +1649,11 @@
       max-width: var(--container-5xl);
     }
   }
+  .md\:max-w-none {
+    @media (width >= 48rem) {
+      max-width: none;
+    }
+  }
   .md\:flex-1 {
     @media (width >= 48rem) {
       flex: 1;
