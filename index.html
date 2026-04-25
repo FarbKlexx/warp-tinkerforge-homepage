@@ -545,14 +545,14 @@
             <div class="max-w-5xl mx-auto flex flex-col items-center gap-5">
                 
                 <!-- Tab Bar -->
-                <nav aria-label="Slider tabs" class="bg-black/30 p-1.5 rounded-[20px] flex gap-3">
-                    <button type="button" class="px-4 md:px-8 lg:px-8 py-1 rounded-[15px] text-white text-btn transition-all duration-200 bg-white/30 cursor-pointer" aria-selected="true">
+                <nav role="tablist" aria-label="Slider tabs" class="bg-black/30 p-1.5 rounded-[20px] flex gap-3">
+                    <button type="button" class="px-4 md:px-8 lg:px-8 py-1 rounded-[15px] text-white text-btn transition-all duration-200 bg-white/30 cursor-pointer" role="tab" aria-selected="true">
                         WARP4
                     </button>
-                    <button type="button" class="px-4 md:px-8 lg:px-8 py-1 rounded-[15px] text-white text-btn transition-all duration-200 hover:bg-white/10 cursor-pointer" aria-selected="false">
+                    <button type="button" class="px-4 md:px-8 lg:px-8 py-1 rounded-[15px] text-white text-btn transition-all duration-200 hover:bg-white/10 cursor-pointer" role="tab" aria-selected="false">
                         Autocharge
                     </button>
-                    <button type="button" class="px-4 md:px-8 lg:px-8 py-1 rounded-[15px] text-white text-btn transition-all duration-200 hover:bg-white/10 cursor-pointer" aria-selected="false">
+                    <button type="button" class="px-4 md:px-8 lg:px-8 py-1 rounded-[15px] text-white text-btn transition-all duration-200 hover:bg-white/10 cursor-pointer" role="tab" aria-selected="false">
                         Gehäusedesign
                     </button>
                 </nav>
@@ -1005,7 +1005,7 @@
                             <span class="text-eyebrow bg-gradient-light-blue-alt bg-clip-text text-transparent">
                                 Feedback
                             </span>
-                            <p class="text-white/40 text-xl leading-relaxed">
+                            <p class="text-white/60 text-xl leading-relaxed">
                                 Individuelle Beratung gewünscht?
                                 <span class="text-white">Sprechen Sie mit unserem Team.</span>
                             </p>
@@ -1017,7 +1017,7 @@
                             <!-- Name -->
                             <div class="flex flex-col gap-1">
                                 <div id="wrap-name" data-border="border-white/60" class="rounded-xl border border-white/60 px-4 py-3 transition-colors">
-                                    <label for="footer-name" class="block text-white/40 text-xs font-medium tracking-widest uppercase mb-1">Name</label>
+                                    <label for="footer-name" class="block text-white/60 text-xs font-medium tracking-widest uppercase mb-1">Name</label>
                                     <input type="text" id="footer-name" name="name" placeholder="Ihr Name" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none">
                                 </div>
                                 <p id="error-name" class="text-red-400 text-xs pl-1 hidden">Bitte geben Sie Ihren Namen ein.</p>
@@ -1026,7 +1026,7 @@
                             <!-- E-Mail -->
                             <div class="flex flex-col gap-1">
                                 <div id="wrap-email" data-border="border-white/25" class="rounded-xl border border-white/25 px-4 py-3 transition-colors">
-                                    <label for="footer-email" class="block text-white/40 text-xs font-medium tracking-widest uppercase mb-1">E-Mail</label>
+                                    <label for="footer-email" class="block text-white/60 text-xs font-medium tracking-widest uppercase mb-1">E-Mail</label>
                                     <input type="email" id="footer-email" name="email" placeholder="ihre@email.de" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none">
                                 </div>
                                 <p id="error-email" class="text-red-400 text-xs pl-1 hidden">Bitte geben Sie eine gültige E-Mail-Adresse ein.</p>
@@ -1035,7 +1035,7 @@
                             <!-- Nachricht -->
                             <div class="flex flex-col gap-1">
                                 <div id="wrap-message" data-border="border-white/25" class="rounded-xl border border-white/25 px-4 py-3 transition-colors">
-                                    <label for="footer-message" class="block text-white/40 text-xs font-medium tracking-widest uppercase mb-1">Nachricht</label>
+                                    <label for="footer-message" class="block text-white/60 text-xs font-medium tracking-widest uppercase mb-1">Nachricht</label>
                                     <textarea id="footer-message" name="message" placeholder="Ihre Nachricht..." rows="4" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none resize-none"></textarea>
                                 </div>
                                 <p id="error-message" class="text-red-400 text-xs pl-1 hidden">Bitte geben Sie eine Nachricht ein.</p>
@@ -1093,7 +1093,7 @@
                         <form id="newsletter-form" novalidate>
                             <div class="flex flex-col gap-1">
                                 <div id="wrap-newsletter" data-border="border-white/13" class="flex items-center border border-white/13 rounded-xl overflow-hidden transition-colors">
-                                    <input type="email" id="newsletter-email" name="newsletter" placeholder="E-mail" class="flex-1 bg-transparent text-white/40 placeholder:text-white/40 text-sm px-5 py-4 focus:outline-none">
+                                    <input type="email" id="newsletter-email" name="newsletter" placeholder="E-mail" class="flex-1 bg-transparent text-white/60 placeholder:text-white/60 text-sm px-5 py-4 focus:outline-none">
                                     <button id="newsletter-submit" type="submit" class="flex items-center gap-4 pr-5 py-4 text-white hover:text-[#1e55c3] transition-colors disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Newsletter abonnieren">
                                         <div class="h-6 w-px bg-white/13"></div>
                                         <svg viewBox="0 0 5 9" fill="none" class="size-3" aria-hidden="true">
@@ -1127,7 +1127,7 @@
                     </a>
                 </div>
 
-                <p class="text-white/40 text-xs">Copyright © 2026 Tinkerforge GmbH</p>
+                <p class="text-white/60 text-xs">Copyright © 2026 Tinkerforge GmbH</p>
             </div>
         </div>
     </footer>
