@@ -14,6 +14,7 @@
 - Individuelle Icons werden aufgrund von Ladezeitoptimierung aus einem SVG-Spritesheet geladen (`assets/images/icons.svg`).
 - Da wo es Sinnvoll ist wurden Style-Klassen in die `input.css` ausgelagert Dies betrifft vor allem wiederverwendbare Klassen. Wo es nicht Sinnvoll ist wurden die Tailwind-Klassen direkt inline in die HTML-Dateien geschrieben.
 - Code Formatierig mithilfe von Prettier
+- Responsive optimierung wurde gemacht auf Macbook Pro Desktop (lg:1440x900), IPad Pro 11-inch (md:834x1210) und IPhone 17 Pro (sm:402x874) Seitenverhältnisse. Unorthodoxe Zwischenschritte (bswp. Samsung Galaxy Z Fold, quadratisches Seitenverhältnis) KÖNNTEN das Layout brechen, aber es ist wichtiger für Standarts zu optimieren.
 
 ## SEO-Zeug
 - Metadaten in Head wichtig

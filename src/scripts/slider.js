@@ -87,19 +87,19 @@ document.addEventListener("DOMContentLoaded", () => {
             badge: "NEU",
             headline: "Bereit für die nächste Generation des Ladens.",
             body: "Der WARP4 unterstützt den Kommunikationsstandard ISO 15118 und ist damit hardwareseitig für bidirektionales Laden vorbereitet, um Ihr Fahrzeug künftig als Energiespeicher nutzen zu können. Zudem ermöglicht die erweiterte Kommunikation das direkte Auslesen des Fahrzeug-Ladestands (SoC), wodurch sich Ladevorgänge und das eigene Energiemanagement noch präziser steuern lassen.",
-            image: "./assets/images/img-placeholder-1.png",
+            image: "./assets/images/img-placeholder-1.webp",
         },
         {
             badge: "",
             headline: "Laden ohne Stecken und Tippen.",
             body: "Mit Autocharge erkennt die Wallbox Ihr Fahrzeug automatisch und startet den Ladevorgang sofort. Kein RFID-Chip, keine App – einfach einstecken und laden.",
-            image: "./assets/images/img-placeholder-2.png",
+            image: "./assets/images/img-placeholder-2.webp",
         },
         {
             badge: "",
             headline: "Zeitloses Design für jede Umgebung.",
             body: "Das moderne Gehäusedesign des WARP4 Charger fügt sich harmonisch in jede Umgebung ein. Pulverbeschichtetes Metall und ein klares, minimalistisches Layout machen es zur ästhetischen Ergänzung Ihrer Garage oder Einfahrt.",
-            image: "./assets/images/img-placeholder-3.png",
+            image: "./assets/images/img-placeholder-3.webp",
         },
     ];
 
