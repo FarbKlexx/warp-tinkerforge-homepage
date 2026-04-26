@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Active Card Glow Logic
     const updateActiveCard = () => {
         if (!cards.length) return;
-        
+
         let minDiff = Infinity;
         let activeCard = null;
 
@@ -43,18 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const paddingLeft = parseFloat(getComputedStyle(scrollContainer).paddingLeft) || 0;
         const targetX = containerRect.left + paddingLeft;
 
-        cards.forEach(card => {
+        cards.forEach((card) => {
             const rect = card.getBoundingClientRect();
             // We want the card whose left edge is closest to our target snap point
             const diff = Math.abs(rect.left - targetX);
-            
+
             if (diff < minDiff) {
                 minDiff = diff;
                 activeCard = card;
             }
         });
 
-        cards.forEach(card => card.classList.remove("is-active"));
+        cards.forEach((card) => card.classList.remove("is-active"));
         if (activeCard) {
             activeCard.classList.add("is-active");
         }
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollContainer.addEventListener("scroll", () => {
         window.requestAnimationFrame(updateActiveCard);
     });
-    
+
     // Also update on resize as padding values might change via media queries
     window.addEventListener("resize", () => {
         window.requestAnimationFrame(updateActiveCard);
