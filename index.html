@@ -42,7 +42,7 @@
                                     invisible opacity-0 translate-y-1
                                     group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
                                     transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
-                            <div class="bg-white flex items-stretch overflow-hidden rounded-[10px] shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)] text-black">
+                            <div class="bg-white flex items-stretch overflow-hidden rounded-[10px] shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)] text-black min-h-104">
 
                                 <!-- Column 1: Product links -->
                                 <div class="shrink-0 w-71 flex flex-col gap-4 p-7.5">
@@ -54,14 +54,13 @@
                                 </div>
 
                                 <!-- Column 2: Featured product card -->
-                                <div class="bg-background flex flex-col w-71 shrink-0 items-start justify-between p-5">
+                                <div class="bg-background flex flex-col w-71 shrink-0 justify-between p-5">
 
                                     <!-- Product preview -->
                                     <div class="flex flex-col gap-4.25">
-                                        <!-- Dark image card (replaces MaskGroup blob decoration) -->
-                                        <div class="bg-black h-44.5 w-full relative rounded-[10px] overflow-hidden">
-                                            <img src="./assets/images/warp-charger-preview.png" alt="WARP3-Charger Vorschau"
-                                                class="absolute h-48 w-57 -left-6.25 top-7.5 pointer-events-none">
+                                        <div class="relative h-44.5 w-full rounded-2xl overflow-hidden pointer-events-none">
+                                            <img src="./assets/images/warp-charger-preview.png" alt="WARP3-Charger Vorschau" class="w-full h-full object-cover">
+                                            <div class="absolute inset-0 rounded-2xl border-2 border-white/50 shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)]"></div>
                                         </div>
                                         <p class="dropdown-card-title">WARP3-Charger</p>
                                         <p class="dropdown-card-desc">Die WARP Wallbox ist die ideale Lösung lorem ipsum dolor sit amet, consetetur sadipscing elitr...</p>
@@ -93,7 +92,7 @@
                                     invisible opacity-0 translate-y-1
                                     group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
                                     transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
-                            <div class="bg-white flex items-stretch overflow-hidden rounded-[10px] shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)] text-black">
+                            <div class="bg-white flex items-stretch overflow-hidden rounded-[10px] shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)] text-black min-h-104">
 
                                 <!-- Column 1: Software links -->
                                 <div class="shrink-0 w-65.75 flex flex-col gap-4 p-7.5">
@@ -105,25 +104,13 @@
                                 </div>
 
                                 <!-- Column 2: Featured software card -->
-                                <div class="bg-background flex flex-col w-71 shrink-0 items-start justify-between p-5">
+                                <div class="bg-background flex flex-col w-71 shrink-0 justify-between p-5 overflow-hidden">
 
                                     <!-- Software preview -->
                                     <div class="flex flex-col gap-4.25">
-                                        <!--
-                                            Pot: white frame card (178px tall, overflow-hidden).
-                                            LinesExample (309×250px) is intentionally larger → clips to show
-                                            a zoomed "peek" of the dashboard. BgShine/Texture blobs omitted.
-                                        -->
-                                        <div class="h-44.5 w-full relative rounded-lg overflow-hidden bg-white shadow-[0px_3.937px_9.844px_0px_rgba(0,0,0,0.35)] border border-white/14">
-                                            <div class="flex items-center justify-center overflow-hidden rounded-[inherit] size-full p-1.25">
-                                                <!-- Dark dashboard card (LinesExample) -->
-                                                <div class="bg-[#171d22] h-62.5 w-77.25 relative rounded-[20px] overflow-hidden border border-white/50 shrink-0">
-                                                    <!-- Dashboard screenshot offset within dark card (Frame2) -->
-                                                    <div class="absolute bg-white/10 rounded-[10px] shadow-[0px_0px_16.35px_3.5px_rgba(0,0,0,0.5)] overflow-hidden h-68.875 w-106 left-9.875 top-22.25 p-1.25">
-                                                        <img src="./assets/images/dashboard-placeholder.png" alt="WARP Webinterface Dashboard" class="w-full h-auto rounded-[5px] pointer-events-none">
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="relative h-44.5 w-full rounded-2xl overflow-hidden pointer-events-none">
+                                            <img src="./assets/images/dashboard-navi.png" alt="WARP Webinterface Dashboard" class="w-full h-full object-cover">
+                                            <div class="absolute inset-0 rounded-2xl border-2 border-white/50 shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)]"></div>
                                         </div>
                                         <p class="dropdown-card-title">Webinterface</p>
                                         <p class="dropdown-card-desc">Das WARP-Webinterface ist die ideale Lösung lorem ipsum dolor sit amet, consetetur sadipscing elitr...</p>
@@ -155,7 +142,7 @@
                                     invisible opacity-0 translate-y-1
                                     group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
                                     transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
-                            <div class="bg-white flex items-stretch overflow-hidden rounded-[10px] shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)] text-black">
+                            <div class="bg-white flex items-stretch overflow-hidden rounded-[10px] shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)] text-black min-h-104">
 
                                 <!-- Column 1: Category links -->
                                 <div class="shrink-0 w-72 flex flex-col gap-4 p-7.5">
@@ -180,7 +167,7 @@
                                 </div>
 
                                 <!-- Column 3: Featured article -->
-                                <div class="bg-background flex flex-col w-71 shrink-0 items-start justify-between p-5">
+                                <div class="bg-background flex flex-col w-71 shrink-0 justify-between p-5">
 
                                     <!-- Article preview -->
                                     <div class="flex flex-col gap-4.25">
@@ -218,7 +205,7 @@
                                     invisible opacity-0 translate-y-1
                                     group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
                                     transition-all duration-200 pointer-events-none group-hover:pointer-events-auto">
-                            <div class="bg-white flex items-stretch overflow-hidden rounded-[10px] shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)] text-black">
+                            <div class="bg-white flex items-stretch overflow-hidden rounded-[10px] shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)] text-black min-h-104">
 
                                 <!-- Column 1: About links -->
                                 <div class="shrink-0 w-60.75 flex flex-col gap-4 p-7.5">
@@ -230,14 +217,13 @@
                                 </div>
 
                                 <!-- Column 2: Featured about card -->
-                                <div class="bg-background flex flex-col w-71 shrink-0 items-start justify-between p-5">
+                                <div class="bg-background flex flex-col w-71 shrink-0 justify-between p-5">
 
                                     <!-- About preview -->
                                     <div class="flex flex-col gap-4.25">
-                                        <!-- NoiseExample: dark card with logo (BgShine/Texture blobs omitted) -->
-                                        <div class="bg-[#171a22] h-44.5 w-full relative rounded-[10px] overflow-hidden border border-white/50">
-                                            <img src="./assets/images/logo4.png" alt="WARP by Tinkerforge"
-                                                class="absolute h-7.25 w-52 left-9.5 top-18.5 object-cover pointer-events-none">
+                                        <div class="relative h-44.5 w-full rounded-2xl overflow-hidden pointer-events-none">
+                                            <img src="./assets/images/logo-navi.png" alt="WARP by Tinkerforge" class="w-full h-full object-cover">
+                                            <div class="absolute inset-0 rounded-2xl border-2 border-white/50 shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)]"></div>
                                         </div>
                                         <p class="dropdown-card-title">WARP</p>
                                         <p class="dropdown-card-desc">Das Unternehmen WARP by Tinkerforge lorem ipsum dolor sit amet, consetetur sadipscing elitr...</p>
