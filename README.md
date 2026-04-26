@@ -90,3 +90,11 @@ Die aktuellen Scores spiegeln die ungebundene lokale Entwicklungsumgebung wider 
 ***\*** Warum ist der Mobile-Performance-Score noch nicht bei 100?**
 1. **Kein Caching:** Das Projekt läuft derzeit lokal/ohne optimierten Webserver. Sobald es live ist, wird Server-Caching die Ladezeiten drastisch verbessern.
 2. **Bildoptimierung:** Für die mobile Ansicht könnten noch Responsive Images implementiert werden. Dies ist aber erst möglichen wenn die Finalen Bilder zur Verfügung stehen.
+
+## © Copyright & Lizenz
+
+© 2026 coupling media GmbH. Alle Rechte vorbehalten.
+
+Dieses Projekt wurde im Auftrag der 
+**Tinkerforge GmbH** entwickelt. 
+Der Quellcode, das Design und alle zugehörigen Assets sind proprietär und unterliegen dem Urheberrecht. Eine unautorisierte Vervielfältigung, Weitergabe oder Nutzung außerhalb des vorgesehenen Verwendungszwecks ist strengstens untersagt.
