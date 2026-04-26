@@ -993,7 +993,7 @@
 
     <!-- Footer -->
     <footer id="footer" class="w-full bg-black">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 py-16">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 py-section">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
                 <!-- Left: Contact / Feedback Form -->
@@ -1017,8 +1017,8 @@
                             <!-- Name -->
                             <div class="flex flex-col gap-1">
                                 <div id="wrap-name" data-border="border-white/60" class="rounded-xl border border-white/60 px-4 py-3 transition-colors">
-                                    <label for="footer-name" class="block text-white/60 text-xs font-medium tracking-widest uppercase mb-1">Name</label>
-                                    <input type="text" id="footer-name" name="name" placeholder="Ihr Name" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none">
+                                    <label for="footer-name" class="block text-eyebrow text-white/60 mb-1">Name</label>
+                                    <input type="text" id="footer-name" name="name" placeholder="Ihr Name" class="w-full bg-transparent text-white text-nav placeholder:text-white/30 focus:outline-none">
                                 </div>
                                 <p id="error-name" class="text-red-400 text-xs pl-1 hidden">Bitte geben Sie Ihren Namen ein.</p>
                             </div>
@@ -1026,8 +1026,8 @@
                             <!-- E-Mail -->
                             <div class="flex flex-col gap-1">
                                 <div id="wrap-email" data-border="border-white/25" class="rounded-xl border border-white/25 px-4 py-3 transition-colors">
-                                    <label for="footer-email" class="block text-white/60 text-xs font-medium tracking-widest uppercase mb-1">E-Mail</label>
-                                    <input type="email" id="footer-email" name="email" placeholder="ihre@email.de" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none">
+                                    <label for="footer-email" class="block text-eyebrow text-white/60 mb-1">E-Mail</label>
+                                    <input type="email" id="footer-email" name="email" placeholder="ihre@email.de" class="w-full bg-transparent text-white text-nav placeholder:text-white/30 focus:outline-none">
                                 </div>
                                 <p id="error-email" class="text-red-400 text-xs pl-1 hidden">Bitte geben Sie eine gültige E-Mail-Adresse ein.</p>
                             </div>
@@ -1035,7 +1035,7 @@
                             <!-- Nachricht -->
                             <div class="flex flex-col gap-1">
                                 <div id="wrap-message" data-border="border-white/25" class="rounded-xl border border-white/25 px-4 py-3 transition-colors">
-                                    <label for="footer-message" class="block text-white/60 text-xs font-medium tracking-widest uppercase mb-1">Nachricht</label>
+                                    <label for="footer-message" class="block text-eyebrow text-white/60 mb-1">Nachricht</label>
                                     <textarea id="footer-message" name="message" placeholder="Ihre Nachricht..." rows="4" class="w-full bg-transparent text-white text-base placeholder:text-white/30 focus:outline-none resize-none"></textarea>
                                 </div>
                                 <p id="error-message" class="text-red-400 text-xs pl-1 hidden">Bitte geben Sie eine Nachricht ein.</p>
@@ -1059,13 +1059,13 @@
                                 Info
                             </span>
                             <nav class="flex flex-col gap-1.5">
-                                <a href="#" class="text-white text-base font-medium hover:text-white/70 transition-colors">Über uns</a>
-                                <a href="#" class="text-white text-base font-medium hover:text-white/70 transition-colors">Produkte</a>
-                                <a href="#" class="text-white text-base font-medium hover:text-white/70 transition-colors">Software</a>
-                                <a href="#" class="text-white text-base font-medium hover:text-white/70 transition-colors">Lösungen</a>
-                                <a href="#" class="text-white text-base font-medium hover:text-white/70 transition-colors">Dokumentation</a>
-                                <a href="#" class="text-white text-base font-medium hover:text-white/70 transition-colors">Downloads</a>
-                                <a href="#" class="text-white text-base font-medium hover:text-white/70 transition-colors">Shop</a>
+                                <a href="#" class="text-white text-nav font-medium hover:text-white/70 transition-colors">Über uns</a>
+                                <a href="#" class="text-white text-nav font-medium hover:text-white/70 transition-colors">Produkte</a>
+                                <a href="#" class="text-white text-nav font-medium hover:text-white/70 transition-colors">Software</a>
+                                <a href="#" class="text-white text-nav font-medium hover:text-white/70 transition-colors">Lösungen</a>
+                                <a href="#" class="text-white text-nav font-medium hover:text-white/70 transition-colors">Dokumentation</a>
+                                <a href="#" class="text-white text-nav font-medium hover:text-white/70 transition-colors">Downloads</a>
+                                <a href="#" class="text-white text-nav font-medium hover:text-white/70 transition-colors">Shop</a>
                             </nav>
                         </div>
                         <!-- Logo -->
@@ -1080,8 +1080,8 @@
                             Kontakt
                         </span>
                         <address class="flex flex-col gap-1.5 not-italic">
-                            <a href="tel:+4952078973000" class="text-white font-medium hover:text-white/70 transition-colors">+49 5207 897300-0</a>
-                            <a href="mailto:info@tinkerforge.com" class="text-white font-medium hover:text-white/70 transition-colors">info@tinkerforge.com</a>
+                            <a href="tel:+4952078973000" class="text-white text-nav font-medium hover:text-white/70 transition-colors">+49 5207 897300-0</a>
+                            <a href="mailto:info@tinkerforge.com" class="text-white text-nav font-medium hover:text-white/70 transition-colors">info@tinkerforge.com</a>
                         </address>
                     </div>
 
@@ -1093,7 +1093,7 @@
                         <form id="newsletter-form" novalidate>
                             <div class="flex flex-col gap-1">
                                 <div id="wrap-newsletter" data-border="border-white/13" class="flex items-center border border-white/13 rounded-xl overflow-hidden transition-colors">
-                                    <input type="email" id="newsletter-email" name="newsletter" placeholder="E-mail" class="flex-1 bg-transparent text-white/60 placeholder:text-white/60 text-sm px-5 py-4 focus:outline-none">
+                                    <input type="email" id="newsletter-email" name="newsletter" placeholder="E-mail" class="flex-1 bg-transparent text-white/60 placeholder:text-white/60 text-body px-5 py-4 focus:outline-none">
                                     <button id="newsletter-submit" type="submit" class="flex items-center gap-4 pr-5 py-4 text-white hover:text-[#1e55c3] transition-colors disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Newsletter abonnieren">
                                         <div class="h-6 w-px bg-white/13"></div>
                                         <svg viewBox="0 0 5 9" fill="none" class="size-3" aria-hidden="true">

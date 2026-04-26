@@ -148,7 +148,7 @@ html {
   );
 
   --background-image-gradient-light-blue-alt: linear-gradient(
-    to bottom,
+    to top,
     #2137B8 0%,
     #487DDF 50%,
     #58B5FF 100%
