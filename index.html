@@ -280,7 +280,7 @@
                         <span class="material-symbols-outlined text-[24px]!">shopping_bag</span>
                     </button>
 
-                    <button class="flex items-center justify-center hover:text-cyan-400 transition-colors ml-1">
+                    <button id="mobile-menu-btn" class="flex items-center justify-center hover:text-white/60 transition-colors ml-1" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
                         <span class="material-symbols-outlined text-[28px]!">menu</span>
                     </button>
 
@@ -289,6 +289,122 @@
             </div>
         </nav>
     </header>
+
+    <!-- Mobile Menu Backdrop -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 z-40 bg-black/60 opacity-0 invisible transition-opacity duration-300"
+        aria-hidden="true">
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <aside id="mobile-menu"
+        class="fixed top-0 right-0 h-dvh w-80 max-w-[85vw] z-50 bg-black translate-x-full transition-transform duration-300 ease-in-out flex flex-col overflow-hidden"
+        aria-label="Hauptnavigation">
+
+        <!-- Panel Header -->
+        <div class="flex items-center justify-between px-5 py-4 border-b border-white/10 shrink-0">
+            <img src="./assets/images/warp-logo.svg" loading="lazy" alt="WARP Charger Logo" class="h-6 w-auto">
+            <button id="mobile-menu-close"
+                class="text-white hover:text-white/60 transition-colors"
+                aria-label="Menü schließen">
+                <span class="material-symbols-outlined text-[24px]!">close</span>
+            </button>
+        </div>
+
+        <!-- Scrollable Nav -->
+        <nav class="flex flex-col overflow-y-auto flex-1 divide-y divide-white/10">
+
+            <!-- Produkte -->
+            <div>
+                <button class="mobile-accordion-btn w-full flex items-center justify-between px-5 py-4 text-white text-base font-medium text-left"
+                    data-target="accordion-produkte" aria-expanded="false">
+                    Produkte
+                    <span class="material-symbols-outlined expand-icon text-[20px]! transition-transform duration-200">expand_more</span>
+                </button>
+                <div id="accordion-produkte" class="overflow-hidden" style="max-height:0;transition:max-height .3s ease-in-out">
+                    <div class="flex flex-col gap-2 px-5 pb-5">
+                        <span class="text-eyebrow text-grey mt-1">Produkte</span>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">WARP3-Charger</a>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">WARP-Ladesäule</a>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">WARP Energy Manager 2.0</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Software -->
+            <div>
+                <button class="mobile-accordion-btn w-full flex items-center justify-between px-5 py-4 text-white text-base font-medium text-left"
+                    data-target="accordion-software" aria-expanded="false">
+                    Software
+                    <span class="material-symbols-outlined expand-icon text-[20px]! transition-transform duration-200">expand_more</span>
+                </button>
+                <div id="accordion-software" class="overflow-hidden" style="max-height:0;transition:max-height .3s ease-in-out">
+                    <div class="flex flex-col gap-2 px-5 pb-5">
+                        <span class="text-eyebrow text-grey mt-1">Software</span>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Webinterface</a>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Software</a>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Downloads</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lösungen -->
+            <div>
+                <button class="mobile-accordion-btn w-full flex items-center justify-between px-5 py-4 text-white text-base font-medium text-left"
+                    data-target="accordion-loesungen" aria-expanded="false">
+                    Lösungen
+                    <span class="material-symbols-outlined expand-icon text-[20px]! transition-transform duration-200">expand_more</span>
+                </button>
+                <div id="accordion-loesungen" class="overflow-hidden" style="max-height:0;transition:max-height .3s ease-in-out">
+                    <div class="flex flex-col gap-2 px-5 pb-5">
+                        <span class="text-eyebrow text-grey mt-1">Energieoptimierung</span>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">PV-Überschussladen</a>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Dynamische Strompreise</a>
+                        <span class="text-eyebrow text-grey mt-2">Compliance</span>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Ladelogbuch &amp; Abrechnung</a>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">§14a EnWG</a>
+                        <span class="text-eyebrow text-grey mt-2">Infrastruktur</span>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Lastmanagement</a>
+                        <span class="text-eyebrow text-grey mt-2">Zielgruppen</span>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Elektriker</a>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Architekten</a>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Informatiker</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Über uns -->
+            <div>
+                <button class="mobile-accordion-btn w-full flex items-center justify-between px-5 py-4 text-white text-base font-medium text-left"
+                    data-target="accordion-ueber-uns" aria-expanded="false">
+                    Über uns
+                    <span class="material-symbols-outlined expand-icon text-[20px]! transition-transform duration-200">expand_more</span>
+                </button>
+                <div id="accordion-ueber-uns" class="overflow-hidden" style="max-height:0;transition:max-height .3s ease-in-out">
+                    <div class="flex flex-col gap-2 px-5 pb-5">
+                        <span class="text-eyebrow text-grey mt-1">Über uns</span>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Unternehmen</a>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Philosophie</a>
+                        <a href="#" class="text-white/80 text-base hover:text-white transition-colors">Qualität</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dokumentation (external) -->
+            <a href="#" class="flex items-center justify-between px-5 py-4 text-white text-base font-medium hover:text-white/60 transition-colors">
+                Dokumentation
+                <span class="material-symbols-outlined text-[18px]!">open_in_new</span>
+            </a>
+
+        </nav>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col gap-3 p-5 border-t border-white/10 shrink-0">
+            <button type="button" class="btn-tertiary w-full justify-center">Downloads</button>
+            <button type="button" class="btn-secondary w-full justify-center">Shop</button>
+        </div>
+
+    </aside>
 
     <!-- Main Content -->
     <main class="flex flex-col items-center text-center">
@@ -1348,6 +1464,58 @@
             </div>
         </div>
     </footer>
+    <!-- Mobile Menu Script -->
+    <script>
+        (function () {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('mobile-menu-close');
+            const overlay = document.getElementById('mobile-menu-overlay');
+            const panel = document.getElementById('mobile-menu');
+
+            function openMenu() {
+                overlay.classList.remove('opacity-0', 'invisible');
+                overlay.classList.add('opacity-100');
+                panel.classList.remove('translate-x-full');
+                panel.classList.add('translate-x-0');
+                menuBtn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('opacity-0');
+                panel.classList.remove('translate-x-0');
+                panel.classList.add('translate-x-full');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+                setTimeout(() => overlay.classList.add('invisible'), 300);
+            }
+
+            menuBtn.addEventListener('click', openMenu);
+            closeBtn.addEventListener('click', closeMenu);
+            overlay.addEventListener('click', closeMenu);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeMenu();
+            });
+
+            document.querySelectorAll('.mobile-accordion-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var content = document.getElementById(btn.dataset.target);
+                    var icon = btn.querySelector('.expand-icon');
+                    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+                    btn.setAttribute('aria-expanded', String(!isOpen));
+                    if (isOpen) {
+                        content.style.maxHeight = '0';
+                        icon.style.transform = '';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        })();
+    </script>
     <!-- Scripts -->
     <script type="module" src="./src/scripts/animations.js"></script>
     <script type="module" src="./src/scripts/products.js"></script>
