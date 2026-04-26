@@ -387,7 +387,7 @@ html {
 
 /* --- PRODUCT CARD STYLING --- */
 .card-wrapper {
-    @apply relative z-0 aspect-auto w-75 shrink-0 rounded-[18px] bg-[rgba(255,255,255,0.1)] p-2.5 shadow-2xl md:aspect-square md:w-125;
+    @apply relative z-0 aspect-auto w-75 shrink-0 rounded-[18px] border border-white/20 bg-[rgba(255,255,255,0.1)] p-2.5 shadow-2xl backdrop-blur-md md:aspect-square md:w-125;
 }
 
 .card-inner {
@@ -426,7 +426,7 @@ html {
 .glass-frame {
     --_gf-pad: clamp(4px, 0.5vw, 10px);
     --_gf-radius: clamp(10px, 1.4vw, 22px);
-    @apply bg-white/10 shadow-normal;
+    @apply border border-white/20 bg-white/10 shadow-normal backdrop-blur-md;
     padding: var(--_gf-pad);
     border-radius: var(--_gf-radius);
 }
