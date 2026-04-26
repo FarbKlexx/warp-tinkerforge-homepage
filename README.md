@@ -13,7 +13,6 @@ Ein responsives, performantes und leichtgewichtiges Frontend-Projekt für die WA
 
 > [!IMPORTANT]  
 > **Hinweis zu Tailwind v4:** Dieses Projekt nutzt bereits Tailwind CSS Version 4. Im Gegensatz zu älteren Versionen gibt es hier keine `tailwind.config.js` mehr. Die gesamte Konfiguration und Definition der Design-Tokens findet direkt in der `input.css` statt.
-
 ---
 
 ## Lokales Setup & Entwicklung
@@ -39,6 +38,12 @@ Der Compiler überwacht nun die `index.html` (und alle weiteren konfigurierten H
 > [!IMPORTANT]  
 > **Hinweis für das Deployment**: Tailwind wird für den Live-Betrieb nicht mehr benötigt. Das gesamte finale Styling befindet sich fertig kompiliert und minifiziert in der `output.css`. Dementsprechen ist auch keine Node.js installation auf dem Live-Server nötig.
 
+### Code-Formatierung
+Dieses Projekt nutzt **Prettier**, um konsistente Coding-Standards über alle Dateien hinweg zu garantieren.
+Um alle relevanten Dateien im Projekt automatisch nach den definierten Regeln zu formatieren, führe folgenden Befehl aus:
+   ```bash
+   npm run format
+   ```
 ---
 
 ## Styling & Asset Management
