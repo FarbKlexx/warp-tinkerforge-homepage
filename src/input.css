@@ -352,6 +352,23 @@ html {
   @apply text-nav hover:text-white/60 transition-colors cursor-pointer;
 }
 
+/* --- DROPDOWN TYPOGRAPHY --- */
+.dropdown-link {
+  @apply font-medium text-black text-lg hover:text-grey transition-colors;
+}
+
+.dropdown-card-title {
+  @apply font-medium text-black text-base leading-6.5;
+}
+
+.dropdown-card-desc {
+  @apply font-medium text-grey text-base leading-6.5 line-clamp-2;
+}
+
+.dropdown-cta {
+  @apply flex items-center gap-1.25 font-medium text-black text-base leading-6.5 hover:text-grey transition-colors whitespace-nowrap;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
