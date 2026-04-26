@@ -1,3 +1,11 @@
+/*
+ * ==============================================================================
+ * Copyright (c) 2026 Tinkerforge GmbH. All rights reserved.
+ * * This source code was designed and developed by coupling media GmbH
+ * on behalf of Tinkerforge GmbH.
+ * ==============================================================================
+ */
+
 const list = document.querySelector('.news-card')?.parentElement;
 
 if (list) {

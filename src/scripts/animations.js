@@ -1,3 +1,10 @@
+/*
+ * ==============================================================================
+ * Copyright (c) 2026 Tinkerforge GmbH. All rights reserved.
+ * * This source code was designed and developed by coupling media GmbH
+ * on behalf of Tinkerforge GmbH.
+ * ==============================================================================
+ */
 document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {

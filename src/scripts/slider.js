@@ -1,3 +1,11 @@
+/*
+ * ==============================================================================
+ * Copyright (c) 2026 Tinkerforge GmbH. All rights reserved.
+ * * This source code was designed and developed by coupling media GmbH
+ * on behalf of Tinkerforge GmbH.
+ * ==============================================================================
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
     // Scroll Showcase mobile/tablet image slider
     const showcaseTrack = document.getElementById("showcase-slider-track");

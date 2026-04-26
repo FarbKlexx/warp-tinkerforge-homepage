@@ -1,3 +1,11 @@
+/*
+ * ==============================================================================
+ * Copyright (c) 2026 Tinkerforge GmbH. All rights reserved.
+ * * This source code was designed and developed by coupling media GmbH
+ * on behalf of Tinkerforge GmbH.
+ * ==============================================================================
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
     const scrollContainer = document.getElementById("products-container");
     const btnLeft = document.getElementById("scroll-products-left");
