@@ -289,7 +289,7 @@ html {
   ========================================= */
 
 @utility liquid-glass {
-    @apply backdrop-blur-md border border-white/20;
+    @apply border border-white/20 backdrop-blur-md;
 }
 
 @utility glow-layer-normal {
@@ -329,7 +329,7 @@ html {
 }
 
 .btn-secondary {
-    @apply z-10 cursor-pointer rounded-[5px] border-2 border-white bg-white px-4 py-2 text-btn text-black transition-all hover:opacity-90 active:scale-95 md:px-6 md:py-3 lg:px-6 lg:py-3;
+    @apply z-10 cursor-pointer rounded-[5px] border-2 border-white bg-white px-4 py-2 text-btn text-black transition-all hover:bg-gray-100 active:scale-95 md:px-6 md:py-3 lg:px-6 lg:py-3;
 }
 
 .btn-tertiary {
@@ -338,7 +338,7 @@ html {
 }
 
 .btn-tertiary::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: white;
@@ -411,7 +411,7 @@ html {
 
 /* --- PRODUCT CARD STYLING --- */
 .card-wrapper {
-    @apply liquid-glass relative z-0 aspect-auto w-75 shrink-0 rounded-[18px] bg-[rgba(255,255,255,0.1)] p-2.5 shadow-2xl md:aspect-square md:w-125;
+    @apply relative z-0 aspect-auto w-75 shrink-0 rounded-[18px] liquid-glass bg-[rgba(255,255,255,0.1)] p-2.5 shadow-2xl md:aspect-square md:w-125;
 }
 
 .card-inner {

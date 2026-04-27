@@ -17,6 +17,8 @@ on behalf of Tinkerforge GmbH.
             content="Entdecke die WARP3 Charger, Ladesäulen & Energy Manager. Open Source Ladelösungen Made in Germany!"
         />
 
+        <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -28,14 +30,14 @@ on behalf of Tinkerforge GmbH.
             rel="stylesheet"
         />
 
-        <link href="./assets/css/output.css" rel="stylesheet" />
+        <link href="./assets/css/output.min.css" rel="stylesheet" />
     </head>
 
     <body class="relative min-h-screen overflow-x-hidden bg-background">
         <!-- Navigation -->
         <header class="fixed top-6 z-50 flex w-full justify-center px-6">
             <nav
-                class="liquid-glass relative flex w-full max-w-6xl items-center justify-between rounded-[10px] px-2 py-2 shadow-xl"
+                class="relative flex w-full max-w-6xl items-center justify-between rounded-[10px] liquid-glass px-2 py-2 shadow-xl"
             >
                 <div
                     class="pointer-events-none absolute inset-0 z-0 rounded-[9px] bg-black/30"
@@ -46,19 +48,21 @@ on behalf of Tinkerforge GmbH.
                         src="./assets/images/warp-logo.svg"
                         loading="lazy"
                         alt="WARP Charger Logo"
-                        class="h-5 w-auto transition-all lg:h-8 drop-shadow-sm"
+                        class="h-5 w-auto drop-shadow-sm transition-all lg:h-8"
                     />
                 </div>
 
                 <div class="z-10 flex flex-row items-center gap-4 text-white lg:gap-8">
-                    <ul class="relative z-10 hidden gap-8 lg:flex [text-shadow:0_1px_4px_rgba(0,0,0,0.4)]">
+                    <ul
+                        class="relative z-10 hidden gap-8 [text-shadow:0_1px_4px_rgba(0,0,0,0.4)] lg:flex"
+                    >
                         <!-- Produkte — hover dropdown trigger -->
                         <li class="nav-item group relative">
                             Produkte
 
                             <!-- Produkte Dropdown -->
                             <div
-                                class="pointer-events-none invisible absolute top-full left-0 z-50 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+                                class="pointer-events-none invisible absolute top-full left-0 z-50 translate-y-1 pt-3 opacity-0 transition-all duration-200 text-shadow-none group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
                             >
                                 <div
                                     class="flex min-h-104 items-stretch overflow-hidden rounded-[10px] bg-white text-black shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)]"
@@ -128,7 +132,7 @@ on behalf of Tinkerforge GmbH.
 
                             <!-- Software Dropdown -->
                             <div
-                                class="pointer-events-none invisible absolute top-full left-0 z-50 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+                                class="pointer-events-none invisible absolute top-full left-0 z-50 translate-y-1 pt-3 opacity-0 transition-all duration-200 text-shadow-none group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
                             >
                                 <div
                                     class="flex min-h-104 items-stretch overflow-hidden rounded-[10px] bg-white text-black shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)]"
@@ -196,7 +200,7 @@ on behalf of Tinkerforge GmbH.
 
                             <!-- Lösungen Dropdown -->
                             <div
-                                class="pointer-events-none invisible absolute top-full left-1/2 z-50 -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+                                class="pointer-events-none invisible absolute top-full left-1/2 z-50 -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-200 text-shadow-none group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
                             >
                                 <div
                                     class="flex min-h-104 items-stretch overflow-hidden rounded-[10px] bg-white text-black shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)]"
@@ -282,7 +286,7 @@ on behalf of Tinkerforge GmbH.
 
                             <!-- Über uns Dropdown -->
                             <div
-                                class="pointer-events-none invisible absolute top-full right-0 z-50 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+                                class="pointer-events-none invisible absolute top-full right-0 z-50 translate-y-1 pt-3 opacity-0 transition-all duration-200 text-shadow-none group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
                             >
                                 <div
                                     class="flex min-h-104 items-stretch overflow-hidden rounded-[10px] bg-white text-black shadow-[0px_7.875px_19.687px_0px_rgba(0,0,0,0.35)]"
@@ -357,13 +361,21 @@ on behalf of Tinkerforge GmbH.
                         <button
                             class="flex items-center justify-center transition-colors hover:text-cyan-400"
                         >
-                            <span class="material-symbols-outlined text-[24px]! [text-shadow:0_1px_4px_rgba(0,0,0,0.4)]">download</span>
+                            <span
+                                class="material-symbols-outlined text-[24px]! [text-shadow:0_1px_4px_rgba(0,0,0,0.4)]"
+                            >
+                                download
+                            </span>
                         </button>
 
                         <button
                             class="flex items-center justify-center transition-colors hover:text-cyan-400"
                         >
-                            <span class="material-symbols-outlined text-[24px]! [text-shadow:0_1px_4px_rgba(0,0,0,0.4)]">shopping_bag</span>
+                            <span
+                                class="material-symbols-outlined text-[24px]! [text-shadow:0_1px_4px_rgba(0,0,0,0.4)]"
+                            >
+                                shopping_bag
+                            </span>
                         </button>
 
                         <button
@@ -373,7 +385,11 @@ on behalf of Tinkerforge GmbH.
                             aria-expanded="false"
                             aria-controls="mobile-menu"
                         >
-                            <span class="material-symbols-outlined text-[28px]! [text-shadow:0_1px_4px_rgba(0,0,0,0.4)]">menu</span>
+                            <span
+                                class="material-symbols-outlined text-[28px]! [text-shadow:0_1px_4px_rgba(0,0,0,0.4)]"
+                            >
+                                menu
+                            </span>
                         </button>
                     </div>
                 </div>
@@ -1673,7 +1689,7 @@ on behalf of Tinkerforge GmbH.
                     <!-- TinkerUnity badge -->
                     <div class="relative inline-flex shrink-0 rounded-[10px] bg-gradient-deep-blue">
                         <div
-                            class="relative flex flex-col items-start overflow-clip rounded-[inherit] p-1.25"
+                            class="relative flex flex-col items-start overflow-clip rounded-[inherit] p-2"
                         >
                             <img
                                 src="./assets/images/tinkerunity.svg"
@@ -2185,14 +2201,24 @@ on behalf of Tinkerforge GmbH.
                                     </a>
                                 </nav>
                             </div>
-                            <!-- Logo -->
-                            <div class="shrink-0">
-                                <img
-                                    src="./assets/images/warp-logo.svg"
-                                    loading="lazy"
-                                    alt="WARP Logo"
-                                    class="h-7 w-auto object-contain"
-                                />
+                            <!-- Logos -->
+                            <div class="flex flex-col gap-10">
+                                <div class="shrink-0">
+                                    <img
+                                        src="./assets/images/warp-logo-subtext.svg"
+                                        loading="lazy"
+                                        alt="WARP Logo"
+                                        class="h-12 w-auto object-contain"
+                                    />
+                                </div>
+                                <div class="shrink-0">
+                                    <img
+                                        src="./assets/images/tinkerforge-logo.svg"
+                                        loading="lazy"
+                                        alt="Tinkerforge Logo"
+                                        class="h-12 w-auto object-contain"
+                                    />
+                                </div>
                             </div>
                         </div>
 
