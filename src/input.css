@@ -460,3 +460,36 @@ html {
     /* inner radius always equals outer radius minus the glass border thickness */
     border-radius: calc(var(--_gf-radius) - var(--_gf-pad));
 }
+
+/* =========================================
+   Energy Flow Animation
+   ========================================= */
+
+.energy-unit-mover {
+    /* Opacity is still controlled by updateEnergyFlow via inline style */
+    transition: opacity 0.3s ease;
+}
+
+@keyframes glow-pulse-out {
+    0%   { opacity: 0; }
+    20%  { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@keyframes glow-pulse-in {
+    0%   { opacity: 0; }
+    50%  { opacity: 0; }
+    70%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.glow-source {
+    opacity: 0;
+    animation: glow-pulse-out var(--flow-speed, 2s) ease-in-out infinite;
+}
+
+.glow-target {
+    opacity: 0;
+    animation: glow-pulse-in var(--flow-speed, 2s) ease-in-out infinite;
+}

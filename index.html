@@ -762,7 +762,191 @@ on behalf of Tinkerforge GmbH.
                     </p>
                 </div>
 
-                <!-- Icon Boxes -->
+                <div class="flex items-center justify-center">
+                    <svg width="696" height="628" viewBox="0 0 696 628" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- === Horizontal track: solar → grid === -->
+                    <path
+                        id="flow-track-line"
+                        d="M594 110.5H111.5"
+                        stroke="#ccd8d5"
+                        stroke-width="2"
+                        stroke-opacity="0.15"
+                        stroke-linecap="round"
+                    />
+                    <path d="M594 110.5H111.5" stroke="#ccd8d5" stroke-width="5" fill="none"/>
+                    <!-- Motion path energy unit (SMIL animateMotion) -->
+                    <g id="main-flow-line" class="energy-unit-mover">
+                        <animateMotion
+                            id="energy-motion-anim"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            rotate="auto-reverse"
+                            keyPoints="0;1"
+                            keyTimes="0;1"
+                            calcMode="spline" keySplines="0.15 0 0.85 1"
+                        >
+                            <mpath href="#flow-track-line"/>
+                        </animateMotion>
+                        <g transform="scale(0.65)" style="filter: blur(2px) drop-shadow(0 0 32px rgba(5, 180, 255, 0.9)) drop-shadow(0 0 8px #5384FF);">
+                            <svg x="-147.5" y="-6.5" width="295" height="13" viewBox="0 0 295 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M295 7.29004L63.8535 13L60.6863 12.9922C44.9045 12.9125 29.9285 12.2395 18.7023 11.0967C6.72755 9.87766 -1.10837e-06 8.22395 0 6.5C0.000565474 4.77612 6.72805 3.12327 18.7023 1.9043C30.6769 0.685283 46.9186 3.27859e-07 63.8535 0L295 7.29004Z" fill="#05B4FF"/>
+                                <path d="M209 7.04695L51.507 11L49.349 10.9946C38.5959 10.9394 28.392 10.4735 20.7429 9.68233C12.5839 8.83838 8 7.6935 8 6.5C8.00039 5.30654 12.5842 4.16226 20.7429 3.31836C28.9019 2.47443 39.9683 2 51.507 2L209 7.04695Z" fill="white"/>
+                            </svg>
+                        </g>
+                    </g>
+                    <!-- === Vertical track: grid → battery === -->
+                    <path
+                        id="flow-track-line-vertical"
+                        d="M586 110L586 518"
+                        stroke="#ccd8d5"
+                        stroke-width="2"
+                        stroke-opacity="0.15"
+                        stroke-linecap="round"
+                    />
+                    <path d="M586 110L586 518" stroke="#ccd8d5" stroke-width="5" fill="none"/>
+                    <g id="vertical-flow-line" class="energy-unit-mover">
+                        <animateMotion
+                            id="energy-motion-anim-vertical"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            rotate="auto-reverse"
+                            keyPoints="0;1"
+                            keyTimes="0;1"
+                            calcMode="spline" keySplines="0.42 0 0.58 1"
+                        >
+                            <mpath href="#flow-track-line-vertical"/>
+                        </animateMotion>
+                        <g transform="scale(0.65)" style="filter: blur(1.5px) drop-shadow(0 0 8px rgba(5, 180, 255, 0.9)) drop-shadow(0 0 8px #5384FF);">
+                            <svg x="-147.5" y="-6.5" width="295" height="13" viewBox="0 0 295 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M295 7.29004L63.8535 13L60.6863 12.9922C44.9045 12.9125 29.9285 12.2395 18.7023 11.0967C6.72755 9.87766 -1.10837e-06 8.22395 0 6.5C0.000565474 4.77612 6.72805 3.12327 18.7023 1.9043C30.6769 0.685283 46.9186 3.27859e-07 63.8535 0L295 7.29004Z" fill="#05B4FF"/>
+                                <path d="M209 7.04695L51.507 11L49.349 10.9946C38.5959 10.9394 28.392 10.4735 20.7429 9.68233C12.5839 8.83838 8 7.6935 8 6.5C8.00039 5.30654 12.5842 4.16226 20.7429 3.31836C28.9019 2.47443 39.9683 2 51.507 2L209 7.04695Z" fill="white"/>
+                            </svg>
+                        </g>
+                    </g>
+                    <!-- === Icons (drawn on top of tracks) === -->
+                    <!-- Left: Solar panels -->
+                    <g class="node-background">
+                        <rect width="220" height="220" rx="110" fill="url(#base-dark)"/>
+                        <rect class="glow-target" width="220" height="220" rx="110" fill="url(#glow-solar)"/>
+                    </g>
+                    <g clip-path="url(#clip0_1002_363)">
+                    <path d="M71.4484 120.203L60.8723 133.498H79.6723C80.7436 133.498 81.7561 133.009 82.4227 132.171L91.9422 120.203H71.4463H71.4484Z" fill="white"/>
+                    <path d="M68.1466 120.203H47.6507L38.5253 131.676C37.9404 132.412 38.4645 133.498 39.4036 133.498H57.5727L68.1487 120.203H68.1466Z" fill="white"/>
+                    <path d="M83.3451 104.872L72.769 118.167H93.265L102.39 106.694C102.975 105.958 102.451 104.872 101.512 104.872H83.343H83.3451Z" fill="white"/>
+                    <path d="M80.0455 104.872H61.2455C60.1743 104.872 59.1617 105.361 58.4951 106.199L48.9756 118.167H69.4715L80.0476 104.872H80.0455Z" fill="white"/>
+                    <path d="M121.851 120.203L111.275 133.498H130.075C131.146 133.498 132.159 133.009 132.825 132.171L142.345 120.203H121.849H121.851Z" fill="white"/>
+                    <path d="M118.549 120.203H98.0532L88.9279 131.676C88.343 132.412 88.8671 133.498 89.8062 133.498H107.975L118.551 120.203H118.549Z" fill="white"/>
+                    <path d="M133.748 104.872L123.172 118.167H143.668L152.793 106.694C153.378 105.958 152.854 104.872 151.915 104.872H133.746H133.748Z" fill="white"/>
+                    <path d="M130.448 104.872H111.648C110.577 104.872 109.564 105.361 108.898 106.199L99.3781 118.167H119.874L130.45 104.872H130.448Z" fill="white"/>
+                    <path d="M97.678 86.8585L87.1019 100.153H105.902C106.973 100.153 107.986 99.665 108.652 98.8265L118.172 86.8585H97.6759H97.678Z" fill="white"/>
+                    <path d="M94.3783 86.8585H73.8823L64.757 98.3318C64.1721 99.0676 64.6962 100.153 65.6353 100.153H83.8043L94.3804 86.8585H94.3783Z" fill="white"/>
+                    <path d="M109.577 71.53L99.0009 84.825H119.497L128.622 73.3517C129.207 72.6159 128.683 71.53 127.744 71.53H109.575H109.577Z" fill="white"/>
+                    <path d="M106.277 71.53H87.4772C86.4059 71.53 85.3934 72.0184 84.7268 72.857L75.2073 84.825H95.7032L106.277 71.53Z" fill="white"/>
+                    <path d="M148.081 86.8585L137.505 100.153H156.305C157.376 100.153 158.388 99.665 159.055 98.8265L168.574 86.8585H148.078H148.081Z" fill="white"/>
+                    <path d="M144.781 86.8585H124.285L115.16 98.3318C114.575 99.0676 115.099 100.153 116.038 100.153H134.207L144.783 86.8585H144.781Z" fill="white"/>
+                    <path d="M159.979 71.53L149.403 84.825H169.899L179.025 73.3517C179.61 72.6159 179.085 71.53 178.146 71.53H159.977H159.979Z" fill="white"/>
+                    <path d="M156.68 71.53H137.88C136.809 71.53 135.796 72.0184 135.129 72.857L125.61 84.825H146.106L156.68 71.53Z" fill="white"/>
+                    <path d="M36.7938 137.691H130.37C132.806 137.691 135.112 136.594 136.651 134.703L183.207 75.4544" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M36.7938 146.898H183.207" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M170.362 91.8016V146.898" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M165.82 97.5813V146.898" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M145.412 123.555V146.898" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M141.144 146.898V128.989" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M58.3737 146.898V137.691" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M53.2146 146.898V137.691" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M165.82 126.85L153.04 113.847" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <!-- Top-right: Grid / meter -->
+                    <g class="node-background">
+                        <rect x="476" width="220" height="220" rx="110" fill="url(#base-dark)"/>
+                        <rect class="glow-source" x="476" width="220" height="220" rx="110" fill="url(#glow-grid)"/>
+                    </g>
+                    <g clip-path="url(#clip1_1002_363)">
+                    <path d="M554.321 152.424C554.321 151.331 553.431 150.445 552.334 150.445C551.236 150.445 550.347 151.331 550.347 152.424V160.018C550.347 161.111 551.236 161.997 552.334 161.997C553.431 161.997 554.321 161.111 554.321 160.018V152.424Z" fill="white"/>
+                    <path d="M561.211 152.424C561.211 151.331 560.321 150.445 559.224 150.445C558.126 150.445 557.237 151.331 557.237 152.424V160.018C557.237 161.111 558.126 161.997 559.224 161.997C560.321 161.997 561.211 161.111 561.211 160.018V152.424Z" fill="white"/>
+                    <path d="M568.102 152.424C568.102 151.331 567.213 150.445 566.115 150.445C565.018 150.445 564.128 151.331 564.128 152.424V160.018C564.128 161.111 565.018 161.997 566.115 161.997C567.213 161.997 568.102 161.111 568.102 160.018V152.424Z" fill="white"/>
+                    <path d="M574.99 152.424C574.99 151.331 574.1 150.445 573.003 150.445C571.905 150.445 571.016 151.331 571.016 152.424V160.018C571.016 161.111 571.905 161.997 573.003 161.997C574.1 161.997 574.99 161.111 574.99 160.018V152.424Z" fill="white"/>
+                    <path d="M581.881 152.424C581.881 151.331 580.991 150.445 579.893 150.445C578.796 150.445 577.906 151.331 577.906 152.424V160.018C577.906 161.111 578.796 161.997 579.893 161.997C580.991 161.997 581.881 161.111 581.881 160.018V152.424Z" fill="white"/>
+                    <path d="M600.348 151.867H612.484V157.645C612.484 160.049 610.525 162 608.111 162H604.721C602.307 162 600.348 160.049 600.348 157.645V151.867Z" fill="white"/>
+                    <path d="M617.654 151.867H629.79V157.645C629.79 160.049 627.831 162 625.417 162H622.027C619.613 162 617.654 160.049 617.654 157.645V151.867Z" fill="white"/>
+                    <path d="M634.317 58H537.683C532.888 58 529 61.8727 529 66.6479V144.856C529 149.631 532.888 153.503 537.683 153.503H634.317C639.112 153.503 643 149.631 643 144.856V66.6479C643 61.8727 639.112 58 634.317 58ZM541.124 107.731H534.027C533.155 107.731 532.447 107.026 532.447 106.157C532.447 105.289 533.155 104.584 534.027 104.584H541.124C541.996 104.584 542.704 105.289 542.704 106.157C542.704 107.026 541.996 107.731 541.124 107.731ZM541.124 100.331H534.027C533.155 100.331 532.447 99.6257 532.447 98.7575C532.447 97.8893 533.155 97.1838 534.027 97.1838H541.124C541.996 97.1838 542.704 97.8893 542.704 98.7575C542.704 99.6257 541.996 100.331 541.124 100.331ZM541.124 92.9285H534.027C533.155 92.9285 532.447 92.223 532.447 91.3548C532.447 90.4866 533.155 89.7812 534.027 89.7812H541.124C541.996 89.7812 542.704 90.4866 542.704 91.3548C542.704 92.223 541.996 92.9285 541.124 92.9285ZM542.704 83.9522C542.704 84.8204 541.996 85.5258 541.124 85.5258H534.027C533.155 85.5258 532.447 84.8204 532.447 83.9522C532.447 83.0839 533.155 82.3785 534.027 82.3785H541.124C541.996 82.3785 542.704 83.0839 542.704 83.9522ZM541.124 78.1231H534.027C533.155 78.1231 532.447 77.4177 532.447 76.5495C532.447 75.6813 533.155 74.9759 534.027 74.9759H541.124C541.996 74.9759 542.704 75.6813 542.704 76.5495C542.704 77.4177 541.996 78.1231 541.124 78.1231ZM639.16 144.293C639.16 147.195 636.797 149.545 633.887 149.545H551.774C548.861 149.545 546.501 147.192 546.501 144.293V67.4847C546.501 64.583 548.864 62.2325 551.774 62.2325H633.887C636.8 62.2325 639.16 64.5859 639.16 67.4847V144.293Z" fill="white"/>
+                    <path d="M610.404 86.9338C611.356 86.9338 612.133 87.7049 612.133 88.6559V123.664C612.133 124.613 611.359 125.387 610.404 125.387H575.254C574.302 125.387 573.525 124.615 573.525 123.664V88.6559C573.525 87.7077 574.299 86.9338 575.254 86.9338H610.404ZM610.404 82.9354H575.254C572.082 82.9354 569.51 85.4972 569.51 88.6559V123.664C569.51 126.823 572.082 129.385 575.254 129.385H610.404C613.576 129.385 616.148 126.823 616.148 123.664V88.6559C616.148 85.4972 613.576 82.9354 610.404 82.9354Z" fill="white"/>
+                    <path d="M611.947 84.1502L570.763 125.168L573.599 127.993L614.783 86.9754L611.947 84.1502Z" fill="white"/>
+                    <path d="M578.377 95.6759C579.28 94.3222 580.461 93.0912 581.858 93.0741C584.829 93.0427 586.228 98.529 589.184 98.489C590.128 98.4747 591.318 97.8978 592.686 95.8101" stroke="white" stroke-width="2.11294" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M595.691 115.513H607.078" stroke="white" stroke-width="2.11294" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M595.691 120.351H599.362" stroke="white" stroke-width="2.11294" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M603.407 120.351H607.078" stroke="white" stroke-width="2.11294" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M553.177 72.0599C554.92 72.0599 556.334 70.6521 556.334 68.9155C556.334 67.1789 554.92 65.7711 553.177 65.7711C551.433 65.7711 550.019 67.1789 550.019 68.9155C550.019 70.6521 551.433 72.0599 553.177 72.0599Z" fill="white"/>
+                    <path d="M632.198 72.0599C633.942 72.0599 635.356 70.6521 635.356 68.9155C635.356 67.1789 633.942 65.7711 632.198 65.7711C630.455 65.7711 629.041 67.1789 629.041 68.9155C629.041 70.6521 630.455 72.0599 632.198 72.0599Z" fill="white"/>
+                    <path d="M632.341 146.098C634.085 146.098 635.498 144.69 635.498 142.954C635.498 141.217 634.085 139.809 632.341 139.809C630.597 139.809 629.184 141.217 629.184 142.954C629.184 144.69 630.597 146.098 632.341 146.098Z" fill="white"/>
+                    <path d="M553.317 146.098C555.061 146.098 556.474 144.69 556.474 142.954C556.474 141.217 555.061 139.809 553.317 139.809C551.573 139.809 550.16 141.217 550.16 142.954C550.16 144.69 551.573 146.098 553.317 146.098Z" fill="white"/>
+                    </g>
+                    <!-- Bottom-right: Solar panels (battery) -->
+                    <g class="node-background">
+                        <rect x="476" y="408" width="220" height="220" rx="110" fill="url(#base-dark)"/>
+                        <rect class="glow-target" x="476" y="408" width="220" height="220" rx="110" fill="url(#glow-battery)"/>
+                    </g>
+                    <g clip-path="url(#clip2_1002_363)">
+                    <path d="M547.448 528.203L536.872 541.498H555.672C556.744 541.498 557.756 541.009 558.423 540.171L567.942 528.203H547.446H547.448Z" fill="white"/>
+                    <path d="M544.147 528.203H523.651L514.525 539.676C513.94 540.412 514.464 541.498 515.404 541.498H533.573L544.149 528.203H544.147Z" fill="white"/>
+                    <path d="M559.345 512.872L548.769 526.167H569.265L578.39 514.694C578.975 513.958 578.451 512.872 577.512 512.872H559.343H559.345Z" fill="white"/>
+                    <path d="M556.045 512.872H537.245C536.174 512.872 535.162 513.361 534.495 514.199L524.976 526.167H545.472L556.048 512.872H556.045Z" fill="white"/>
+                    <path d="M597.851 528.203L587.275 541.498H606.075C607.146 541.498 608.159 541.009 608.825 540.171L618.345 528.203H597.849H597.851Z" fill="white"/>
+                    <path d="M594.549 528.203H574.053L564.928 539.676C564.343 540.412 564.867 541.498 565.806 541.498H583.975L594.551 528.203H594.549Z" fill="white"/>
+                    <path d="M609.748 512.872L599.172 526.167H619.668L628.793 514.694C629.378 513.958 628.854 512.872 627.915 512.872H609.746H609.748Z" fill="white"/>
+                    <path d="M606.448 512.872H587.648C586.577 512.872 585.564 513.361 584.898 514.199L575.378 526.167H595.874L606.45 512.872H606.448Z" fill="white"/>
+                    <path d="M573.678 494.858L563.102 508.153H581.902C582.973 508.153 583.986 507.665 584.652 506.826L594.172 494.858H573.676H573.678Z" fill="white"/>
+                    <path d="M570.378 494.858H549.882L540.757 506.332C540.172 507.068 540.696 508.153 541.635 508.153H559.804L570.38 494.858H570.378Z" fill="white"/>
+                    <path d="M585.577 479.53L575.001 492.825H595.497L604.622 481.352C605.207 480.616 604.683 479.53 603.744 479.53H585.575H585.577Z" fill="white"/>
+                    <path d="M582.277 479.53H563.477C562.406 479.53 561.393 480.018 560.727 480.857L551.207 492.825H571.703L582.277 479.53Z" fill="white"/>
+                    <path d="M624.081 494.858L613.505 508.153H632.305C633.376 508.153 634.388 507.665 635.055 506.826L644.574 494.858H624.078H624.081Z" fill="white"/>
+                    <path d="M620.781 494.858H600.285L591.16 506.332C590.575 507.068 591.099 508.153 592.038 508.153H610.207L620.783 494.858H620.781Z" fill="white"/>
+                    <path d="M635.979 479.53L625.403 492.825H645.899L655.025 481.352C655.61 480.616 655.085 479.53 654.146 479.53H635.977H635.979Z" fill="white"/>
+                    <path d="M632.68 479.53H613.88C612.809 479.53 611.796 480.018 611.129 480.857L601.61 492.825H622.106L632.68 479.53Z" fill="white"/>
+                    <path d="M512.794 545.691H606.37C608.806 545.691 611.112 544.594 612.651 542.703L659.207 483.454" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M512.794 554.898H659.207" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M646.362 499.802V554.898" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M641.82 505.581V554.898" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M621.412 531.555V554.898" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M617.144 554.898V536.989" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M534.374 554.898V545.691" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M529.215 554.898V545.691" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M641.82 534.85L629.04 521.847" stroke="white" stroke-width="3.14452" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <linearGradient id="base-dark" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#051533" />
+                        <stop offset="100%" stop-color="#051533" />
+                    </linearGradient>
+                    <!-- Solar: unit arrives from the right → bright on right -->
+                    <linearGradient id="glow-solar" x1="0" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                        <stop offset="0%" stop-color="#051533"/>
+                        <stop offset="100%" stop-color="#0F3F99"/>
+                    </linearGradient>
+                    <!-- Grid: departs left (solar) + down (battery) → bright on lower-left (225°) -->
+                    <linearGradient id="glow-grid" x1="1" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                        <stop offset="0%" stop-color="#051533"/>
+                        <stop offset="100%" stop-color="#0F3F99"/>
+                    </linearGradient>
+                    <!-- Battery: unit arrives from the top → bright on top -->
+                    <linearGradient id="glow-battery" x1="0" y1="1" x2="0" y2="0" gradientUnits="objectBoundingBox">
+                        <stop offset="0%" stop-color="#051533"/>
+                        <stop offset="100%" stop-color="#0F3F99"/>
+                    </linearGradient>
+                    <clipPath id="clip0_1002_363">
+                    <rect width="149.557" height="76.94" fill="white" transform="translate(35.2213 71.53)"/>
+                    </clipPath>
+                    <clipPath id="clip1_1002_363">
+                    <rect width="114" height="104" fill="white" transform="translate(529 58)"/>
+                    </clipPath>
+                    <clipPath id="clip2_1002_363">
+                    <rect width="149.557" height="76.94" fill="white" transform="translate(511.221 479.53)"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                </div>
+
+                <!-- Icon Boxes 
                 <div
                     class="mx-auto flex w-full flex-row items-center justify-center gap-10 px-2 md:max-w-2xl md:gap-16 md:px-10 lg:max-w-5xl lg:gap-25 lg:px-20"
                 >
@@ -811,6 +995,7 @@ on behalf of Tinkerforge GmbH.
                         <p class="feature-text">Wechselrichter</p>
                     </div>
                 </div>
+                -->
             </section>
 
             <!-- Product Section -->
