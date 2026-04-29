@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+    MicroGraphRenderer — Minimal HTML Boilerplate
+    Ausgeliefert direkt vom ESP32-Webserver.
+    Keine externen Abhängigkeiten außer Tailwind CDN (kann durch lokales CSS ersetzt werden).
+-->
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energie-Fluss-Diagramm</title>
+
+    <!--
+        Tailwind CDN — auf dem ESP32 durch ein lokales output.min.css ersetzen:
+        <link rel="stylesheet" href="./assets/css/output.min.css">
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-[#05050a] flex items-center justify-center p-8">
+
+    <!--
+        Container für das SVG-Diagramm.
+        max-w-2xl begrenzt die maximale Breite — das SVG skaliert fluid darin.
+        Das SVG selbst hat w-full h-auto und rendert intern mit einer fixen viewBox.
+        Kein JS-Resize-Listener nötig.
+    -->
+    <div id="energy-diagram" class="w-full max-w-2xl"></div>
+
+    <!-- Renderer-Klasse -->
+    <script src="./src/scripts/micro-graph-renderer.js"></script>
+
+    <script>
+        // =====================================================================
+        // Graph aus config.json laden und rendern
+        // Konfiguration liegt in assets/images/energy-diagram/config.json.
+        // Auf dem ESP32 kann dies auch ein API-Endpunkt sein: '/api/config'
+        // =====================================================================
+
+        MicroGraphRenderer.create(
+            './memory/example.config.json',
+            'energy-diagram'
+        ).then(renderer => {
+
+            renderer.render();
+
+            // =================================================================
+            // Initiale Sichtbarkeit anwenden.
+            // Aktive Kanten laufen mit der Geschwindigkeit aus edge.speed in
+            // config.json. Kein watts-Override hier — sonst würde der Wert aus
+            // der Config sofort überschrieben.
+            // =================================================================
+
+            renderer.applyConfig({
+                nodes: {
+                    n01: { visible: true },
+                    n02: { visible: true },
+                    n03: { visible: true },
+                    n04: { visible: true },
+                },
+                flows: {
+                    e02: { watts: null },   // Wärmepumpe nicht verbunden → ausgeblendet
+                }
+            });
+
+            // =================================================================
+            // Live-Update-Beispiel (simuliert ein Polling vom ESP32)
+            // In der echten Anwendung: fetch('/api/live').then(d => renderer.applyConfig(d))
+            // =================================================================
+
+            setInterval(() => {
+                const solar  = 1000 + Math.random() * 4000;
+                const charge = 500  + Math.random() * 1500;
+
+                renderer.updateFlow('e01', solar);
+                renderer.updateFlow('e03', charge);
+            }, 4000);
+
+        }).catch(err => {
+            console.error('MicroGraphRenderer failed to initialize:', err);
+        });
+    </script>
+
+</body>
+</html>

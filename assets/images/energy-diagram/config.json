@@ -1,0 +1,57 @@
+{
+    "grid": {
+        "width": "3",
+        "height": "3"
+    },
+    "graph": {
+        "nodes": [
+            {
+                "id": "n01",
+                "position": "(1,1)",
+                "label": "WARP4-Wallbox",
+                "icon": "warp4-wallbox.svg"
+            },
+            {
+                "id": "n02",
+                "position": "(0,1)",
+                "label": "Wärmepumpe",
+                "icon": "waermepumpe.svg"
+            },
+            {
+                "id": "n03",
+                "position": "(1,0)",
+                "label": "Stromnetz",
+                "icon": "stromnetz.svg"
+            },
+            {
+                "id": "n04",
+                "position": "(1,2)",
+                "label": "Auto",
+                "icon": "auto.svg"
+            }
+        ],
+        "edges": [
+            {
+                "id": "e01",
+                "source": "n03",
+                "target": "n01",
+                "status": "active",
+                "speed": 0.7
+            },
+            {
+                "id": "e02",
+                "source": "n01",
+                "target": "n02",
+                "status": "inactive",
+                "speed": 0.5
+            },
+            {
+                "id": "e03",
+                "source": "n01",
+                "target": "n04",
+                "status": "active",
+                "speed": 0.4
+            }
+        ]
+    }
+}
