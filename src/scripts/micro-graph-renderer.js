@@ -91,9 +91,6 @@ class MicroGraphRenderer {
         /** Vorberechnete Node-Mittelpunkte: nodeId → { x, y, node } */
         this._nodeMap = {};
 
-        /** Referenzen auf <animateMotion>-Elemente: edgeId → SVGAnimateMotionElement */
-        this._animMap = {};
-
         /** viewBox-String der energy-unit.svg (z.B. "0 0 295 13"), null = Fallback */
         this._unitVB    = null;
 
@@ -320,7 +317,7 @@ class MicroGraphRenderer {
         vfx.appendChild(unitSvg);
         mover.appendChild(vfx);
 
-        return { mover, anim };
+        return mover;
     }
 
 
@@ -416,9 +413,7 @@ class MicroGraphRenderer {
             }));
 
             if (active) {
-                const { mover, anim } = this._buildMover(edge, trackId, edge.speed);
-                this._animMap[edge.id] = anim;
-                group.appendChild(mover);
+                group.appendChild(this._buildMover(edge, trackId, edge.speed));
             }
 
             edgeLayer.appendChild(group);
@@ -492,30 +487,6 @@ class MicroGraphRenderer {
     // ==========================================================================
 
     /**
-     * Aktualisiert Geschwindigkeit und Richtung einer Kante.
-     * dur = clamp(5000 / |watts|, 0.3, 6) Sekunden
-     *
-     * @param {string} edgeId
-     * @param {number} watts  – 0 = pausiert, negativ = Rückwärts
-     */
-    updateFlow(edgeId, watts) {
-        const anim  = this._animMap[edgeId];
-        const mover = document.getElementById(`mg-mover-${edgeId}`);
-        if (!anim) return;
-
-        if (watts === 0) {
-            if (mover) mover.setAttribute('opacity', '0.15');
-            return;
-        }
-
-        if (mover) mover.setAttribute('opacity', '1');
-
-        const dur = Math.max(0.3, Math.min(5000 / Math.abs(watts), 6)).toFixed(2);
-        anim.setAttribute('dur',       `${dur}s`);
-        anim.setAttribute('keyPoints', watts < 0 ? '1;0' : '0;1');
-    }
-
-    /**
      * Blendet einen Node ein oder aus.
      * @param {string}  nodeId
      * @param {boolean} visible
@@ -536,27 +507,19 @@ class MicroGraphRenderer {
     }
 
     /**
-     * Wendet eine vollständige Gerätekonfiguration an.
+     * Wendet Sichtbarkeitsänderungen für Nodes und Kanten an.
+     * Geschwindigkeiten kommen ausschließlich aus der config.json.
      *
      * @param {Object} config
      * @param {Object} [config.nodes]  – { "n01": { visible: true }, ... }
-     * @param {Object} [config.flows]  – { "e01": { watts: 3200 }, "e02": { watts: null }, ... }
-     *                                    watts: null  → ausblenden
-     *                                    watts: 0     → sichtbar, pausiert
-     *                                    watts: >0    → Vorwärts
-     *                                    watts: <0    → Rückwärts
+     * @param {Object} [config.flows]  – { "e01": { visible: true }, "e02": { visible: false }, ... }
      */
     applyConfig(config) {
         for (const [id, opts] of Object.entries(config.nodes ?? {})) {
             this.setNodeVisible(id, opts.visible ?? true);
         }
         for (const [id, opts] of Object.entries(config.flows ?? {})) {
-            if (opts.watts == null) {
-                this.setEdgeVisible(id, false);
-            } else {
-                this.setEdgeVisible(id, true);
-                this.updateFlow(id, opts.watts);
-            }
+            this.setEdgeVisible(id, opts.visible ?? true);
         }
     }
 }
