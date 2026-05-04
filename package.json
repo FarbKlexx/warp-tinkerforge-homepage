@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/output.min.css --watch --minify",
+    "dev:diagram": "npx @tailwindcss/cli -i ./src/diagram.css -o ./assets/css/diagram.min.css --watch --minify",
     "format": "prettier --write \"**/*.{html,css,js}\""
   },
   "repository": {

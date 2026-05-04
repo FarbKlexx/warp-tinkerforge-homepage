@@ -96,6 +96,7 @@ class MicroGraphRenderer {
 
         /** Geklonte <path>-Elemente aus energy-unit.svg, null = Fallback */
         this._unitPaths = null;
+
     }
 
 
@@ -276,7 +277,7 @@ class MicroGraphRenderer {
         const W = MicroGraphRenderer.UNIT_W;
         const H = MicroGraphRenderer.UNIT_H;
 
-        const mover = this._el('g', { id: `mg-mover-${edge.id}` });
+        const mover = this._el('g', { id: `mg-mover-${edge.id}`, class: 'energy-unit-mover' });
 
         const anim = this._el('animateMotion', {
             id:          `mg-anim-${edge.id}`,
@@ -285,8 +286,7 @@ class MicroGraphRenderer {
             rotate:      'auto-reverse',
             keyPoints:   '0;1',
             keyTimes:    '0;1',
-            calcMode:    'spline',
-            keySplines:  '0.42 0 0.58 1',
+            calcMode:    'linear',
         });
         const mpath = this._el('mpath');
         mpath.setAttribute('href', `#${trackPathId}`);
@@ -328,17 +328,27 @@ class MicroGraphRenderer {
     _buildDefs(svg) {
         const defs = this._el('defs');
 
-        const baseDark = this._el('linearGradient', { id: 'mg-base-dark' });
-        for (const pct of ['0%', '100%']) {
-            baseDark.appendChild(this._el('stop', { offset: pct, 'stop-color': '#051533' }));
-        }
-        defs.appendChild(baseDark);
+        // feFlood+feComposite: flood target color, mask by source alpha.
+        // Works reliably on <image> elements regardless of original fill color.
+        const iconColor = getComputedStyle(document.documentElement)
+            .getPropertyValue('--color-dark-primary').trim() || '#051533';
+        const iconFilter = this._el('filter', { id: 'mg-icon-color' });
+        const flood = this._el('feFlood', { 'flood-color': iconColor, result: 'color' });
+        const composite = this._el('feComposite', { in: 'color', in2: 'SourceGraphic', operator: 'in' });
+        iconFilter.appendChild(flood);
+        iconFilter.appendChild(composite);
+        defs.appendChild(iconFilter);
+
+        const R = MicroGraphRenderer.R;
+        const D = R * 2;
+        // rx proportional to node-base.svg (rx=15 on a 220-wide viewBox)
+        const rx = Math.round(15 / 220 * D);
 
         this.config.graph.nodes.forEach(node => {
             const { x, y } = this._nodeMap[node.id];
             const clip = this._el('clipPath', { id: `mg-clip-${node.id}` });
-            clip.appendChild(this._el('circle', {
-                cx: x, cy: y, r: MicroGraphRenderer.R,
+            clip.appendChild(this._el('rect', {
+                x: x - R, y: y - R, width: D, height: D, rx,
             }));
             defs.appendChild(clip);
         });
@@ -390,13 +400,17 @@ class MicroGraphRenderer {
             const tgt     = this._nodeMap[edge.target];
             const pathD   = this.getBezierPath(src.x, src.y, tgt.x, tgt.y);
             const trackId = `mg-track-${edge.id}`;
-            const active  = edge.status === 'active';
+            const active   = edge.status === 'active';
+            const inactive = edge.status === 'inactive';
 
-            const group = this._el('g', { id: `mg-edge-${edge.id}` });
+            const group = this._el('g', {
+                id:      `mg-edge-${edge.id}`,
+                opacity: inactive ? '0.5' : '1',
+            });
 
             group.appendChild(this._el('path', {
                 d:                pathD,
-                stroke:           '#ccd8d5',
+                class:            'mg-track',
                 'stroke-width':   String(MicroGraphRenderer.TRACK_W * 0.6),
                 'stroke-opacity': '0.15',
                 'stroke-linecap': 'round',
@@ -406,7 +420,7 @@ class MicroGraphRenderer {
             group.appendChild(this._el('path', {
                 id:               trackId,
                 d:                pathD,
-                stroke:           '#ccd8d5',
+                class:            'mg-track',
                 'stroke-width':   String(MicroGraphRenderer.TRACK_W),
                 'stroke-linecap': 'round',
                 fill:             'none',
@@ -429,16 +443,13 @@ class MicroGraphRenderer {
             const R        = MicroGraphRenderer.R;
             const group    = this._el('g', { id: `mg-node-${node.id}` });
 
-            group.appendChild(this._el('circle', {
-                cx: x, cy: y, r: R,
-                fill: 'url(#mg-base-dark)',
-            }));
-
-            group.appendChild(this._el('circle', {
-                cx: x, cy: y, r: R,
-                fill:           'none',
-                stroke:         'rgba(255,255,255,0.07)',
-                'stroke-width': '10',
+            group.appendChild(this._el('image', {
+                href:                `${MicroGraphRenderer.ICON_PATH}node-base.svg`,
+                x:                   x - R,
+                y:                   y - R,
+                width:               R * 2,
+                height:              R * 2,
+                preserveAspectRatio: 'xMidYMid meet',
             }));
 
             if (node.icon) {
@@ -451,8 +462,8 @@ class MicroGraphRenderer {
                     height:              s,
                     preserveAspectRatio: 'xMidYMid meet',
                     'clip-path':         `url(#mg-clip-${node.id})`,
+                    filter:              'url(#mg-icon-color)',
                 });
-                // If the icon file is missing, silently remove the element
                 imgEl.addEventListener('error', () => imgEl.remove());
                 group.appendChild(imgEl);
             }
@@ -465,7 +476,7 @@ class MicroGraphRenderer {
                 'font-size':      String(MicroGraphRenderer.LABEL_FS),
                 'font-weight':    '600',
                 'letter-spacing': '1',
-                fill:             'rgba(255,255,255,0.75)',
+                class:            'mg-label',
             });
             label.textContent = node.label;
             group.appendChild(label);

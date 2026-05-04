@@ -1,0 +1,35 @@
+/*
+ * ==============================================================================
+ * Copyright (c) 2026 coupling media GmbH. All rights reserved.
+ * * This source code was designed and developed by coupling media GmbH
+ * on behalf of Tinkerforge GmbH.
+ * ==============================================================================
+ */
+
+/* =========================================
+   Tailwind — scoped to the energy diagram
+   ========================================= */
+
+@import "tailwindcss" source(none);
+
+@source "../energy-diagram-demo.html";
+@source "../src/scripts/micro-graph-renderer.js";
+
+@theme {
+    --color-background: #f3f3f3;
+    --color-grey: #6c757d;
+    --color-dark-primary: #051533;
+    --color-track: rgba(94, 94, 94, 0.8);
+}
+
+/* =========================================
+   Energy Diagram
+   ========================================= */
+
+.mg-label {
+    fill: var(--color-grey);
+}
+
+.mg-track {
+    stroke: var(--color-track);
+}
