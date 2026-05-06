@@ -86,8 +86,13 @@ class MicroGraphRenderer {
     getBezierPath(x1, y1, x2, y2) {
         const dx = x2 - x1;
         const dy = y2 - y1;
-        let cx1, cy1, cx2, cy2;
 
+        // Diagonal connection — straight line so the energy unit travels without rotation artefacts
+        if (dx !== 0 && dy !== 0) {
+            return `M ${x1} ${y1} L ${x2} ${y2}`;
+        }
+
+        let cx1, cy1, cx2, cy2;
         if (Math.abs(dx) >= Math.abs(dy)) {
             cx1 = x1 + dx * 0.5;  cy1 = y1;
             cx2 = x2 - dx * 0.5;  cy2 = y2;

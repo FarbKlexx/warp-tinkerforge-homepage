@@ -36,12 +36,12 @@
     <script>
         // =====================================================================
         // Graph aus config.json laden und rendern
-        // Konfiguration liegt in assets/images/energy-diagram/config.json.
+        // Konfiguration liegt in diagram-config.json (Projektwurzel).
         // Auf dem ESP32 kann dies auch ein API-Endpunkt sein: '/api/config'
         // =====================================================================
 
         MicroGraphRenderer.create(
-            './memory/example.config.json',
+            './diagram-config.json',
             'energy-diagram'
         ).then(renderer => {
 

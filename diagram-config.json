@@ -19,7 +19,7 @@
             },
             {
                 "id": "n03",
-                "position": "(1,0)",
+                "position": "(0,0)",
                 "label": "Stromnetz",
                 "icon": "stromnetz.svg"
             },
@@ -43,14 +43,14 @@
                 "source": "n01",
                 "target": "n02",
                 "status": "inactive",
-                "speed": 0.5
+                "speed": 0.7
             },
             {
                 "id": "e03",
                 "source": "n01",
                 "target": "n04",
                 "status": "active",
-                "speed": 0.4
+                "speed": 0.7
             }
         ]
     }
