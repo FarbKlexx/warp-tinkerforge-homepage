@@ -19,6 +19,8 @@
     --color-grey: #6c757d;
     --color-dark-primary: #051533;
     --color-track: rgba(94, 94, 94, 0.8);
+    --background-image-gradient-light-blue: linear-gradient(to bottom, #8aaee9 0%, #233153 100%);
+    --background-image-gradient-deep-blue: linear-gradient(to bottom, #364578 0%, #0d121f 100%);
 }
 
 /* =========================================
@@ -59,8 +61,6 @@
        multiplied by ~4.5 while keeping the rgba colors unchanged. */
     background: rgba(0, 0, 0, 0.2);
     border: 6px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(54px);
-    -webkit-backdrop-filter: blur(54px);
     box-shadow: 0 112px 224px -54px rgba(0, 0, 0, 0.25);
 }
 

@@ -1,5 +1,5 @@
 /*
- * MicroGraphRenderer — Zero-Dependency SVG Energy Flow Graph
+ * MicroGraphRenderer - Zero-Dependency SVG Energy Flow Graph
  *
  * Designed for ESP32 web server deployment (240 MHz, 520 kB RAM).
  * No external dependencies. Single render pass, fluid scaling via CSS.
