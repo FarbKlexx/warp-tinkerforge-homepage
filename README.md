@@ -32,7 +32,11 @@ Das Projekt nutzt die Tailwind CLI, um Änderungen in Echtzeit zu kompilieren. E
    ```bash
    npm run dev
    ```
-
+4. Für die Entwicklung des SVG-Animation-Diagrams:
+   ```bash
+   npm run dev:diagram
+   ```
+   
 Der Compiler überwacht nun die `index.html` (und alle weiteren konfigurierten HTML-Dateien) sowie die `input.css`. Änderungen werden in Echtzeit als natives CSS in die `output.css` geschrieben.
 
 > [!IMPORTANT]  

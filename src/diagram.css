@@ -12,7 +12,6 @@
 
 @import "tailwindcss" source(none);
 
-@source "../energy-diagram-demo.html";
 @source "../src/scripts/micro-graph-renderer.js";
 
 @theme {
@@ -26,10 +25,23 @@
    Energy Diagram
    ========================================= */
 
+:root {
+    --mg-vfx-scale: 0.65;
+    --mg-vfx-blur: 2px;
+    --mg-vfx-glow-near-spread: 20px;
+    --mg-vfx-glow-near-color: rgba(5, 180, 255, 0.9);
+    --mg-vfx-glow-far-spread: 40px;
+    --mg-vfx-glow-far-color: #5384FF;
+}
+
 .mg-label {
     fill: var(--color-grey);
 }
 
 .mg-track {
     stroke: var(--color-track);
+}
+
+.mg-track-ghost {
+    stroke-opacity: 0.15;
 }
