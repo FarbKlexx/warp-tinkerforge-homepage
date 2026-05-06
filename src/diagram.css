@@ -45,3 +45,40 @@
 .mg-track-ghost {
     stroke-opacity: 0.15;
 }
+
+.mg-node-outer {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /* % resolves against the foreignObject's SVG-unit dimensions — scale-independent */
+    padding: 2%;
+    border-radius: 10%;
+    /* Exact same colors as .card-wrapper on the product slider.
+       px values are SVG user units; at the 3×3 / max-w-2xl default scale
+       (~0.22 px/unit) a value of 1 SVG unit is sub-pixel, so sizes are
+       multiplied by ~4.5 while keeping the rgba colors unchanged. */
+    background: rgba(0, 0, 0, 0.2);
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(54px);
+    -webkit-backdrop-filter: blur(54px);
+    box-shadow: 0 112px 224px -54px rgba(0, 0, 0, 0.25);
+}
+
+.mg-node-inner {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 8%;
+    background: linear-gradient(to top, #f3f3f3 0%, #ffffff 40%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mg-node-icon {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    filter: brightness(0);
+}
