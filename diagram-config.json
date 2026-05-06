@@ -7,48 +7,122 @@
         "nodes": [
             {
                 "id": "n01",
-                "position": "(1,1)",
-                "label": "WARP4-Wallbox",
-                "icon": "warp4-wallbox.svg"
+                "position": "(0,0)",
+                "label": "Stromnetz",
+                "icon": "stromnetz.svg",
+                "highlighted": "false"
             },
             {
                 "id": "n02",
-                "position": "(0,1)",
-                "label": "Wärmepumpe",
-                "icon": "waermepumpe.svg"
+                "position": "(1,0)",
+                "label": "Stromzähler",
+                "icon": "electric-meter.svg",
+                "highlighted": "false"
             },
             {
                 "id": "n03",
-                "position": "(0,0)",
-                "label": "Stromnetz",
-                "icon": "stromnetz.svg"
+                "position": "(2,0)",
+                "label": "Solar-Panele",
+                "icon": "solar-panel.svg",
+                "highlighted": "false"
             },
             {
                 "id": "n04",
+                "position": "(0,1)",
+                "label": "Batterie",
+                "icon": "battery.svg",
+                "highlighted": "false"
+            },
+            {
+                "id": "n05",
+                "position": "(1,1)",
+                "label": "WARP4-Wallbox",
+                "icon": "warp4-wallbox.svg",
+                "highlighted": "true"
+            },
+            {
+                "id": "n06",
+                "position": "(2,1)",
+                "label": "Wärmepumpe",
+                "icon": "waermepumpe.svg",
+                "highlighted": "false"
+            },
+            {
+                "id": "n07",
+                "position": "(0,2)",
+                "label": "E-Auto",
+                "icon": "auto.svg",
+                "highlighted": "false"
+            },
+            {
+                "id": "n08",
                 "position": "(1,2)",
-                "label": "Auto",
-                "icon": "auto.svg"
+                "label": "E-Auto",
+                "icon": "auto.svg",
+                "highlighted": "false"
+            },
+            {
+                "id": "n09",
+                "position": "(2,2)",
+                "label": "WARP4-Wallbox",
+                "icon": "warp4-wallbox.svg",
+                "highlighted": "false"
             }
         ],
         "edges": [
             {
                 "id": "e01",
-                "source": "n03",
-                "target": "n01",
+                "source": "n01",
+                "target": "n02",
                 "status": "active",
                 "speed": 0.7
             },
             {
                 "id": "e02",
-                "source": "n01",
-                "target": "n02",
-                "status": "inactive",
+                "source": "n02",
+                "target": "n05",
+                "status": "active",
                 "speed": 0.7
             },
             {
                 "id": "e03",
-                "source": "n01",
+                "source": "n05",
                 "target": "n04",
+                "status": "active",
+                "speed": 0.7
+            },
+            {
+                "id": "e04",
+                "source": "n05",
+                "target": "n06",
+                "status": "active",
+                "speed": 0.7
+            },
+            {
+                "id": "e05",
+                "source": "n06",
+                "target": "n03",
+                "status": "active",
+                "speed": 0.7
+            },
+            {
+                "id": "e06",
+                "source": "n05",
+                "target": "n07",
+                "status": "active",
+                "speed": 0.7
+            },
+            {
+                "id": "e07",
+                "source": "n05",
+                "target": "n09",
+                "status": "active",
+                "speed": 0.7
+            },
+            {
+                "id": "e08",
+                "source": "n09",
+                "target": "n08",
                 "status": "active",
                 "speed": 0.7
             }
