@@ -471,17 +471,33 @@ html {
 }
 
 @keyframes glow-pulse-out {
-    0%   { opacity: 0; }
-    20%  { opacity: 1; }
-    50%  { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes glow-pulse-in {
-    0%   { opacity: 0; }
-    50%  { opacity: 0; }
-    70%  { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .glow-source {

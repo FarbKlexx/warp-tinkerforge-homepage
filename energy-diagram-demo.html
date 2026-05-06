@@ -1,99 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
     MicroGraphRenderer — Minimal HTML Boilerplate
     Ausgeliefert direkt vom ESP32-Webserver.
     Keine externen Abhängigkeiten.
 -->
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Energie-Fluss-Diagramm</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Energie-Fluss-Diagramm</title>
 
-    <link rel="stylesheet" href="./assets/css/diagram.min.css">
-</head>
+        <link rel="stylesheet" href="./assets/css/diagram.min.css" />
+    </head>
 
-<body class="min-h-screen bg-background flex items-center justify-center">
-
-    <div class="relative flex w-full items-center justify-center p-8"
-         style="background: url('./assets/images/energy-diagram/background-grid.svg') center / cover no-repeat;">
-
-        <!--
+    <body class="flex min-h-screen items-center justify-center bg-background">
+        <div
+            class="relative flex w-full items-center justify-center p-8"
+            style="
+                background: url(&quot;./assets/images/energy-diagram/background-grid.svg&quot;)
+                    center / cover no-repeat;
+            "
+        >
+            <!--
             Highlighted-Grid — unsichtbar bis die Maske greift.
             mask-image wird per rAF auf die aktuelle Energy-Unit-Position gesetzt.
         -->
-        <div id="grid-highlight"
-             class="absolute inset-0 pointer-events-none"
-             style="z-index: 0; background: url('./assets/images/energy-diagram/background-grid-highlighted.svg') center / cover no-repeat;"
-             aria-hidden="true"></div>
+            <div
+                id="grid-highlight"
+                class="pointer-events-none absolute inset-0"
+                style="
+                    z-index: 0;
+                    background: url(&quot;./assets/images/energy-diagram/background-grid-highlighted.svg&quot;)
+                        center / cover no-repeat;
+                "
+                aria-hidden="true"
+            ></div>
 
-        <div id="energy-diagram" class="w-full max-w-2xl" style="position: relative; z-index: 1;"></div>
-    </div>
+            <div
+                id="energy-diagram"
+                class="w-full max-w-2xl"
+                style="position: relative; z-index: 1"
+            ></div>
+        </div>
 
-    <!-- Renderer-Klasse -->
-    <script src="./src/scripts/micro-graph-renderer.js"></script>
+        <!-- Renderer-Klasse -->
+        <script src="./src/scripts/micro-graph-renderer.js"></script>
 
-    <script>
-        // =====================================================================
-        // Graph aus config.json laden und rendern
-        // Konfiguration liegt in diagram-config.json (Projektwurzel).
-        // Auf dem ESP32 kann dies auch ein API-Endpunkt sein: '/api/config'
-        // =====================================================================
+        <script>
+            // =====================================================================
+            // Graph aus config.json laden und rendern
+            // Konfiguration liegt in diagram-config.json (Projektwurzel).
+            // Auf dem ESP32 kann dies auch ein API-Endpunkt sein: '/api/config'
+            // =====================================================================
 
-        MicroGraphRenderer.create(
-            './diagram-config.json',
-            'energy-diagram'
-        ).then(renderer => {
+            MicroGraphRenderer.create("./diagram-config.json", "energy-diagram")
+                .then((renderer) => {
+                    renderer.render();
 
-            renderer.render();
+                    // =================================================================
+                    // Sichtbarkeit anwenden. Geschwindigkeit kommt ausschließlich aus
+                    // edge.speed in der config.json — kein Runtime-Override.
+                    // =================================================================
 
-            // =================================================================
-            // Sichtbarkeit anwenden. Geschwindigkeit kommt ausschließlich aus
-            // edge.speed in der config.json — kein Runtime-Override.
-            // =================================================================
+                    renderer.applyConfig({
+                        nodes: {
+                            n01: { visible: true },
+                            n02: { visible: true },
+                            n03: { visible: true },
+                            n04: { visible: true },
+                        },
+                    });
 
-            renderer.applyConfig({
-                nodes: {
-                    n01: { visible: true },
-                    n02: { visible: true },
-                    n03: { visible: true },
-                    n04: { visible: true },
-                },
-            });
+                    // =================================================================
+                    // Highlighted-Grid Maske — folgt den Energy-Units via rAF.
+                    // Jede aktive Unit erzeugt einen radialen Gradienten; mehrere Units
+                    // werden als kommagetrennte mask-image-Layer kombiniert.
+                    // =================================================================
 
-            // =================================================================
-            // Highlighted-Grid Maske — folgt den Energy-Units via rAF.
-            // Jede aktive Unit erzeugt einen radialen Gradienten; mehrere Units
-            // werden als kommagetrennte mask-image-Layer kombiniert.
-            // =================================================================
+                    const highlight = document.getElementById("grid-highlight");
+                    const wrapper = highlight.parentElement;
+                    const RADIUS = 150; // px — Radius des sichtbaren Kreises
 
-            const highlight = document.getElementById('grid-highlight');
-            const wrapper   = highlight.parentElement;
-            const RADIUS    = 150; // px — Radius des sichtbaren Kreises
+                    (function frame() {
+                        const units = wrapper.querySelectorAll(".energy-unit-mover");
+                        const wr = wrapper.getBoundingClientRect();
+                        const masks = [];
 
-            (function frame() {
-                const units = wrapper.querySelectorAll('.energy-unit-mover');
-                const wr    = wrapper.getBoundingClientRect();
-                const masks = [];
+                        units.forEach((u) => {
+                            const br = u.getBoundingClientRect();
+                            const xp = (
+                                ((br.left + br.width / 2 - wr.left) / wr.width) *
+                                100
+                            ).toFixed(2);
+                            const yp = (
+                                ((br.top + br.height / 2 - wr.top) / wr.height) *
+                                100
+                            ).toFixed(2);
+                            masks.push(
+                                `radial-gradient(circle ${RADIUS}px at ${xp}% ${yp}%, black 0%, transparent 100%)`,
+                            );
+                        });
 
-                units.forEach(u => {
-                    const br = u.getBoundingClientRect();
-                    const xp = ((br.left + br.width  / 2 - wr.left) / wr.width  * 100).toFixed(2);
-                    const yp = ((br.top  + br.height / 2 - wr.top)  / wr.height * 100).toFixed(2);
-                    masks.push(`radial-gradient(circle ${RADIUS}px at ${xp}% ${yp}%, black 0%, transparent 100%)`);
+                        const mask = masks.join(", ") || "none";
+                        highlight.style.maskImage = mask;
+                        highlight.style.webkitMaskImage = mask;
+
+                        requestAnimationFrame(frame);
+                    })();
+                })
+                .catch((err) => {
+                    console.error("MicroGraphRenderer failed to initialize:", err);
                 });
-
-                const mask = masks.join(', ') || 'none';
-                highlight.style.maskImage        = mask;
-                highlight.style.webkitMaskImage  = mask;
-
-                requestAnimationFrame(frame);
-            })();
-
-        }).catch(err => {
-            console.error('MicroGraphRenderer failed to initialize:', err);
-        });
-    </script>
-
-</body>
+        </script>
+    </body>
 </html>
