@@ -38,6 +38,13 @@
 
 .mg-label {
     fill: var(--color-grey);
+    font-size: 55px; /* SVG units — ≈ 12px visual at 672px container */
+}
+
+@media (max-width: 480px) {
+    .mg-label {
+        font-size: 88px; /* ≈ 11px visual at 375px, compensates for smaller SVG scale */
+    }
 }
 
 .mg-track {

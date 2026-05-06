@@ -20,6 +20,7 @@ class MicroGraphRenderer {
 
     static ANIM_DUR_MAX      = 6;
     static ANIM_DUR_MIN      = 0.3;
+    static EDGE_ICON_SIZE    = 160;
     static NS    = 'http://www.w3.org/2000/svg';
     static XHTML = 'http://www.w3.org/1999/xhtml';
     static UNIT_SVG_PATH = './assets/images/energy-diagram/energy-unit.svg';
@@ -179,6 +180,9 @@ class MicroGraphRenderer {
         });
         this._svg = svg;
 
+        const defs = this._el('defs');
+        svg.appendChild(defs);
+
         const edgeLayer = this._el('g', { id: 'mg-edge-layer' });
         graph.edges.forEach(edge => {
             const src     = this._nodeMap[edge.source];
@@ -217,6 +221,31 @@ class MicroGraphRenderer {
             group.appendChild(trackEl);
 
             if (active) group.appendChild(this._buildMover(edge, trackEl, edge.speed));
+
+            if (edge.icon) {
+                const S  = MicroGraphRenderer.EDGE_ICON_SIZE;
+                const mx = (src.x + tgt.x) / 2;
+                const my = (src.y + tgt.y) / 2;
+                const imgAttrs = {
+                    href:   `${MicroGraphRenderer.ICON_PATH}${edge.icon}`,
+                    x:      mx - S / 2,
+                    y:      my - S - 40,
+                    width:  S,
+                    height: S,
+                };
+                if (edge['icon-color']) {
+                    const filterId = `mg-edge-icon-filter-${edge.id}`;
+                    const filter   = this._el('filter', { id: filterId });
+                    const flood    = this._el('feFlood', { 'flood-color': edge['icon-color'], result: 'color' });
+                    const comp     = this._el('feComposite', { in: 'color', in2: 'SourceGraphic', operator: 'in' });
+                    filter.appendChild(flood);
+                    filter.appendChild(comp);
+                    defs.appendChild(filter);
+                    imgAttrs.filter = `url(#${filterId})`;
+                }
+                group.appendChild(this._el('image', imgAttrs));
+            }
+
             edgeLayer.appendChild(group);
         });
         svg.appendChild(edgeLayer);
