@@ -82,3 +82,16 @@
     object-fit: contain;
     filter: brightness(0);
 }
+
+.mg-node-outer--highlighted {
+    background-image: var(--background-image-gradient-light-blue);
+    border: none;
+}
+
+.mg-node-inner--highlighted {
+    background-image: var(--background-image-gradient-deep-blue);
+}
+
+.mg-node-inner--highlighted .mg-node-icon {
+    filter: brightness(0) invert(1);
+}

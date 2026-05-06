@@ -75,56 +75,64 @@
                 "source": "n01",
                 "target": "n02",
                 "status": "active",
-                "speed": 0.7
+                "speed": 0.7,
+                "dotted": "true"
             },
             {
                 "id": "e02",
                 "source": "n02",
                 "target": "n05",
                 "status": "active",
-                "speed": 0.7
+                "speed": 0.7,
+                "dotted": "false"
             },
             {
                 "id": "e03",
                 "source": "n05",
                 "target": "n04",
                 "status": "active",
-                "speed": 0.7
+                "speed": 0.7,
+                "dotted": "false"
             },
             {
                 "id": "e04",
                 "source": "n05",
                 "target": "n06",
                 "status": "active",
-                "speed": 0.7
+                "speed": 0.7,
+                "dotted": "false"
             },
             {
                 "id": "e05",
                 "source": "n06",
                 "target": "n03",
                 "status": "active",
-                "speed": 0.7
+                "speed": 0.7,
+                "dotted": "false"
             },
             {
                 "id": "e06",
                 "source": "n05",
                 "target": "n07",
                 "status": "active",
-                "speed": 0.7
+                "speed": 0.7,
+                "dotted": "false"
             },
             {
                 "id": "e07",
                 "source": "n05",
                 "target": "n09",
                 "status": "active",
-                "speed": 0.7
+                "speed": 0.7,
+                "dotted": "false"
             },
             {
                 "id": "e08",
                 "source": "n09",
                 "target": "n08",
                 "status": "active",
-                "speed": 0.7
+                "speed": 0.7,
+                "dotted": "false"
             }
         ]
     }

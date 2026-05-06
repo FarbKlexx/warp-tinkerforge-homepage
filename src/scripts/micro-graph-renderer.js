@@ -186,27 +186,34 @@ class MicroGraphRenderer {
             const pathD   = this.getBezierPath(src.x, src.y, tgt.x, tgt.y);
             const trackId = `mg-track-${edge.id}`;
             const active  = edge.status === 'active';
+            const dotted  = edge.dotted === 'true' || edge.dotted === true;
+            const dashArr = dotted ? `1 ${MicroGraphRenderer.TRACK_W * 3}` : null;
 
             const group = this._el('g', {
                 id:      `mg-edge-${edge.id}`,
                 opacity: edge.status === 'inactive' ? '0.5' : '1',
             });
 
-            group.appendChild(this._el('path', {
+            const ghostAttrs = {
                 d:                pathD,
                 class:            'mg-track mg-track-ghost',
                 'stroke-width':   String(MicroGraphRenderer.TRACK_W * MicroGraphRenderer.TRACK_GHOST_W),
                 'stroke-linecap': 'round',
                 fill:             'none',
-            }));
-            const trackEl = this._el('path', {
+            };
+            if (dashArr) ghostAttrs['stroke-dasharray'] = dashArr;
+            group.appendChild(this._el('path', ghostAttrs));
+
+            const trackAttrs = {
                 id:               trackId,
                 d:                pathD,
                 class:            'mg-track',
                 'stroke-width':   String(MicroGraphRenderer.TRACK_W),
                 'stroke-linecap': 'round',
                 fill:             'none',
-            });
+            };
+            if (dashArr) trackAttrs['stroke-dasharray'] = dashArr;
+            const trackEl = this._el('path', trackAttrs);
             group.appendChild(trackEl);
 
             if (active) group.appendChild(this._buildMover(edge, trackEl, edge.speed));
@@ -217,7 +224,8 @@ class MicroGraphRenderer {
         const nodeLayer = this._el('g', { id: 'mg-node-layer' });
         graph.nodes.forEach(node => {
             const { x, y } = this._nodeMap[node.id];
-            const R        = MicroGraphRenderer.R;
+            const highlighted = node.highlighted === 'true' || node.highlighted === true;
+            const R        = highlighted ? MicroGraphRenderer.R : Math.round(MicroGraphRenderer.R * 0.75);
             const group    = this._el('g', { id: `mg-node-${node.id}` });
 
             // Expand foreignObject by BLEED on all sides so box-shadow isn't clipped.
@@ -235,10 +243,10 @@ class MicroGraphRenderer {
             wrapper.setAttribute('xmlns', XHTML);
             wrapper.style.cssText = `width:100%;height:100%;padding:${BLEED}px;box-sizing:border-box;pointer-events:none;`;
             const outer = document.createElementNS(XHTML, 'div');
-            outer.className = 'mg-node-outer';
+            outer.className = highlighted ? 'mg-node-outer mg-node-outer--highlighted' : 'mg-node-outer';
             outer.style.pointerEvents = 'auto';
             const inner = document.createElementNS(XHTML, 'div');
-            inner.className = 'mg-node-inner';
+            inner.className = highlighted ? 'mg-node-inner mg-node-inner--highlighted' : 'mg-node-inner';
             if (node.icon) {
                 const img = document.createElementNS(XHTML, 'img');
                 img.setAttribute('src', `${MicroGraphRenderer.ICON_PATH}${node.icon}`);
