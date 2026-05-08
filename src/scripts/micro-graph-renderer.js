@@ -43,10 +43,12 @@ class MicroGraphRenderer {
     constructor(config, containerId) {
         this.config = config;
         this.container = document.getElementById(containerId);
-        this._svg = null;
+        this._animSvg = null;
+        this._staticSvg = null;
         this._nodeMap = {};
         this._unitVB = null;
         this._unitPaths = null;
+        this._unitDefs = null;
     }
 
     async _loadUnitSvg() {
@@ -62,6 +64,7 @@ class MicroGraphRenderer {
                 root.getAttribute("viewBox") ||
                 `0 0 ${root.getAttribute("width")} ${root.getAttribute("height")}`;
             this._unitPaths = Array.from(root.querySelectorAll("path"));
+            this._unitDefs = Array.from(root.querySelectorAll("defs > *"));
         } catch (e) {
             console.warn(
                 `MicroGraphRenderer: energy-unit.svg not loaded (${e.message}), using fallback.`,
@@ -118,14 +121,15 @@ class MicroGraphRenderer {
         return (max - s * (max - min)).toFixed(2);
     }
 
-    _buildMover(edge, trackPathEl, speed = 0.5) {
+    _buildMover(edge, pathD, speed = 0.5) {
         const W = MicroGraphRenderer.UNIT_W;
         const H = MicroGraphRenderer.UNIT_H;
 
-        const mover = this._el("g", { id: `mg-mover-${edge.id}`, class: "energy-unit-mover" });
+        const mover = this._el("g", { id: `mg-mover-${edge.id}`, class: "energy-unit-mover", style: "will-change: transform;" });
 
         const anim = this._el("animateMotion", {
             id: `mg-anim-${edge.id}`,
+            path: pathD,
             dur: `${this._speedToDur(speed)}s`,
             repeatCount: "indefinite",
             rotate: "auto-reverse",
@@ -133,14 +137,12 @@ class MicroGraphRenderer {
             keyTimes: "0;1",
             calcMode: "linear",
         });
-        const mpath = this._el("mpath");
-        mpath.setAttribute("href", `#${trackPathEl.id}`);
-        anim.appendChild(mpath);
         mover.appendChild(anim);
 
         const vfx = this._el("g", {
             style: "transform: scale(var(--mg-vfx-scale)); filter: blur(var(--mg-vfx-blur)) drop-shadow(0 0 var(--mg-vfx-glow-near-spread) var(--mg-vfx-glow-near-color)) drop-shadow(0 0 var(--mg-vfx-glow-far-spread) var(--mg-vfx-glow-far-color));",
         });
+
         const unitSvg = this._el("svg", {
             x: -(W / 2),
             y: -(H / 2),
@@ -149,7 +151,6 @@ class MicroGraphRenderer {
             viewBox: this._unitVB || `0 0 ${W} ${H}`,
             preserveAspectRatio: "none",
         });
-
         this._unitPaths?.forEach((p) => unitSvg.appendChild(p.cloneNode(true)));
 
         vfx.appendChild(unitSvg);
@@ -163,23 +164,30 @@ class MicroGraphRenderer {
         const cols = parseInt(grid.width);
         const rows = parseInt(grid.height);
         const C = MicroGraphRenderer.CELL;
+        const vb = `0 0 ${cols * C} ${rows * C + 300}`;
 
         graph.nodes.forEach((node) => {
             this._nodeMap[node.id] = { ...this._center(node.position), node };
         });
 
-        const svg = this._el("svg", {
-            viewBox: `0 0 ${cols * C} ${rows * C + 300}`,
+        // Two-layer architecture: animated SVG has no foreignObject so Firefox
+        // can isolate it as a GPU layer; static SVG holds the foreignObject nodes.
+        const layerWrapper = document.createElement("div");
+        layerWrapper.style.cssText = "position: relative;";
+
+        // Layer 1 (bottom): tracks + movers — normal flow to establish container height
+        const animSvg = this._el("svg", {
+            viewBox: vb,
             xmlns: MicroGraphRenderer.NS,
-            class: "w-full h-auto",
             overflow: "visible",
-            role: "img",
-            "aria-label": "Energie-Fluss-Diagramm",
+            "aria-hidden": "true",
+            class: "w-full h-auto",
         });
-        this._svg = svg;
+        this._animSvg = animSvg;
 
         const defs = this._el("defs");
-        svg.appendChild(defs);
+        this._unitDefs?.forEach((d) => defs.appendChild(d.cloneNode(true)));
+        animSvg.appendChild(defs);
 
         const edgeLayer = this._el("g", { id: "mg-edge-layer" });
         graph.edges.forEach((edge) => {
@@ -220,7 +228,7 @@ class MicroGraphRenderer {
             const trackEl = this._el("path", trackAttrs);
             group.appendChild(trackEl);
 
-            if (active) group.appendChild(this._buildMover(edge, trackEl, edge.speed));
+            if (active) group.appendChild(this._buildMover(edge, pathD, edge.speed));
 
             if (edge.icon) {
                 const S = MicroGraphRenderer.EDGE_ICON_SIZE;
@@ -255,7 +263,17 @@ class MicroGraphRenderer {
 
             edgeLayer.appendChild(group);
         });
-        svg.appendChild(edgeLayer);
+        animSvg.appendChild(edgeLayer);
+
+        // Layer 2 (top): nodes with foreignObject — absolute overlay, painted above animated SVG
+        const staticSvg = this._el("svg", {
+            viewBox: vb,
+            xmlns: MicroGraphRenderer.NS,
+            role: "img",
+            "aria-label": "Energie-Fluss-Diagramm",
+            style: "position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;",
+        });
+        this._staticSvg = staticSvg;
 
         const nodeLayer = this._el("g", { id: "mg-node-layer" });
         graph.nodes.forEach((node) => {
@@ -275,9 +293,9 @@ class MicroGraphRenderer {
                 overflow: "visible",
             });
             const XHTML = MicroGraphRenderer.XHTML;
-            const wrapper = document.createElementNS(XHTML, "div");
-            wrapper.setAttribute("xmlns", XHTML);
-            wrapper.style.cssText = `width:100%;height:100%;padding:${BLEED}px;box-sizing:border-box;pointer-events:none;`;
+            const foWrapper = document.createElementNS(XHTML, "div");
+            foWrapper.setAttribute("xmlns", XHTML);
+            foWrapper.style.cssText = `width:100%;height:100%;padding:${BLEED}px;box-sizing:border-box;pointer-events:none;`;
             const outer = document.createElementNS(XHTML, "div");
             outer.className = highlighted
                 ? "mg-node-outer mg-node-outer--highlighted"
@@ -295,8 +313,8 @@ class MicroGraphRenderer {
                 inner.appendChild(img);
             }
             outer.appendChild(inner);
-            wrapper.appendChild(outer);
-            fo.appendChild(wrapper);
+            foWrapper.appendChild(outer);
+            fo.appendChild(foWrapper);
             group.appendChild(fo);
 
             const label = this._el("text", {
@@ -313,14 +331,17 @@ class MicroGraphRenderer {
             group.appendChild(label);
             nodeLayer.appendChild(group);
         });
-        svg.appendChild(nodeLayer);
+        staticSvg.appendChild(nodeLayer);
 
-        this.container.replaceChildren(svg);
+        layerWrapper.appendChild(animSvg);   // below: animated, no foreignObject
+        layerWrapper.appendChild(staticSvg); // above: static, foreignObject nodes
+        this.container.replaceChildren(layerWrapper);
         return this;
     }
 
     _setVisible(prefix, id, visible) {
-        const el = this._svg?.querySelector(`#mg-${prefix}-${id}`);
+        const svg = prefix === "node" ? this._staticSvg : this._animSvg;
+        const el = svg?.querySelector(`#mg-${prefix}-${id}`);
         if (el) el.setAttribute("opacity", visible ? "1" : "0");
     }
 
