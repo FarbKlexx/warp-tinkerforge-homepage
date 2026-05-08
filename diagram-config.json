@@ -16,7 +16,7 @@
                 "id": "n02",
                 "position": "(1,0)",
                 "label": "Stromzähler",
-                "icon": "electric-meter.svg",
+                "icon": "stromzaehler.svg",
                 "highlighted": "false"
             },
             {
@@ -43,8 +43,8 @@
             {
                 "id": "n06",
                 "position": "(2,2)",
-                "label": "Wärmepumpe",
-                "icon": "waermepumpe.svg",
+                "label": "WARP4-Wallbox",
+                "icon": "warp4-wallbox.svg",
                 "highlighted": "false"
             },
             {
@@ -58,7 +58,15 @@
                 "id": "n08",
                 "position": "(2,1)",
                 "label": "Wechselrichter",
-                "icon": "electric-meter.svg",
+                "icon": "wechselrichter.svg",
+                "highlighted": "false"
+            }
+            ,
+            {
+                "id": "n09",
+                "position": "(1,2)",
+                "label": "E-Auto",
+                "icon": "auto.svg",
                 "highlighted": "false"
             }
         ],
@@ -69,9 +77,7 @@
                 "target": "n02",
                 "status": "active",
                 "speed": 0.7,
-                "dotted": "true",
-                "icon": "euro.svg",
-                "icon-color": "#118c4f"
+                "dotted": "true"
             },
             {
                 "id": "e02",
@@ -79,8 +85,7 @@
                 "target": "n05",
                 "status": "active",
                 "speed": 0.7,
-                "dotted": "false",
-                "icon": ""
+                "dotted": "false"
             },
             {
                 "id": "e03",
@@ -88,8 +93,7 @@
                 "target": "n04",
                 "status": "active",
                 "speed": 0.7,
-                "dotted": "false",
-                "icon": ""
+                "dotted": "false"
             },
             {
                 "id": "e04",
@@ -97,8 +101,7 @@
                 "target": "n06",
                 "status": "active",
                 "speed": 0.7,
-                "dotted": "false",
-                "icon": ""
+                "dotted": "false"
             },
             {
                 "id": "e05",
@@ -106,8 +109,7 @@
                 "target": "n08",
                 "status": "active",
                 "speed": 0.7,
-                "dotted": "false",
-                "icon": ""
+                "dotted": "false"
             },
             {
                 "id": "e06",
@@ -115,8 +117,7 @@
                 "target": "n07",
                 "status": "active",
                 "speed": 0.7,
-                "dotted": "false",
-                "icon": ""
+                "dotted": "false"
             },
             {
                 "id": "e07",
@@ -124,8 +125,15 @@
                 "target": "n05",
                 "status": "active",
                 "speed": 0.7,
-                "dotted": "false",
-                "icon": ""
+                "dotted": "false"
+            },
+            {
+                "id": "e08",
+                "source": "n06",
+                "target": "n09",
+                "status": "active",
+                "speed": 0.7,
+                "dotted": "false"
             }
         ]
     }
