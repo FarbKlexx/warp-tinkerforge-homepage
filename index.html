@@ -2395,7 +2395,9 @@ on behalf of Tinkerforge GmbH.
                     const wrapper = highlight.parentElement;
                     const RADIUS = 150;
 
-                    (function frame() {
+                    let rafId = null;
+
+                    function frame() {
                         const units = wrapper.querySelectorAll(".energy-unit-mover");
                         const wr = wrapper.getBoundingClientRect();
                         const masks = [];
@@ -2419,8 +2421,22 @@ on behalf of Tinkerforge GmbH.
                         highlight.style.maskImage = mask;
                         highlight.style.webkitMaskImage = mask;
 
-                        requestAnimationFrame(frame);
-                    })();
+                        rafId = requestAnimationFrame(frame);
+                    }
+
+                    new IntersectionObserver((entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                renderer._animSvg.unpauseAnimations();
+                                if (!rafId) rafId = requestAnimationFrame(frame);
+                            } else {
+                                renderer._animSvg.pauseAnimations();
+                                if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+                            }
+                        });
+                    }, { threshold: 0 }).observe(wrapper);
+
+                    rafId = requestAnimationFrame(frame);
                 })
                 .catch((err) => {
                     console.error("MicroGraphRenderer failed to initialize:", err);
